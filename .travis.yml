@@ -1,0 +1,9 @@
+os: osx
+language: swift
+osx_image: xcode12.5
+
+install:
+  - ./install_swiftlint.sh
+
+script:
+  - swiftlint
