@@ -278,6 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E4B41262728FF0600EDE747 /* Build configuration list for PBXNativeTarget "Satuju" */;
 			buildPhases = (
+				8E4B414927290AEF00EDE747 /* Run SwiftLint */,
 				8E4B40FE2728FF0500EDE747 /* Sources */,
 				8E4B40FF2728FF0500EDE747 /* Frameworks */,
 				8E4B41002728FF0500EDE747 /* Resources */,
@@ -407,6 +408,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E4B414927290AEF00EDE747 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E4B40FE2728FF0500EDE747 /* Sources */ = {
@@ -584,7 +606,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
 				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -615,7 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
 				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
