@@ -2,6 +2,11 @@ os: osx
 language: swift
 osx_image: xcode12.5
 
+branches:
+  only:
+    - main
+    - develop
+
 install:
   - ./install_swiftlint.sh
 
