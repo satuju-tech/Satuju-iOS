@@ -10,15 +10,12 @@ import SwiftUI
 struct SwitchButton: View {
     var body: some View {
         Button {
-            //disini function
-            print("switchhh")
-        }label: {
+        } label: {
             Image("SwitchIcon")
                 .resizable()
                 .frame(width: 23.4, height: 23.18)
                 .foregroundColor(Color("Purple"))
         }
-            
     }
 }
 
@@ -26,6 +23,5 @@ struct SwitchButton_Previews: PreviewProvider {
     static var previews: some View {
         SwitchButton()
             .previewLayout(.fixed(width: 48, height: 48))
-            .preferredColorScheme(.light)
     }
 }

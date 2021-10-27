@@ -21,6 +21,7 @@
 		8E4B41442729041800EDE747 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41432729041800EDE747 /* Model.swift */; };
 		8E4B41462729042000EDE747 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41452729042000EDE747 /* Service.swift */; };
 		8E4B41482729042700EDE747 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41472729042700EDE747 /* Repository.swift */; };
+		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		8E4B41432729041800EDE747 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8E4B41452729042000EDE747 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8E4B41472729042700EDE747 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		8E4B412F2729019900EDE747 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				A55F227C272967DE00B6E260 /* SwitchButton.swift */,
 				8E4B4139272903D100EDE747 /* ReusableView.swift */,
 			);
 			path = ReusableView;
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B41442729041800EDE747 /* Model.swift in Sources */,
+				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41462729042000EDE747 /* Service.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
