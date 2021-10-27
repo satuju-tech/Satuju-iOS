@@ -21,6 +21,21 @@
 		8E4B41442729041800EDE747 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41432729041800EDE747 /* Model.swift */; };
 		8E4B41462729042000EDE747 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41452729042000EDE747 /* Service.swift */; };
 		8E4B41482729042700EDE747 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41472729042700EDE747 /* Repository.swift */; };
+		A55F22682729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
+		A55F22692729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
+		A55F226A2729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
+		A55F226B2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */; };
+		A55F226C2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */; };
+		A55F226D2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */; };
+		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
+		A55F226F2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
+		A55F22702729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
+		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
+		A55F22722729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
+		A55F22732729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
+		A55F227727294D7200B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227627294D7200B6E260 /* SwitchButton.swift */; };
+		A55F227827294D7200B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227627294D7200B6E260 /* SwitchButton.swift */; };
+		A55F227927294D7200B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227627294D7200B6E260 /* SwitchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +73,12 @@
 		8E4B41432729041800EDE747 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8E4B41452729042000EDE747 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8E4B41472729042700EDE747 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A55F227627294D7200B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +129,7 @@
 		8E4B41042728FF0500EDE747 /* Satuju */ = {
 			isa = PBXGroup;
 			children = (
+				A55F2274272939A200B6E260 /* Info.plist */,
 				8E4B413F272903F300EDE747 /* Helper */,
 				8E4B4138272903B100EDE747 /* Vendor */,
 				8E4B4134272901BC00EDE747 /* Asset */,
@@ -148,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				8E4B4139272903D100EDE747 /* ReusableView.swift */,
+				A55F227627294D7200B6E260 /* SwitchButton.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -187,6 +210,7 @@
 		8E4B4134272901BC00EDE747 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				A55F22632729390E00B6E260 /* Font */,
 				8E4B41092728FF0600EDE747 /* Assets.xcassets */,
 				8E4B410B2728FF0600EDE747 /* Preview Content */,
 			);
@@ -234,6 +258,17 @@
 				8E4B41412729040F00EDE747 /* Helper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A55F22632729390E00B6E260 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */,
+				A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */,
+				A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */,
+				A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,8 +376,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */,
+				A55F22682729398D00B6E260 /* NotoSans-Bold.ttf in Resources */,
 				8E4B410D2728FF0600EDE747 /* Preview Assets.xcassets in Resources */,
+				A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */,
 				8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */,
+				A55F226B2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55F22722729398D00B6E260 /* NotoSans-Regular.ttf in Resources */,
+				A55F226F2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */,
+				A55F22692729398D00B6E260 /* NotoSans-Bold.ttf in Resources */,
+				A55F226C2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +400,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55F22732729398D00B6E260 /* NotoSans-Regular.ttf in Resources */,
+				A55F22702729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */,
+				A55F226A2729398D00B6E260 /* NotoSans-Bold.ttf in Resources */,
+				A55F226D2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B41442729041800EDE747 /* Model.swift in Sources */,
+				A55F227727294D7200B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41462729042000EDE747 /* Service.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
@@ -405,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B41172728FF0600EDE747 /* SatujuTests.swift in Sources */,
+				A55F227827294D7200B6E260 /* SwitchButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B41232728FF0600EDE747 /* SatujuUITestsLaunchTests.swift in Sources */,
+				A55F227927294D7200B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41212728FF0600EDE747 /* SatujuUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +610,7 @@
 				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Satuju/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -590,6 +641,7 @@
 				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Satuju/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
