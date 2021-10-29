@@ -21,6 +21,9 @@
 		8E4B41442729041800EDE747 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41432729041800EDE747 /* Model.swift */; };
 		8E4B41462729042000EDE747 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41452729042000EDE747 /* Service.swift */; };
 		8E4B41482729042700EDE747 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41472729042700EDE747 /* Repository.swift */; };
+		8EBE67B1272A40D3009C9F02 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B0272A40D3009C9F02 /* Realm */; };
+		8EBE67B3272A40D3009C9F02 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B2272A40D3009C9F02 /* RealmSwift */; };
+		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
 		A55F22682729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
 		A55F226B2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */; };
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
@@ -82,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBE67B3272A40D3009C9F02 /* RealmSwift in Frameworks */,
+				8EBE67B1272A40D3009C9F02 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +308,10 @@
 			dependencies = (
 			);
 			name = Satuju;
+			packageProductDependencies = (
+				8EBE67B0272A40D3009C9F02 /* Realm */,
+				8EBE67B2272A40D3009C9F02 /* RealmSwift */,
+			);
 			productName = Satuju;
 			productReference = 8E4B41022728FF0500EDE747 /* Satuju.app */;
 			productType = "com.apple.product-type.application";
@@ -375,6 +384,9 @@
 				Base,
 			);
 			mainGroup = 8E4B40F92728FF0500EDE747;
+			packageReferences = (
+				8EBE67AF272A40D3009C9F02 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 8E4B41032728FF0500EDE747 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -805,6 +817,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EBE67AF272A40D3009C9F02 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EBE67B0272A40D3009C9F02 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EBE67AF272A40D3009C9F02 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		8EBE67B2272A40D3009C9F02 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EBE67AF272A40D3009C9F02 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E4B40FA2728FF0500EDE747 /* Project object */;
 }
