@@ -78,5 +78,6 @@ struct MenuListView: View {
 struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
         MenuListView().colorScheme(.dark)
+        MenuListView().colorScheme(.light)
     }
 }
