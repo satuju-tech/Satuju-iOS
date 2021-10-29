@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuListView: View {
     @State var autoPlayCheck: Bool = false
     @State var detectLanguageCheck: Bool = false
+
     init() {
         UITableView.appearance().backgroundColor = .none
     }
@@ -19,30 +20,30 @@ struct MenuListView: View {
                 HStack {
                     if autoPlayCheck {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     } else {
                         Image(systemName: "checkmark.circle.fill")
                             .hidden()
                     }
                     Text("Auto Play Translation")
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                         .font(.system(size: 17))
                 }
-            })
+            }).buttonStyle(PlainButtonStyle())
             Button(action: {detectLanguage()}, label: {
                 HStack {
                     if detectLanguageCheck {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     } else {
                         Image(systemName: "checkmark.circle.fill")
                             .hidden()
                     }
                     Text("Detect Language")
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                         .font(.system(size: 17))
                 }
-            })
+            }).buttonStyle(PlainButtonStyle())
             Button(action: {}, label: {
                 HStack {
                     Image(systemName: "trash")
@@ -51,7 +52,7 @@ struct MenuListView: View {
                         .foregroundColor(.red)
                         .font(.system(size: 17))
                 }
-            })
+            }).buttonStyle(PlainButtonStyle())
         }
         .hasScrollEnabled(false)
         .cornerRadius(14)
@@ -76,6 +77,6 @@ struct MenuListView: View {
 
 struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuListView()
+        MenuListView().colorScheme(.dark)
     }
 }

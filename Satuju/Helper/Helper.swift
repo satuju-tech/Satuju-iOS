@@ -5,4 +5,13 @@
 //  Created by Yossan Rahmadi on 27/10/21.
 //
 
-import Foundation
+import SwiftUI
+
+extension View {
+
+    func hasScrollEnabled(_ value: Bool) -> some View {
+        self.onAppear {
+            UITableView.appearance().isScrollEnabled = value
+        }
+    }
+}
