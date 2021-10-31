@@ -12,6 +12,9 @@
 		8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA80272E778000013049 /* TranslationAPIService.swift */; };
 		8E16CA83272E783100013049 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA82272E783100013049 /* APIConstant.swift */; };
 		8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA84272E7E2600013049 /* TranslationRepository.swift */; };
+		8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA88272ECCE500013049 /* SupportedLanguages.swift */; };
+		8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */; };
+		8E16CA8D272ED54300013049 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8C272ED54300013049 /* TestViewModel.swift */; };
 		8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* SatujuApp.swift */; };
 		8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41072728FF0500EDE747 /* ContentView.swift */; };
 		8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B41092728FF0600EDE747 /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		8E16CA80272E778000013049 /* TranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationAPIService.swift; sourceTree = "<group>"; };
 		8E16CA82272E783100013049 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		8E16CA84272E7E2600013049 /* TranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationRepository.swift; sourceTree = "<group>"; };
+		8E16CA88272ECCE500013049 /* SupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLanguages.swift; sourceTree = "<group>"; };
+		8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedLanguage.swift; sourceTree = "<group>"; };
+		8E16CA8C272ED54300013049 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8E4B41022728FF0500EDE747 /* Satuju.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satuju.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41052728FF0500EDE747 /* SatujuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuApp.swift; sourceTree = "<group>"; };
 		8E4B41072728FF0500EDE747 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				8E4B412F2729019900EDE747 /* ReusableView */,
 				8E4B41052728FF0500EDE747 /* SatujuApp.swift */,
 				8E4B41072728FF0500EDE747 /* ContentView.swift */,
+				8E16CA8C272ED54300013049 /* TestViewModel.swift */,
 			);
 			path = Satuju;
 			sourceTree = "<group>";
@@ -183,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				8E16CA7E272E769C00013049 /* Translation.swift */,
+				8E16CA88272ECCE500013049 /* SupportedLanguages.swift */,
+				8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,6 +443,8 @@
 			files = (
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
+				8E16CA8D272ED54300013049 /* TestViewModel.swift in Sources */,
+				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
@@ -442,6 +453,7 @@
 				8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
+				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

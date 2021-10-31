@@ -9,6 +9,15 @@ import Foundation
 
 protocol TranslationRepositoryProtocol {
     func translate(text: String, lang: String, successCompletion: @escaping (Translation) -> Void, failCompletion: @escaping (String) -> Void)
+
+    func getLanguages(originLang: String, successCompletion: @escaping (SupportedLanguages) -> Void, failCompletion: @escaping (String) -> Void)
+
+    func translateWithLanguageDetection(
+        firstLang: String,
+        secondLang: String,
+        text: String,
+        successCompletion: @escaping (Translation) -> Void,
+        failCompletion: @escaping (String) -> Void)
 }
 
 final class TranslationRepository: TranslationRepositoryProtocol {
@@ -24,6 +33,40 @@ final class TranslationRepository: TranslationRepositoryProtocol {
         } failCompletion: { error in
             failCompletion(error.errorDescription ?? "error")
         }
+    }
 
+    func getLanguages(originLang: String, successCompletion: @escaping (SupportedLanguages) -> Void, failCompletion: @escaping (String) -> Void) {
+        apiService.getLanguages(originLang: originLang) { supportedLanguages in
+            successCompletion(supportedLanguages)
+        } failCompletion: { error in
+            failCompletion(error.errorDescription ?? "error")
+        }
+    }
+
+    func translateWithLanguageDetection(
+        firstLang: String,
+        secondLang: String,
+        text: String,
+        successCompletion: @escaping (Translation) -> Void,
+        failCompletion: @escaping (String) -> Void) {
+        let pairOfLanguage = "\(firstLang),\(secondLang)"
+
+        apiService.detectLanguage(languagePair: pairOfLanguage, text: text) { detectedLanguage in
+            var lang = ""
+
+            if detectedLanguage.lang == firstLang {
+                lang = "\(firstLang)-\(secondLang)"
+            } else {
+                lang = "\(secondLang)-\(firstLang)"
+            }
+
+            self.apiService.translate(text: text, lang: lang) { translation in
+                successCompletion(translation)
+            } failCompletion: { error in
+                failCompletion(error.errorDescription ?? "error")
+            }
+        } failCompletion: { error in
+            failCompletion(error.errorDescription ?? "error")
+        }
     }
 }
