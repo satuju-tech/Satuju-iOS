@@ -8,5 +8,5 @@
 import Foundation
 
 struct Translation: Codable {
-    let text: [String]
+    let text: [String]?
 }
