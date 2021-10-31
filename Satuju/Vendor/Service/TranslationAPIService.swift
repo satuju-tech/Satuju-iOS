@@ -15,7 +15,7 @@ protocol TranslationAPIServiceProtocol {
 final class TranslationAPIService: TranslationAPIServiceProtocol {
     func translate(text: String, lang: String, successCompletion: @escaping (Translation) -> Void, failCompletion: @escaping (AFError) -> Void) {
         AF.request(
-            "\(APIConstant.TRANSLATOR_BASE_API)/translate?key=\(APIConstant.TRANSLATOR_API_KEY)",
+            "\(APIConstant.TRANSLATION_BASE_API)/translate?key=\(APIConstant.TRANSLATION_API_KEY)",
             method: .post,
             parameters: ["text": text, "lang": lang])
             .responseDecodable(of: Translation.self) { response in
