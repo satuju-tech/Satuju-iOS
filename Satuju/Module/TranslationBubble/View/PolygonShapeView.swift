@@ -21,14 +21,14 @@ struct Polygon: Shape {
         var path = Path()
         let width = rect.size.width
         let height = rect.size.height
-        path.move(to: CGPoint(x: 0.08402*width, y: 0.59343*height))
+        path.move(to: CGPoint(x: 0.08402 * width, y: 0.59343 * height))
         path.addCurve(
-            to: CGPoint(x: 0.08402*width, y: 0.40657*height),
-            control1: CGPoint(x: -0.02801*width, y: 0.5437*height),
-            control2: CGPoint(x: -0.02801*width, y: 0.4563*height))
+            to: CGPoint(x: 0.08402 * width, y: 0.40657 * height),
+            control1: CGPoint(x: -0.02801 * width, y: 0.5437 * height),
+            control2: CGPoint(x: -0.02801 * width, y: 0.4563 * height))
         path.addLine(to: CGPoint(x: width, y: 0))
         path.addLine(to: CGPoint(x: width, y: height))
-        path.addLine(to: CGPoint(x: 0.08402*width, y: 0.59343*height))
+        path.addLine(to: CGPoint(x: 0.08402 * width, y: 0.59343 * height))
         path.closeSubpath()
         return path
     }
