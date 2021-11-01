@@ -32,6 +32,9 @@
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
 		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
 		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
+		A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09EC1272FC17B00710550 /* TranslationBubble.swift */; };
+		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
+		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
+		A5A09EC1272FC17B00710550 /* TranslationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubble.swift; sourceTree = "<group>"; };
+		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
+		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A5F26246272BDDA000A390E6 /* TranslationBubble */,
 				8E4B41362729038D00EDE747 /* ExampleModule */,
 			);
 			path = Module;
@@ -274,6 +281,24 @@
 				A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		A5F26246272BDDA000A390E6 /* TranslationBubble */ = {
+			isa = PBXGroup;
+			children = (
+				A5F26251272BDF6E00A390E6 /* View */,
+			);
+			path = TranslationBubble;
+			sourceTree = "<group>";
+		};
+		A5F26251272BDF6E00A390E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */,
+				A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */,
+				A5A09EC1272FC17B00710550 /* TranslationBubble.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,13 +468,16 @@
 			files = (
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
-				8E16CA8D272ED54300013049 /* TestViewModel.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
+				8E4B41462729042000EDE747 /* Service.swift in Sources */,
+				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
+				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
+				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
 				8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
