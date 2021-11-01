@@ -30,14 +30,12 @@ struct TranslationBubble: View {
                         )
                         .foregroundColor(Color("PurplePrimary"))
                 }
-                .environment(\.layoutDirection, .leftToRight)
                 .frame(maxWidth: 278)
                 VStack {
                     HStack {
                         Spacer()
                         ButtonReplayView {}
                     }
-                    .environment(\.layoutDirection, .leftToRight)
                 }
                 .frame(maxWidth: 278)
             }
@@ -49,9 +47,9 @@ struct TranslationBubble: View {
                     cornerRadius: 12
                 )
             )
-        .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
+            .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
+            .environment(\.layoutDirection, .leftToRight)
         }
-        .flipsForRightToLeftLayoutDirection(false)
         .environment(\.layoutDirection, isOrigin ? .rightToLeft : .leftToRight)
 
     }
