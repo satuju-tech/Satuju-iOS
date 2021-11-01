@@ -28,11 +28,8 @@
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
 		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
 		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
-		A5F26248272BDEA600A390E6 /* BubbleChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26247272BDEA600A390E6 /* BubbleChatView.swift */; };
-		A5F2624A272BDEC200A390E6 /* BubbleChatLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26249272BDEC200A390E6 /* BubbleChatLeftView.swift */; };
-		A5F2624C272BDEEF00A390E6 /* BubbleChatRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624B272BDEEF00A390E6 /* BubbleChatRightView.swift */; };
+		A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09EC1272FC17B00710550 /* TranslationBubble.swift */; };
 		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
-		A5F26253272BDFC700A390E6 /* TextTranslationBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26252272BDFC700A390E6 /* TextTranslationBubbleView.swift */; };
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,11 +74,8 @@
 		A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
-		A5F26247272BDEA600A390E6 /* BubbleChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChatView.swift; sourceTree = "<group>"; };
-		A5F26249272BDEC200A390E6 /* BubbleChatLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChatLeftView.swift; sourceTree = "<group>"; };
-		A5F2624B272BDEEF00A390E6 /* BubbleChatRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChatRightView.swift; sourceTree = "<group>"; };
+		A5A09EC1272FC17B00710550 /* TranslationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubble.swift; sourceTree = "<group>"; };
 		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
-		A5F26252272BDFC700A390E6 /* TextTranslationBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslationBubbleView.swift; sourceTree = "<group>"; };
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,12 +283,9 @@
 		A5F26251272BDF6E00A390E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A5F26247272BDEA600A390E6 /* BubbleChatView.swift */,
-				A5F26249272BDEC200A390E6 /* BubbleChatLeftView.swift */,
-				A5F2624B272BDEEF00A390E6 /* BubbleChatRightView.swift */,
 				A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */,
-				A5F26252272BDFC700A390E6 /* TextTranslationBubbleView.swift */,
 				A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */,
+				A5A09EC1272FC17B00710550 /* TranslationBubble.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,18 +454,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B41442729041800EDE747 /* Model.swift in Sources */,
-				A5F26253272BDFC700A390E6 /* TextTranslationBubbleView.swift in Sources */,
-				A5F2624A272BDEC200A390E6 /* BubbleChatLeftView.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41462729042000EDE747 /* Service.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
-				A5F2624C272BDEEF00A390E6 /* BubbleChatRightView.swift in Sources */,
+				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
 				8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
-				A5F26248272BDEA600A390E6 /* BubbleChatView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E4B41422729040F00EDE747 /* Helper.swift in Sources */,
 				8E4B41482729042700EDE747 /* Repository.swift in Sources */,
