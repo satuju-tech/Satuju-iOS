@@ -30,13 +30,12 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
             // State
-//            if let state = placeMark.administrativeArea {
-//                self.state = state
-//            }
+            if let state = placeMark.administrativeArea {
+                print(state)
+            }
             // Country
             if let country = placeMark.country {
                 print(country)
-                LocationManagerRepository().setCountry(negara: "INA")
             }
         })
     }

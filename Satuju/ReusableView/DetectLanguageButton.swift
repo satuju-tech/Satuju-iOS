@@ -1,8 +1,8 @@
 //
-//  DetectLanguageButtonView.swift
+//  DetectLanguageButton.swift
 //  Satuju
 //
-//  Created by Gede Wicaksana on 01/11/21.
+//  Created by Gede Wicaksana on 02/11/21.
 //
 
 import SwiftUI
