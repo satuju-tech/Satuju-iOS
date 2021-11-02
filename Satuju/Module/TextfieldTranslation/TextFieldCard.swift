@@ -8,30 +8,36 @@
 import SwiftUI
 
 struct TextFieldCard: View {
-    @State private var name: String = "Enter Text"
+    @Binding var text: String
+    @State var placeholder: String = "Enter Text"
     @State private var value: CGFloat = 0
     @State var isFirstResponder = false
     @State var isFirstTap: Bool = false
     var onEditingEnded: () -> Void
     var body: some View {
         VStack {
-                TextEditor(text: $name)
-                    .font(.custom("NotoSans-Bold", size: 22))
-                    .foregroundColor(Color("DividerColor"))
-                    .onTapGesture {
-                        if !isFirstTap {
-                            self.name = ""
-                            isFirstTap.toggle()
-                        }
+            TextEditor(text: $text)
+                .onAppear(perform: {
+                    if text.isEmpty {
+                        text = placeholder
                     }
-                    .onChange(of: name) { value in
-                        if value.contains("\n") {
-                            name = value.replacingOccurrences(of: "\n", with: "")
-                            self.dismissKeyboard()
-                            self.onEditingEnded()
-                        }
+                })
+                .font(.custom("NotoSans-Bold", size: 22))
+                .foregroundColor(Color("DividerColor"))
+                .onTapGesture {
+                    if !isFirstTap {
+                        self.text = ""
+                        isFirstTap.toggle()
                     }
-                    .zIndex(2)
+                }
+                .onChange(of: text) { value in
+                    if value.contains("\n") {
+                        text = value.replacingOccurrences(of: "\n", with: "")
+                        self.dismissKeyboard()
+                        self.onEditingEnded()
+                    }
+                }
+                .zIndex(2)
         }
         .ignoresSafeArea(.keyboard)
         .padding(.init(top: 60, leading: 20, bottom: 20, trailing: 20))
@@ -44,8 +50,10 @@ struct TextFieldCard: View {
 
 struct TextFieldCard_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldCard {}
-
+        TextFieldCard(
+            text: .constant("Enter Text"),
+            onEditingEnded: {}
+        )
     }
 }
 

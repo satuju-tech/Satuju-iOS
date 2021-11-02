@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TextfieldTranslationView: View {
+    var action: () -> Void
+    @Binding var text: String
     @State var isClick: Bool = false
     @Namespace var namespace
     @State var isDisable = false
@@ -50,9 +52,10 @@ struct TextfieldTranslationView: View {
                     if isClick {
                         ZStack(alignment: .topTrailing) {
                             VStack {
-                                TextFieldCard(onEditingEnded: {
+                                TextFieldCard(text: $text, onEditingEnded: {
                                     isClick.toggle()
                                     isDisable = false
+                                    action()
                                 })
                                     .matchedGeometryEffect(id: "TFTranslation", in: namespace)
                                     .frame(idealWidth: 390, maxHeight: 700)
@@ -66,6 +69,7 @@ struct TextfieldTranslationView: View {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                             isDisable = false
                                         }
+                                        text = ""
                                     }
                                 }
                         }
@@ -90,6 +94,6 @@ struct TextfieldTranslationView: View {
 
 struct TextfieldTranslationView_Previews: PreviewProvider {
     static var previews: some View {
-        TextfieldTranslationView()
+        TextfieldTranslationView(action: {}, text: .constant("Enter Text"))
     }
 }
