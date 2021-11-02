@@ -9,8 +9,8 @@ import CoreLocation
 
 final class LocationManagerService: NSObject, CLLocationManagerDelegate, ObservableObject {
     private let manager = CLLocationManager()
-    @Published var state = ""
-    @Published var country = ""
+//    @Published var state = ""
+//    @Published var country = ""
     override init() {
         super.init()
         manager.delegate = self
@@ -30,12 +30,13 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
             // State
-            if let state = placeMark.administrativeArea {
-                self.state = state
-            }
+//            if let state = placeMark.administrativeArea {
+//                self.state = state
+//            }
             // Country
             if let country = placeMark.country {
-                self.country = country
+                print(country)
+                LocationManagerRepository().setCountry(negara: "INA")
             }
         })
     }

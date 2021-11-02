@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-final class LocationManagerRepository: NSObject {
-    @StateObject private var viewModel = LocationManagerService()
+final class LocationManagerRepository: NSObject, ObservableObject {
     @Published var country = ""
     @Published var state = ""
-
-    override init() {
-        super.init()
-        
+    func setCountry(negara: String) {
+        country = negara
+        TranslationViewModel().changeLanguageButtonDestination()
     }
 }

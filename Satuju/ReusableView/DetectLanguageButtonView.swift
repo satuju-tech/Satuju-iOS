@@ -10,7 +10,6 @@ import SwiftUI
 struct DetectLanguageButtonView: View {
     var body: some View {
         Button {
-            
         } label: {
             Label(
                 title: {},

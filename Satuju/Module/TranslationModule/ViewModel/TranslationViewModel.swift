@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class TranslationViewModel: ObservableObject {
-    @Published var imageNameButtonOne = "INA"
-    @Published var countryNameButtonOne = "Indonesia"
-    @Published var imageNameButtonTwo = "INA"
-    @Published var countryNameButtonTwo = "Indonesia"
+    @ObservedObject var viewModel = LocationManagerRepository()
+    @Published var imageNameButtonOrigin = "INA"
+    @Published var countryNameButtonOrigin = "Indonesia"
+    @Published var imageNameButtonDestination = "UK"
+    @Published var countryNameButtonDestination = "England"
+
+    func changeLanguageButtonOrigin() {
+        imageNameButtonOrigin = "UK"
+        countryNameButtonOrigin = "England"
+    }
+    func changeLanguageButtonDestination() {
+        imageNameButtonDestination = "INA"
+        countryNameButtonDestination = "Indonesia"
+    }
 }

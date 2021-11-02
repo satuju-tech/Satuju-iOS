@@ -9,13 +9,14 @@ import SwiftUI
 
 struct LanguageButtonView: View {
     @State var toggleLanguageButton: (() -> Void)
-    @StateObject private var viewModel = TranslationViewModel()
+    @Binding var imageName: String
+    @Binding var countryName: String
     var body: some View {
         Button(action: {
             toggleLanguageButton()
         }, label: {
             HStack(spacing: 8) {
-                Image("INA")
+                Image(imageName)
                     .resizable()
                     .frame(width: 37.35, height: 37.35 )
                     .clipShape(Circle())
@@ -25,7 +26,7 @@ struct LanguageButtonView: View {
                             .stroke(lineWidth: 1)
                             .foregroundColor(.white)
                     )
-                Text("Indonesia")
+                Text(countryName)
                     .font(.custom("NotoSans-Bold", size: 12))
                     .foregroundColor(.white)
             }
@@ -33,13 +34,6 @@ struct LanguageButtonView: View {
             .padding(.leading, 8.0)
             .background(LinearGradient(gradient: Gradient(colors: [Color("AquaSecondary"), Color("PurplePrimary")]), startPoint: .top, endPoint: .bottom))
             .clipShape(RoundedRectangle(cornerRadius: 53))
-        })
-    }
-}
-
-struct LanguageButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        LanguageButtonView(toggleLanguageButton: {
         })
     }
 }
