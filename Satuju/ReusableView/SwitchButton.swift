@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SwitchButton: View {
+    var action: () -> Void
+    
     var body: some View {
         Button {
         } label: {
@@ -21,7 +23,7 @@ struct SwitchButton: View {
 
 struct SwitchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SwitchButton()
+        SwitchButton(action: {})
             .previewLayout(.fixed(width: 48, height: 48))
     }
 }
