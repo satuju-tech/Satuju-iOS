@@ -30,6 +30,6 @@ struct MenuButtonView: View {
 
 struct MenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuButtonView().preferredColorScheme(.dark)
+        MenuButtonView()
     }
 }

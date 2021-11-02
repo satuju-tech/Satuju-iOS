@@ -10,7 +10,6 @@ import SwiftUI
 struct MenuListView: View {
     @State var autoPlayCheck: Bool = false
     @State var detectLanguageCheck: Bool = false
-
     init() {
         UITableView.appearance().backgroundColor = .none
     }
@@ -20,13 +19,13 @@ struct MenuListView: View {
                 HStack {
                     if autoPlayCheck {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     } else {
                         Image(systemName: "checkmark.circle.fill")
                             .hidden()
                     }
                     Text("Auto Play Translation")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .font(.system(size: 17))
                 }
             }).buttonStyle(PlainButtonStyle())
@@ -34,13 +33,13 @@ struct MenuListView: View {
                 HStack {
                     if detectLanguageCheck {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     } else {
                         Image(systemName: "checkmark.circle.fill")
                             .hidden()
                     }
                     Text("Detect Language")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .font(.system(size: 17))
                 }
             }).buttonStyle(PlainButtonStyle())
@@ -57,27 +56,20 @@ struct MenuListView: View {
         .hasScrollEnabled(false)
         .cornerRadius(14)
         .padding()
-        .frame(width: 300, height: 200, alignment: .topLeading)
+        .foregroundColor(.white)
+        .frame(width: 300, height: 200, alignment: .center)
     }
     func autoPlay() {
-        if autoPlayCheck {
-            autoPlayCheck = false
-        } else {
-            autoPlayCheck = true
-        }
+        autoPlayCheck = !autoPlayCheck
+        
     }
     func detectLanguage() {
-        if detectLanguageCheck {
-            detectLanguageCheck = false
-        } else {
-            detectLanguageCheck = true
-        }
+        detectLanguageCheck = !detectLanguageCheck
     }
 }
 
 struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuListView().colorScheme(.dark)
         MenuListView().colorScheme(.light)
     }
 }
