@@ -7,8 +7,10 @@
 
 import CoreLocation
 
-class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
+final class LocationManagerService: NSObject, CLLocationManagerDelegate, ObservableObject {
     private let manager = CLLocationManager()
+    @Published var state = ""
+    @Published var country = ""
     override init() {
         super.init()
         manager.delegate = self
@@ -24,15 +26,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     func convertLatLongToAddress(latitude: Double, longitude: Double) {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: latitude, longitude: longitude)
-        geoCoder.reverseGeocodeLocation( location, completionHandler: { (placemarks, error) -> Void in
-            // Place details
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
-            if let city = placeMark.locality {
-                print(city)
+            // State
+            if let state = placeMark.administrativeArea {
+                self.state = state
             }
+            // Country
             if let country = placeMark.country {
-                print(country)
+                self.country = country
             }
         })
     }

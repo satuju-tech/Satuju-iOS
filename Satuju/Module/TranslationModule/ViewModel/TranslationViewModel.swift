@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+final class TranslationViewModel: ObservableObject {
+    @Published var imageNameButtonOne = "INA"
+    @Published var countryNameButtonOne = "Indonesia"
+    @Published var imageNameButtonTwo = "INA"
+    @Published var countryNameButtonTwo = "Indonesia"
+}

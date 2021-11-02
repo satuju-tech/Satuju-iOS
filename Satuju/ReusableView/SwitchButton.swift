@@ -22,6 +22,6 @@ struct SwitchButton: View {
 struct SwitchButton_Previews: PreviewProvider {
     static var previews: some View {
         SwitchButton()
-            .previewLayout(.fixed(width: 48, height: 48))
+            .previewLayout(.fixed(width: 43, height: 51))
     }
 }

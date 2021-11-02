@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MenuListView: View {
-    @State var autoPlayCheck: Bool = false
-    @State var detectLanguageCheck: Bool = false
+    @State var autoPlayCheck: Bool = UserDefaults.standard.bool(forKey: "autoPlayCheck")
+    @State var detectLanguageCheck: Bool = UserDefaults.standard.bool(forKey: "detectLanguageCheck")
     init() {
         UITableView.appearance().backgroundColor = .none
     }
@@ -24,7 +24,7 @@ struct MenuListView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .hidden()
                     }
-                    Text("Auto Play Translation")
+                    Text("Auto Play Translation                ")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
                 }
@@ -38,7 +38,7 @@ struct MenuListView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .hidden()
                     }
-                    Text("Detect Language")
+                    Text("Detect Language                     ")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
                 }
@@ -47,7 +47,7 @@ struct MenuListView: View {
                 HStack {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
-                    Text("Clear History")
+                    Text("Clear History                       ")
                         .foregroundColor(.red)
                         .font(.system(size: 17))
                 }
@@ -61,10 +61,11 @@ struct MenuListView: View {
     }
     func autoPlay() {
         autoPlayCheck = !autoPlayCheck
-        
+        UserDefaults.standard.set(self.autoPlayCheck, forKey: "autoPlayCheck")
     }
     func detectLanguage() {
         detectLanguageCheck = !detectLanguageCheck
+        UserDefaults.standard.set(self.detectLanguageCheck, forKey: "detectLanguageCheck")
     }
 }
 

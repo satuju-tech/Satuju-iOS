@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct MenuButtonView: View {
+    @State var toggleMenuButton: (() -> Void)
     var body: some View {
             VStack {
-                Button(action: {}, label: {
+                Button(action: {
+                    toggleMenuButton()
+                }, label: {
                     Label(
                         title: {},
                         icon: { Image("dotIcon")
@@ -30,6 +33,7 @@ struct MenuButtonView: View {
 
 struct MenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuButtonView()
+        MenuButtonView(toggleMenuButton: {
+        })
     }
 }
