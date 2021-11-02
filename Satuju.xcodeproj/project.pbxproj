@@ -14,7 +14,6 @@
 		8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA84272E7E2600013049 /* TranslationRepository.swift */; };
 		8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA88272ECCE500013049 /* SupportedLanguages.swift */; };
 		8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */; };
-		8E16CA8D272ED54300013049 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8C272ED54300013049 /* TestViewModel.swift */; };
 		8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* SatujuApp.swift */; };
 		8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41072728FF0500EDE747 /* ContentView.swift */; };
 		8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B41092728FF0600EDE747 /* Assets.xcassets */; };
@@ -33,6 +32,10 @@
 		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
 		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
 		A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09EC1272FC17B00710550 /* TranslationBubble.swift */; };
+		A5A09ECF2730C98D00710550 /* TextfieldTranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */; };
+		A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */; };
+		A5A09ED32730CC5C00710550 /* TextFieldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED22730CC5C00710550 /* TextFieldCard.swift */; };
+		A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED42730CCCF00710550 /* CloseButton.swift */; };
 		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +85,10 @@
 		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
 		A5A09EC1272FC17B00710550 /* TranslationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubble.swift; sourceTree = "<group>"; };
+		A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldTranslationView.swift; sourceTree = "<group>"; };
+		A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedCornerShape.swift; sourceTree = "<group>"; };
+		A5A09ED22730CC5C00710550 /* TextFieldCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCard.swift; sourceTree = "<group>"; };
+		A5A09ED42730CCCF00710550 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +187,7 @@
 			children = (
 				A55F227C272967DE00B6E260 /* SwitchButton.swift */,
 				8E4B4139272903D100EDE747 /* ReusableView.swift */,
+				A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A5A09ECD2730C95B00710550 /* TextfieldTranslation */,
 				A5F26246272BDDA000A390E6 /* TranslationBubble */,
 				8E4B41362729038D00EDE747 /* ExampleModule */,
 			);
@@ -281,6 +290,16 @@
 				A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		A5A09ECD2730C95B00710550 /* TextfieldTranslation */ = {
+			isa = PBXGroup;
+			children = (
+				A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */,
+				A5A09ED22730CC5C00710550 /* TextFieldCard.swift */,
+				A5A09ED42730CCCF00710550 /* CloseButton.swift */,
+			);
+			path = TextfieldTranslation;
 			sourceTree = "<group>";
 		};
 		A5F26246272BDDA000A390E6 /* TranslationBubble */ = {
@@ -469,16 +488,19 @@
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
-				8E4B41462729042000EDE747 /* Service.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
+				A5A09ED32730CC5C00710550 /* TextFieldCard.swift in Sources */,
+				A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */,
+				A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
 				8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */,
+				A5A09ECF2730C98D00710550 /* TextfieldTranslationView.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
