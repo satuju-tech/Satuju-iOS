@@ -23,12 +23,8 @@
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
 		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
 		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
-		B7AD0000272FE62200F15FC0 /* LocationManagerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFFF272FE62200F15FC0 /* LocationManagerRepository.swift */; };
-		B7AD00052730325C00F15FC0 /* TextToVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00042730325C00F15FC0 /* TextToVoiceService.swift */; };
-		B7AD0010273172F600F15FC0 /* DetectLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD000F273172F600F15FC0 /* DetectLanguageButton.swift */; };
 		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
 		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
-		B7ADFFF9272FAB7400F15FC0 /* LocationManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF8272FAB7400F15FC0 /* LocationManagerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +63,8 @@
 		A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
-		B7AD00042730325C00F15FC0 /* TextToVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToVoiceService.swift; sourceTree = "<group>"; };
-		B7AD000F273172F600F15FC0 /* DetectLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLanguageButton.swift; sourceTree = "<group>"; };
 		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
-		B7ADFFF8272FAB7400F15FC0 /* LocationManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerService.swift; sourceTree = "<group>"; };
-		B7ADFFFF272FE62200F15FC0 /* LocationManagerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +160,6 @@
 				B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */,
 				B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */,
 				A55F227C272967DE00B6E260 /* SwitchButton.swift */,
-				B7AD000F273172F600F15FC0 /* DetectLanguageButton.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -184,8 +175,6 @@
 		8E4B4132272901AD00EDE747 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B7AD00042730325C00F15FC0 /* TextToVoiceService.swift */,
-				B7ADFFF8272FAB7400F15FC0 /* LocationManagerService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -193,7 +182,6 @@
 		8E4B4133272901B400EDE747 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				B7ADFFFF272FE62200F15FC0 /* LocationManagerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -407,16 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7AD0010273172F600F15FC0 /* DetectLanguageButton.swift in Sources */,
 				B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */,
 				8E4B41442729041800EDE747 /* Model.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
-				B7AD0000272FE62200F15FC0 /* LocationManagerRepository.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
-				B7AD00052730325C00F15FC0 /* TextToVoiceService.swift in Sources */,
 				B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */,
-				B7ADFFF9272FAB7400F15FC0 /* LocationManagerService.swift in Sources */,
 				8E4B41422729040F00EDE747 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

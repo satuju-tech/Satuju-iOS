@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var autoPlayCheck: Bool = UserDefaults.standard.bool(forKey: "autoPlayCheck")
-    @State var detectLanguageCheck: Bool = UserDefaults.standard.bool(forKey: "detectLanguageCheck")
-    @State var menuListHidden: Bool = true
-    @State var menuButtonLocation = CGPoint()
+    @State var isMenuListHidden: Bool = true
     var body: some View {
         ZStack {
             VStack {
@@ -19,15 +16,22 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     MenuButtonView(toggleMenuButton: {
-                        menuListHidden = !menuListHidden
+                        isMenuListHidden.toggle()
                     })
                         .padding(9)
                 }.padding(.trailing, 26)
             }
-            if !menuListHidden {
-                MenuListView()
-                    .position(x: 273, y: 658)
-                    .opacity(0.90)
+            VStack {
+                Spacer()
+                if !isMenuListHidden {
+                    HStack {
+                        Spacer()
+                        MenuListView()
+                            .opacity(0.95)
+                            .padding(.bottom, 43)
+                            .padding(.trailing, 9)
+                    }
+                }
             }
         }
     }

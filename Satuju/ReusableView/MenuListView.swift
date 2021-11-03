@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MenuListView: View {
-    @State var autoPlayCheck: Bool = UserDefaults.standard.bool(forKey: "autoPlayCheck")
-    @State var detectLanguageCheck: Bool = UserDefaults.standard.bool(forKey: "detectLanguageCheck")
+    @State var isAutoPlayOn: Bool = UserDefaults.standard.bool(forKey: "isAutoPlayOn")
+    @State var isDetectLanguageOn: Bool = UserDefaults.standard.bool(forKey: "isDetectLanguageOn")
+    @State var isSiriShortcutOn: Bool = UserDefaults.standard.bool(forKey: "isSiriShortcutOn")
     init() {
         UITableView.appearance().backgroundColor = .none
     }
@@ -17,60 +18,72 @@ struct MenuListView: View {
         List {
             Button(action: {autoPlay()}, label: {
                 HStack {
-                    if autoPlayCheck {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.black)
-                    } else {
-                        Image(systemName: "checkmark.circle.fill")
-                            .hidden()
-                    }
-                    Text("Auto Play Translation                ")
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(isAutoPlayOn ? .black : .clear)
+                    Text("Auto Play Translation")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
-                }
+                        .frame(maxWidth: 300, alignment: .leading)
+                }.contentShape(Rectangle())
             }).buttonStyle(PlainButtonStyle())
+                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
             Button(action: {detectLanguage()}, label: {
                 HStack {
-                    if detectLanguageCheck {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.black)
-                    } else {
-                        Image(systemName: "checkmark.circle.fill")
-                            .hidden()
-                    }
-                    Text("Detect Language                     ")
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(isDetectLanguageOn ? .black : .clear)
+                    Text("Detect Language")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
-                }
+                        .frame(maxWidth: 300, alignment: .leading)
+                }.contentShape(Rectangle())
             }).buttonStyle(PlainButtonStyle())
+                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+            Button(action: {siriShortcut()}, label: {
+                HStack {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(isSiriShortcutOn ? .black : .clear)
+                    Text("Siri Shortcut")
+                        .foregroundColor(.black)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: 300, alignment: .leading)
+                }.contentShape(Rectangle())
+            }).buttonStyle(PlainButtonStyle())
+                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
             Button(action: {}, label: {
                 HStack {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
-                    Text("Clear History                       ")
+                    Text("Clear History")
                         .foregroundColor(.red)
                         .font(.system(size: 17))
-                }
+                        .frame(maxWidth: 300, alignment: .leading)
+                }.contentShape(Rectangle())
             }).buttonStyle(PlainButtonStyle())
+                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
         }
         .hasScrollEnabled(false)
         .cornerRadius(14)
         .padding()
         .foregroundColor(.white)
-        .frame(width: 300, height: 200, alignment: .center)
+        .frame(width: 300, height: 250, alignment: .center)
     }
     func autoPlay() {
-        autoPlayCheck = !autoPlayCheck
-        UserDefaults.standard.set(self.autoPlayCheck, forKey: "autoPlayCheck")
+        isAutoPlayOn.toggle()
+        UserDefaults.standard.set(self.isAutoPlayOn, forKey: "isAutoPlayOn")
     }
     func detectLanguage() {
-        detectLanguageCheck = !detectLanguageCheck
-        UserDefaults.standard.set(self.detectLanguageCheck, forKey: "detectLanguageCheck")
+        isDetectLanguageOn.toggle()
+        UserDefaults.standard.set(self.isDetectLanguageOn, forKey: "isDetectLanguageOn")
+    }
+    func siriShortcut() {
+        isSiriShortcutOn.toggle()
+        UserDefaults.standard.set(self.isSiriShortcutOn, forKey: "isSiriShortcutOn")
     }
 }
 
 struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
         MenuListView()
+            .previewLayout(.fixed(width: 280, height: 250))
     }
 }
