@@ -15,7 +15,7 @@ struct TranslationHistoryView: View {
         ScrollView {
             LazyVStack {
                 ForEach(translationHistory.results, id: \.id) { item in
-                    TranslationBubble(isOrigin: false, textTranslationInput: item.originText, textTranslationResult: item.destinationText)
+                    TranslationBubble(isLeft: item.isLeft, textTranslationInput: item.originText, textTranslationResult: item.destinationText)
                 }
             }
         }
