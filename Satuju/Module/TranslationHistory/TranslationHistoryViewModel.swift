@@ -13,12 +13,8 @@ class TranslationHistoryViewModel<Element>: ObservableObject where Element: Real
     private var token: NotificationToken!
 
     init(translationHistoryResults: Results<Element>) {
-        let translationHistoryRepo = TranslationHistoryRepository()
         self.results = translationHistoryResults
         lateInit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            translationHistoryRepo.deleteTranslationHistory()
-        }
     }
 
     func lateInit() {
