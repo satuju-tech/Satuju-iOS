@@ -21,6 +21,10 @@
 		8E4B41172728FF0600EDE747 /* SatujuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41162728FF0600EDE747 /* SatujuTests.swift */; };
 		8E4B41212728FF0600EDE747 /* SatujuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41202728FF0600EDE747 /* SatujuUITests.swift */; };
 		8E4B41232728FF0600EDE747 /* SatujuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */; };
+		8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */; };
+		8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */; };
+		8E56B7882731932B00848AEA /* TranslationHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */; };
+		8E56B78A2731933B00848AEA /* TranslationHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7892731933B00848AEA /* TranslationHistoryView.swift */; };
 		8EBE67B1272A40D3009C9F02 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B0272A40D3009C9F02 /* Realm */; };
 		8EBE67B3272A40D3009C9F02 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B2272A40D3009C9F02 /* RealmSwift */; };
 		A55F22682729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
@@ -73,6 +77,10 @@
 		8E4B411C2728FF0600EDE747 /* SatujuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatujuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41202728FF0600EDE747 /* SatujuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuUITests.swift; sourceTree = "<group>"; };
 		8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistory.swift; sourceTree = "<group>"; };
+		8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryRepository.swift; sourceTree = "<group>"; };
+		8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryViewModel.swift; sourceTree = "<group>"; };
+		8E56B7892731933B00848AEA /* TranslationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryView.swift; sourceTree = "<group>"; };
 		A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 				8E16CA7E272E769C00013049 /* Translation.swift */,
 				8E16CA88272ECCE500013049 /* SupportedLanguages.swift */,
 				8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */,
+				8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				8E16CA84272E7E2600013049 /* TranslationRepository.swift */,
+				8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				8E56B7862731930C00848AEA /* TranslationHistory */,
 				A5A09ECD2730C95B00710550 /* TextfieldTranslation */,
 				A5F26246272BDDA000A390E6 /* TranslationBubble */,
 			);
@@ -251,6 +262,15 @@
 				8E16CA82272E783100013049 /* APIConstant.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		8E56B7862731930C00848AEA /* TranslationHistory */ = {
+			isa = PBXGroup;
+			children = (
+				8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */,
+				8E56B7892731933B00848AEA /* TranslationHistoryView.swift */,
+			);
+			path = TranslationHistory;
 			sourceTree = "<group>";
 		};
 		A55F22632729390E00B6E260 /* Font */ = {
@@ -464,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E56B7882731932B00848AEA /* TranslationHistoryViewModel.swift in Sources */,
 				B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
@@ -473,6 +494,8 @@
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
+				8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */,
+				8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */,
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
@@ -485,6 +508,7 @@
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
+				8E56B78A2731933B00848AEA /* TranslationHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

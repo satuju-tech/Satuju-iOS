@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct TranslationBubble: View {
-    @State var isOrigin: Bool
+    @State var isLeft: Bool
     var textTranslationInput: String
     var textTranslationResult: String
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
             PolygonShapeView()
                 .zIndex(1)
-                .rotation3DEffect(!isOrigin ? .degrees(0) : .degrees(180), axis: (x: 0, y: 1, z: 0))
+                .rotation3DEffect(isLeft ? .degrees(0) : .degrees(180), axis: (x: 0, y: 1, z: 0))
             VStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(textTranslationInput)
@@ -50,7 +50,7 @@ struct TranslationBubble: View {
             .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
             .environment(\.layoutDirection, .leftToRight)
         }
-        .environment(\.layoutDirection, isOrigin ? .rightToLeft : .leftToRight)
+        .environment(\.layoutDirection, isLeft ? .leftToRight : .rightToLeft)
 
     }
 }
@@ -58,13 +58,13 @@ struct TranslationBubble: View {
 struct TranslationBubble_Previews: PreviewProvider {
     static var previews: some View {
         TranslationBubble(
-            isOrigin: false,
+            isLeft: false,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
             textTranslationResult: "Ini adalah dua ratus won")
             .previewLayout(.sizeThatFits)
             .padding()
         TranslationBubble(
-            isOrigin: true,
+            isLeft: true,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
             textTranslationResult: "Ini adalah dua ratus won")
             .previewLayout(.sizeThatFits)
