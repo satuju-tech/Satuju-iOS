@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AE209DC273288F80045651C /* LanguangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE209DB273288F80045651C /* LanguangeItem.swift */; };
+		6AE209E0273289210045651C /* LanguageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE209DF273289210045651C /* LanguageList.swift */; };
 		8E16CA7D272E762800013049 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8E16CA7C272E762800013049 /* Alamofire */; };
 		8E16CA7F272E769C00013049 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA7E272E769C00013049 /* Translation.swift */; };
 		8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA80272E778000013049 /* TranslationAPIService.swift */; };
@@ -14,7 +16,6 @@
 		8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA84272E7E2600013049 /* TranslationRepository.swift */; };
 		8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA88272ECCE500013049 /* SupportedLanguages.swift */; };
 		8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */; };
-		8E16CA8D272ED54300013049 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8C272ED54300013049 /* TestViewModel.swift */; };
 		8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* SatujuApp.swift */; };
 		8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41072728FF0500EDE747 /* ContentView.swift */; };
 		8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B41092728FF0600EDE747 /* Assets.xcassets */; };
@@ -55,13 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AE209DB273288F80045651C /* LanguangeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguangeItem.swift; sourceTree = "<group>"; };
+		6AE209DF273289210045651C /* LanguageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageList.swift; sourceTree = "<group>"; };
 		8E16CA7E272E769C00013049 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		8E16CA80272E778000013049 /* TranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationAPIService.swift; sourceTree = "<group>"; };
 		8E16CA82272E783100013049 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		8E16CA84272E7E2600013049 /* TranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationRepository.swift; sourceTree = "<group>"; };
 		8E16CA88272ECCE500013049 /* SupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLanguages.swift; sourceTree = "<group>"; };
 		8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedLanguage.swift; sourceTree = "<group>"; };
-		8E16CA8C272ED54300013049 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8E4B41022728FF0500EDE747 /* Satuju.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satuju.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41052728FF0500EDE747 /* SatujuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuApp.swift; sourceTree = "<group>"; };
 		8E4B41072728FF0500EDE747 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AE209DD273289090045651C /* LanguageList */ = {
+			isa = PBXGroup;
+			children = (
+				6AE209DE273289180045651C /* View */,
+			);
+			path = LanguageList;
+			sourceTree = "<group>";
+		};
+		6AE209DE273289180045651C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6AE209DF273289210045651C /* LanguageList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8E4B40F92728FF0500EDE747 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +163,6 @@
 				8E4B412F2729019900EDE747 /* ReusableView */,
 				8E4B41052728FF0500EDE747 /* SatujuApp.swift */,
 				8E4B41072728FF0500EDE747 /* ContentView.swift */,
-				8E16CA8C272ED54300013049 /* TestViewModel.swift */,
 			);
 			path = Satuju;
 			sourceTree = "<group>";
@@ -178,6 +195,7 @@
 		8E4B412F2729019900EDE747 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				6AE209DB273288F80045651C /* LanguangeItem.swift */,
 				A55F227C272967DE00B6E260 /* SwitchButton.swift */,
 				8E4B4139272903D100EDE747 /* ReusableView.swift */,
 			);
@@ -231,6 +249,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6AE209DD273289090045651C /* LanguageList */,
 				A5F26246272BDDA000A390E6 /* TranslationBubble */,
 				8E4B41362729038D00EDE747 /* ExampleModule */,
 			);
@@ -469,19 +488,20 @@
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
-				8E4B41462729042000EDE747 /* Service.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
+				6AE209E0273289210045651C /* LanguageList.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
 				8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
+				6AE209DC273288F80045651C /* LanguangeItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
