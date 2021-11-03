@@ -25,7 +25,8 @@ struct MenuListView: View {
                         .font(.system(size: 17))
                         .frame(maxWidth: 300, alignment: .leading)
                 }.contentShape(Rectangle())
-            }).buttonStyle(PlainButtonStyle())
+            })
+                .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
             Button(action: {detectLanguage()}, label: {
                 HStack {
@@ -36,7 +37,8 @@ struct MenuListView: View {
                         .font(.system(size: 17))
                         .frame(maxWidth: 300, alignment: .leading)
                 }.contentShape(Rectangle())
-            }).buttonStyle(PlainButtonStyle())
+            })
+                .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
             Button(action: {siriShortcut()}, label: {
                 HStack {
@@ -47,7 +49,8 @@ struct MenuListView: View {
                         .font(.system(size: 17))
                         .frame(maxWidth: 300, alignment: .leading)
                 }.contentShape(Rectangle())
-            }).buttonStyle(PlainButtonStyle())
+            })
+                .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
             Button(action: {}, label: {
                 HStack {
@@ -58,7 +61,8 @@ struct MenuListView: View {
                         .font(.system(size: 17))
                         .frame(maxWidth: 300, alignment: .leading)
                 }.contentShape(Rectangle())
-            }).buttonStyle(PlainButtonStyle())
+            })
+                .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
         }
         .hasScrollEnabled(false)
