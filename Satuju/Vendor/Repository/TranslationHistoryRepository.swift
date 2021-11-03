@@ -9,7 +9,8 @@ import Foundation
 import RealmSwift
 
 protocol TranslationHistoryRepositoryProtocol {
-    func addTranslation(originLang: String, destinationLang: String, originText: String, destinationText: String)
+    func addTranslation(originLang: String, destinationLang: String, originText: String, destinationText: String, isLeft: Bool)
+    func editTranslation(id: UUID, originText: String, destinationText: String)
     func getTranslationHistory() -> Results<TranslationHistory>
     func deleteTranslationHistory()
 }
@@ -22,7 +23,7 @@ final class TranslationHistoryRepository: TranslationHistoryRepositoryProtocol {
         translationHistory = realm.objects(objects)
     }
 
-    func addTranslation(originLang: String, destinationLang: String, originText: String, destinationText: String) {
+    func addTranslation(originLang: String, destinationLang: String, originText: String, destinationText: String, isLeft: Bool) {
         do {
             try realm.write {
                 let newTranslationHistory = TranslationHistory()
@@ -30,7 +31,22 @@ final class TranslationHistoryRepository: TranslationHistoryRepositoryProtocol {
                 newTranslationHistory.destinationLang = destinationLang
                 newTranslationHistory.originText = originText
                 newTranslationHistory.destinationText = destinationText
+                newTranslationHistory.isLeft = isLeft
                 realm.add(newTranslationHistory)
+            }
+        } catch {
+            print(error)
+        }
+    }
+
+    func editTranslation(id: UUID, originText: String, destinationText: String) {
+        let realm = try! Realm()
+        let translationHistoryItem = realm.object(ofType: TranslationHistory.self, forPrimaryKey: id)
+
+        do {
+            try realm.write {
+                translationHistoryItem?.originText = originText
+                translationHistoryItem?.destinationText = destinationText
             }
         } catch {
             print(error)
