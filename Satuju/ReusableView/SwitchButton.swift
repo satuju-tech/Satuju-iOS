@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SwitchButton: View {
     var action: () -> Void
-    
     var body: some View {
         Button {
+            action()
         } label: {
             Image("SwitchIcon")
                 .resizable()
