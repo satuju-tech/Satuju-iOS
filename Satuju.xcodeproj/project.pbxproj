@@ -14,7 +14,6 @@
 		8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA84272E7E2600013049 /* TranslationRepository.swift */; };
 		8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA88272ECCE500013049 /* SupportedLanguages.swift */; };
 		8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */; };
-		8E16CA8D272ED54300013049 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8C272ED54300013049 /* TestViewModel.swift */; };
 		8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* SatujuApp.swift */; };
 		8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41072728FF0500EDE747 /* ContentView.swift */; };
 		8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B41092728FF0600EDE747 /* Assets.xcassets */; };
@@ -22,11 +21,6 @@
 		8E4B41172728FF0600EDE747 /* SatujuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41162728FF0600EDE747 /* SatujuTests.swift */; };
 		8E4B41212728FF0600EDE747 /* SatujuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41202728FF0600EDE747 /* SatujuUITests.swift */; };
 		8E4B41232728FF0600EDE747 /* SatujuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */; };
-		8E4B41422729040F00EDE747 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41412729040F00EDE747 /* Helper.swift */; };
-		8E4B41442729041800EDE747 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41432729041800EDE747 /* Model.swift */; };
-		8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B4139272903D100EDE747 /* ReusableView.swift */; };
-		8E4B413C272903DB00EDE747 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B413B272903DB00EDE747 /* View.swift */; };
-		8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B413D272903E900EDE747 /* ViewModel.swift */; };
 		8EBE67B1272A40D3009C9F02 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B0272A40D3009C9F02 /* Realm */; };
 		8EBE67B3272A40D3009C9F02 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B2272A40D3009C9F02 /* RealmSwift */; };
 		A55F22682729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
@@ -34,11 +28,11 @@
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
 		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
 		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
-		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
-		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
 		A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09EC1272FC17B00710550 /* TranslationBubble.swift */; };
 		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
+		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
+		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +59,6 @@
 		8E16CA84272E7E2600013049 /* TranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationRepository.swift; sourceTree = "<group>"; };
 		8E16CA88272ECCE500013049 /* SupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLanguages.swift; sourceTree = "<group>"; };
 		8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedLanguage.swift; sourceTree = "<group>"; };
-		8E16CA8C272ED54300013049 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8E4B41022728FF0500EDE747 /* Satuju.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satuju.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41052728FF0500EDE747 /* SatujuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuApp.swift; sourceTree = "<group>"; };
 		8E4B41072728FF0500EDE747 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,22 +69,17 @@
 		8E4B411C2728FF0600EDE747 /* SatujuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatujuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41202728FF0600EDE747 /* SatujuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuUITests.swift; sourceTree = "<group>"; };
 		8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8E4B41412729040F00EDE747 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		8E4B41432729041800EDE747 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		8E4B4139272903D100EDE747 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		8E4B413B272903DB00EDE747 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		8E4B413D272903E900EDE747 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
-		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
-		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		A5A09EC1272FC17B00710550 /* TranslationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubble.swift; sourceTree = "<group>"; };
 		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
+		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
+		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +117,7 @@
 				8E4B41152728FF0600EDE747 /* SatujuTests */,
 				8E4B411F2728FF0600EDE747 /* SatujuUITests */,
 				8E4B41032728FF0500EDE747 /* Products */,
+				B7AD001C27328EDF00F15FC0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,7 +142,6 @@
 				8E4B412F2729019900EDE747 /* ReusableView */,
 				8E4B41052728FF0500EDE747 /* SatujuApp.swift */,
 				8E4B41072728FF0500EDE747 /* ContentView.swift */,
-				8E16CA8C272ED54300013049 /* TestViewModel.swift */,
 			);
 			path = Satuju;
 			sourceTree = "<group>";
@@ -189,7 +177,6 @@
 				B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */,
 				B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */,
 				A55F227C272967DE00B6E260 /* SwitchButton.swift */,
-				8E4B4139272903D100EDE747 /* ReusableView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -234,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				A5F26246272BDDA000A390E6 /* TranslationBubble */,
-				8E4B41362729038D00EDE747 /* ExampleModule */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -284,6 +270,13 @@
 				A5A09EC1272FC17B00710550 /* TranslationBubble.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B7AD001C27328EDF00F15FC0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,25 +445,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */,
-				8E4B41442729041800EDE747 /* Model.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */,
-				8E4B41422729040F00EDE747 /* Helper.swift in Sources */,
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
-				8E4B41462729042000EDE747 /* Service.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
-				8E4B413E272903E900EDE747 /* ViewModel.swift in Sources */,
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
-				8E4B413C272903DB00EDE747 /* View.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
-				8E4B413A272903D100EDE747 /* ReusableView.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,

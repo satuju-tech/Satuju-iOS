@@ -91,3 +91,11 @@ struct MenuListView_Previews: PreviewProvider {
             .previewLayout(.fixed(width: 280, height: 250))
     }
 }
+
+extension View {
+    func hasScrollEnabled(_ value: Bool) -> some View {
+        self.onAppear {
+            UITableView.appearance().isScrollEnabled = value
+        }
+    }
+}
