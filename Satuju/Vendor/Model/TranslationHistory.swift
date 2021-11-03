@@ -14,6 +14,7 @@ class TranslationHistory: Object {
     @objc dynamic var destinationLang = ""
     @objc dynamic var originText = ""
     @objc dynamic var destinationText = ""
+    @objc dynamic var isLeft = true
 
     override class func primaryKey() -> String? {
         return "id"
