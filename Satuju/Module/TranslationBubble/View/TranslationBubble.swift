@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TranslationBubble: View {
+    var action: () -> Void
     @State var isLeft: Bool
     var textTranslationInput: String
     var textTranslationResult: String
@@ -34,7 +35,9 @@ struct TranslationBubble: View {
                 VStack {
                     HStack {
                         Spacer()
-                        ButtonReplayView {}
+                        ButtonReplayView {
+                            action()
+                        }
                     }
                 }
                 .frame(maxWidth: 278)
@@ -58,12 +61,14 @@ struct TranslationBubble: View {
 struct TranslationBubble_Previews: PreviewProvider {
     static var previews: some View {
         TranslationBubble(
+            action: {},
             isLeft: false,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
             textTranslationResult: "Ini adalah dua ratus won")
             .previewLayout(.sizeThatFits)
             .padding()
         TranslationBubble(
+            action: {},
             isLeft: true,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
             textTranslationResult: "Ini adalah dua ratus won")
