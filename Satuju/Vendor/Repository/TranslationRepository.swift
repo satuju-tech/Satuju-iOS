@@ -44,8 +44,8 @@ final class TranslationRepository: TranslationRepositoryProtocol {
     }
 
     func translateWithLanguageDetection(
-        firstLang: String,
-        secondLang: String,
+        firstLang: String = "",
+        secondLang: String = "",
         text: String,
         successCompletion: @escaping (Translation) -> Void,
         failCompletion: @escaping (String) -> Void) {
