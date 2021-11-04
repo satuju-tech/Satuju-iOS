@@ -49,12 +49,18 @@ struct LanguageList: View {
                     $0.1 < $1.1
                 }, id: \.key ) { key, valueText in
                     LanguangeItem(action: {
+                        ///TODOs add dismiss modal after click the list
+                        if isOrigin {
+                            SatujuApp().originLangCode = key
+                        } else {
+                            SatujuApp().destLangCode = key
+                        }
                         print("\(key) - \(valueText)")
                     }, language: valueText,
-                    isSelected: isOrigin ? key.elementsEqual("OriginLangCode"): key.elementsEqual("DestinationLangCode"))
+                                  isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""): key.elementsEqual(SatujuApp().destLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
-                                          bottom: 10, trailing: 20)
-                                  )
+                                       bottom: 10, trailing: 20)
+                        )
                     Divider().padding(
                         .init(top: 0, leading: 20,
                               bottom: 0, trailing: 20)
@@ -71,7 +77,7 @@ struct LanguageList: View {
             return languageListViewModel.langs
         } else {
             return languageListViewModel.langs
-            .filter { $0.value.contains(searchQuery) }
+                .filter { $0.value.contains(searchQuery) }
         }
     }
 }
