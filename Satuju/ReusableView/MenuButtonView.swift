@@ -33,7 +33,7 @@ struct MenuButtonView: View {
 
 struct MenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuButtonView(toggleMenuButton: {
-        }).previewLayout(.fixed(width: 66, height: 66))
+        MenuButtonView(toggleMenuButton: {})
+            .previewLayout(.fixed(width: 66, height: 66))
     }
 }

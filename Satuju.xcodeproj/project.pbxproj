@@ -39,6 +39,9 @@
 		A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED42730CCCF00710550 /* CloseButton.swift */; };
 		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
+		B7AD002327339B4A00F15FC0 /* TextToVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002227339B4A00F15FC0 /* TextToVoiceService.swift */; };
+		B7AD002727339C5200F15FC0 /* TranslationBubbleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002627339C5200F15FC0 /* TranslationBubbleViewModel.swift */; };
+		B7AD002B2733C53400F15FC0 /* ViewHasScrollEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002A2733C53400F15FC0 /* ViewHasScrollEnabled.swift */; };
 		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
 		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +97,9 @@
 		A5A09ED42730CCCF00710550 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
+		B7AD002227339B4A00F15FC0 /* TextToVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToVoiceService.swift; sourceTree = "<group>"; };
+		B7AD002627339C5200F15FC0 /* TranslationBubbleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubbleViewModel.swift; sourceTree = "<group>"; };
+		B7AD002A2733C53400F15FC0 /* ViewHasScrollEnabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHasScrollEnabled.swift; sourceTree = "<group>"; };
 		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				8E16CA80272E778000013049 /* TranslationAPIService.swift */,
+				B7AD002227339B4A00F15FC0 /* TextToVoiceService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				8E16CA82272E783100013049 /* APIConstant.swift */,
+				B7AD002A2733C53400F15FC0 /* ViewHasScrollEnabled.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 		A5F26246272BDDA000A390E6 /* TranslationBubble */ = {
 			isa = PBXGroup;
 			children = (
+				B7AD001F2733851800F15FC0 /* ViewModel */,
 				A5F26251272BDF6E00A390E6 /* View */,
 			);
 			path = TranslationBubble;
@@ -317,6 +326,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B7AD001F2733851800F15FC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B7AD002627339C5200F15FC0 /* TranslationBubbleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +509,8 @@
 				B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */,
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
+				B7AD002327339B4A00F15FC0 /* TextToVoiceService.swift in Sources */,
+				B7AD002727339C5200F15FC0 /* TranslationBubbleViewModel.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */,
@@ -500,6 +519,7 @@
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
 				A5A09ED32730CC5C00710550 /* TextFieldCard.swift in Sources */,
+				B7AD002B2733C53400F15FC0 /* ViewHasScrollEnabled.swift in Sources */,
 				A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */,
 				A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
