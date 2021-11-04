@@ -10,19 +10,19 @@ import SwiftUI
 @main
 struct SatujuApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
-
+    @AppStorage("originLangCode") var originLangCode: String?
     // TODOs: - Assign system language to origin button text
 
     init() {
         if isFirstLaunch {
-            _ = Locale.current.languageCode
+            originLangCode = Locale.current.languageCode
             isFirstLaunch = false
         }
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LanguageList()
         }
     }
 }

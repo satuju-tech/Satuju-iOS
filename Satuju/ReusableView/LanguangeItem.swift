@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LanguangeItem: View {
+    var action: () -> Void
     @State var language: String = ""
     @State var isSelected: Bool = false
     var body: some View {
@@ -19,11 +20,16 @@ struct LanguangeItem: View {
                     .foregroundColor(.black)
             }
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            action()
+        }
     }
 }
 
 struct LanguangeItem_Previews: PreviewProvider {
     static var previews: some View {
-        LanguangeItem()
+        LanguangeItem {
+        }
     }
 }

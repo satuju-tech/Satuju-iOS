@@ -10,7 +10,7 @@ import SwiftUI
 struct LanguageList: View {
     @State private var isOrigin: Bool = false
     @State private var searchQuery: String = ""
-    @State private var languages: [String: String] = [:]
+    @ObservedObject var languageListViewModel = LanguageListViewModel()
     var body: some View {
         VStack {
             HStack {
@@ -44,18 +44,34 @@ struct LanguageList: View {
                 .init(top: 0, leading: 24,
                       bottom: 20, trailing: 24)
             )
-            ForEach(languages.sorted(by: >), id: \.key) {key, valueText in
-                LanguangeItem(language: valueText,
-                              isSelected: isOrigin ? key.elementsEqual("OriginLangCode"): key.elementsEqual("DestinationLangCode")).padding(
-                    .init(top: 10, leading: 20,
-                          bottom: 10, trailing: 20)
-                )
-                Divider().padding(
-                    .init(top: 0, leading: 20,
-                          bottom: 0, trailing: 20)
-                )
+            ScrollView {
+                ForEach( langItem.sorted {
+                    $0.1 < $1.1
+                }, id: \.key ) { key, valueText in
+                    LanguangeItem(action: {
+                        print("\(key) - \(valueText)")
+                    }, language: valueText,
+                    isSelected: isOrigin ? key.elementsEqual("OriginLangCode"): key.elementsEqual("DestinationLangCode"))
+                        .padding(.init(top: 10, leading: 20,
+                                          bottom: 10, trailing: 20)
+                                  )
+                    Divider().padding(
+                        .init(top: 0, leading: 20,
+                              bottom: 0, trailing: 20)
+                    )
+                }
             }
             Spacer()
+        }.onAppear {
+            languageListViewModel.fetchLanguage()
+        }
+    }
+    var langItem: [String: String] {
+        if searchQuery.isEmpty {
+            return languageListViewModel.langs
+        } else {
+            return languageListViewModel.langs
+            .filter { $0.value.contains(searchQuery) }
         }
     }
 }
