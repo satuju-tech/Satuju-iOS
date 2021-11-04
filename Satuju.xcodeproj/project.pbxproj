@@ -32,6 +32,9 @@
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
 		A55F22712729398D00B6E260 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */; };
 		A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
+		A56A66C127341D2B0051A6A9 /* SoundWaveInputVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A66C027341D2B0051A6A9 /* SoundWaveInputVoice.swift */; };
+		A56A66C3273420860051A6A9 /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A66C2273420860051A6A9 /* SoundWaveView.swift */; };
+		A56A66C5273420E00051A6A9 /* SoundWaveItemBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A66C4273420E00051A6A9 /* SoundWaveItemBarView.swift */; };
 		A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09EC1272FC17B00710550 /* TranslationBubble.swift */; };
 		A5A09ECF2730C98D00710550 /* TextfieldTranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */; };
 		A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */; };
@@ -87,6 +90,9 @@
 		A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		A55F2274272939A200B6E260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55F227C272967DE00B6E260 /* SwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
+		A56A66C027341D2B0051A6A9 /* SoundWaveInputVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveInputVoice.swift; sourceTree = "<group>"; };
+		A56A66C2273420860051A6A9 /* SoundWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveView.swift; sourceTree = "<group>"; };
+		A56A66C4273420E00051A6A9 /* SoundWaveItemBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveItemBarView.swift; sourceTree = "<group>"; };
 		A5A09EC1272FC17B00710550 /* TranslationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubble.swift; sourceTree = "<group>"; };
 		A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldTranslationView.swift; sourceTree = "<group>"; };
 		A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedCornerShape.swift; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A56A66BF27341BB20051A6A9 /* Soundwave */,
 				8E56B7862731930C00848AEA /* TranslationHistory */,
 				A5A09ECD2730C95B00710550 /* TextfieldTranslation */,
 				A5F26246272BDDA000A390E6 /* TranslationBubble */,
@@ -282,6 +289,16 @@
 				A55F22672729398C00B6E260 /* NotoSans-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		A56A66BF27341BB20051A6A9 /* Soundwave */ = {
+			isa = PBXGroup;
+			children = (
+				A56A66C027341D2B0051A6A9 /* SoundWaveInputVoice.swift */,
+				A56A66C2273420860051A6A9 /* SoundWaveView.swift */,
+				A56A66C4273420E00051A6A9 /* SoundWaveItemBarView.swift */,
+			);
+			path = Soundwave;
 			sourceTree = "<group>";
 		};
 		A5A09ECD2730C95B00710550 /* TextfieldTranslation */ = {
@@ -491,6 +508,8 @@
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */,
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
+				A56A66C3273420860051A6A9 /* SoundWaveView.swift in Sources */,
+				A56A66C5273420E00051A6A9 /* SoundWaveItemBarView.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
@@ -508,6 +527,7 @@
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
+				A56A66C127341D2B0051A6A9 /* SoundWaveInputVoice.swift in Sources */,
 				8E56B78A2731933B00848AEA /* TranslationHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
