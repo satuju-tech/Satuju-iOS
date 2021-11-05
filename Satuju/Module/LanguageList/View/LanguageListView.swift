@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LanguageList: View {
+struct LanguageListView: View {
     @State private var isOrigin: Bool = false
     @State private var searchQuery: String = ""
     @ObservedObject var languageListViewModel = LanguageListViewModel()
@@ -56,8 +56,8 @@ struct LanguageList: View {
                             SatujuApp().destLangCode = key
                         }
                         print("\(key) - \(valueText)")
-                    }, language: valueText,
-                                  isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""): key.elementsEqual(SatujuApp().destLangCode ?? ""))
+                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""):
+                                    key.elementsEqual(SatujuApp().destLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
                                        bottom: 10, trailing: 20)
                         )
@@ -84,6 +84,6 @@ struct LanguageList: View {
 
 struct LanguageList_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageList()
+        LanguageListView()
     }
 }
