@@ -8,9 +8,9 @@
 import SwiftUI
 
 var numberOfBar: Int = 36
-var leftGradientColor: Color = Color(red: 255/255, green: 71/255, blue: 23/255)
-var centerGradientColor: Color = Color(red: 158/255, green: 13/255, blue: 168/255)
-var rightGradientColor: Color = Color(red: 20/255, green: 145/255, blue: 156/255)
+var leftGradientColor: Color = Color(red: 255 / 255, green: 71 / 255, blue: 23 / 255)
+var centerGradientColor: Color = Color(red: 158 / 255, green: 13 / 255, blue: 168 / 255)
+var rightGradientColor: Color = Color(red: 20 / 255, green: 145 / 255, blue: 156 / 255)
 
 struct SoundWaveView: View {
     @ObservedObject private var mic = SoundWaveInputVoice(numberOfSamples: numberOfBar)
