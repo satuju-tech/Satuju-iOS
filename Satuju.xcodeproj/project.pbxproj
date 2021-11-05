@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AE209DC273288F80045651C /* LanguangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE209DB273288F80045651C /* LanguangeItem.swift */; };
+		6AE209E0273289210045651C /* LanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE209DF273289210045651C /* LanguageListView.swift */; };
+		6AE209E327328B970045651C /* LanguageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE209E227328B970045651C /* LanguageListViewModel.swift */; };
 		8E16CA7D272E762800013049 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8E16CA7C272E762800013049 /* Alamofire */; };
 		8E16CA7F272E769C00013049 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA7E272E769C00013049 /* Translation.swift */; };
 		8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA80272E778000013049 /* TranslationAPIService.swift */; };
@@ -42,6 +45,9 @@
 		A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED42730CCCF00710550 /* CloseButton.swift */; };
 		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
+		B7AD002D2735094B00F15FC0 /* DetectLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002C2735094B00F15FC0 /* DetectLanguageButtonView.swift */; };
+		B7AD003027350B8400F15FC0 /* VoiceRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002F27350B8400F15FC0 /* VoiceRecognitionView.swift */; };
+		B7AD003227350D3B00F15FC0 /* VoiceRecognitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD003127350D3B00F15FC0 /* VoiceRecognitionViewModel.swift */; };
 		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
 		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AE209DB273288F80045651C /* LanguangeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguangeItem.swift; sourceTree = "<group>"; };
+		6AE209DF273289210045651C /* LanguageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListView.swift; sourceTree = "<group>"; };
+		6AE209E227328B970045651C /* LanguageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewModel.swift; sourceTree = "<group>"; };
 		8E16CA7E272E769C00013049 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		8E16CA80272E778000013049 /* TranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationAPIService.swift; sourceTree = "<group>"; };
 		8E16CA82272E783100013049 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
@@ -100,6 +109,9 @@
 		A5A09ED42730CCCF00710550 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
+		B7AD002C2735094B00F15FC0 /* DetectLanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLanguageButtonView.swift; sourceTree = "<group>"; };
+		B7AD002F27350B8400F15FC0 /* VoiceRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionView.swift; sourceTree = "<group>"; };
+		B7AD003127350D3B00F15FC0 /* VoiceRecognitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionViewModel.swift; sourceTree = "<group>"; };
 		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +144,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AE209DD273289090045651C /* LanguageList */ = {
+			isa = PBXGroup;
+			children = (
+				6AE209E127328B840045651C /* ViewModel */,
+				6AE209DE273289180045651C /* View */,
+			);
+			path = LanguageList;
+			sourceTree = "<group>";
+		};
+		6AE209DE273289180045651C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6AE209DF273289210045651C /* LanguageListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6AE209E127328B840045651C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6AE209E227328B970045651C /* LanguageListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8E4B40F92728FF0500EDE747 = {
 			isa = PBXGroup;
 			children = (
@@ -196,10 +233,12 @@
 		8E4B412F2729019900EDE747 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				6AE209DB273288F80045651C /* LanguangeItem.swift */,
 				B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */,
 				B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */,
 				A55F227C272967DE00B6E260 /* SwitchButton.swift */,
 				A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */,
+				B7AD002C2735094B00F15FC0 /* DetectLanguageButtonView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -246,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				A56A66BF27341BB20051A6A9 /* Soundwave */,
+				B7AD002E27350AF900F15FC0 /* VoiceRecognition */,
+				6AE209DD273289090045651C /* LanguageList */,
 				8E56B7862731930C00848AEA /* TranslationHistory */,
 				A5A09ECD2730C95B00710550 /* TextfieldTranslation */,
 				A5F26246272BDDA000A390E6 /* TranslationBubble */,
@@ -334,6 +375,15 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B7AD002E27350AF900F15FC0 /* VoiceRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				B7AD002F27350B8400F15FC0 /* VoiceRecognitionView.swift */,
+				B7AD003127350D3B00F15FC0 /* VoiceRecognitionViewModel.swift */,
+			);
+			path = VoiceRecognition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,12 +551,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7AD002D2735094B00F15FC0 /* DetectLanguageButtonView.swift in Sources */,
+				B7AD003227350D3B00F15FC0 /* VoiceRecognitionViewModel.swift in Sources */,
 				8E56B7882731932B00848AEA /* TranslationHistoryViewModel.swift in Sources */,
 				B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */,
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */,
+				B7AD003027350B8400F15FC0 /* VoiceRecognitionView.swift in Sources */,
 				8E16CA81272E778000013049 /* TranslationAPIService.swift in Sources */,
 				A56A66C3273420860051A6A9 /* SoundWaveView.swift in Sources */,
 				A56A66C5273420E00051A6A9 /* SoundWaveItemBarView.swift in Sources */,
@@ -518,16 +571,19 @@
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */,
 				8E16CA83272E783100013049 /* APIConstant.swift in Sources */,
+				6AE209E0273289210045651C /* LanguageListView.swift in Sources */,
 				A5A09ED32730CC5C00710550 /* TextFieldCard.swift in Sources */,
 				A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */,
 				A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
 				A5A09ECF2730C98D00710550 /* TextfieldTranslationView.swift in Sources */,
+				6AE209E327328B970045651C /* LanguageListViewModel.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
 				A56A66C127341D2B0051A6A9 /* SoundWaveInputVoice.swift in Sources */,
+				6AE209DC273288F80045651C /* LanguangeItem.swift in Sources */,
 				8E56B78A2731933B00848AEA /* TranslationHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,7 +745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
-				DEVELOPMENT_TEAM = M7Q7DN9JDX;
+				DEVELOPMENT_TEAM = X9XRN4TUZZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Satuju/Info.plist;
@@ -720,7 +776,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
-				DEVELOPMENT_TEAM = M7Q7DN9JDX;
+				DEVELOPMENT_TEAM = X9XRN4TUZZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Satuju/Info.plist;
