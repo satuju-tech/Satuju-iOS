@@ -43,5 +43,6 @@ struct SoundWaveView: View {
 struct SoundWaveView_Previews: PreviewProvider {
     static var previews: some View {
         SoundWaveView()
+            .previewLayout(.sizeThatFits)
     }
 }
