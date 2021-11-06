@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct MenuListView: View {
-    @State var isAutoPlayOn: Bool = UserDefaults.standard.bool(forKey: "isAutoPlayOn")
-    @State var isDetectLanguageOn: Bool = UserDefaults.standard.bool(forKey: "isDetectLanguageOn")
-    @State var isSiriShortcutOn: Bool = UserDefaults.standard.bool(forKey: "isSiriShortcutOn")
-    init() {
-        UITableView.appearance().backgroundColor = .none
-    }
+    @StateObject private var viewModel = TranslationBubbleViewModel()
     var body: some View {
         List {
-            Button(action: {autoPlay()}, label: {
+            Button(action: {viewModel.toggleAutoPlayButton()}, label: {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(isAutoPlayOn ? .black : .clear)
+                        .foregroundColor(viewModel.isAutoPlayOn ? .black : .clear)
                     Text("Auto Play Translation")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
@@ -28,10 +23,10 @@ struct MenuListView: View {
             })
                 .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-            Button(action: {detectLanguage()}, label: {
+            Button(action: {viewModel.toggleAutoDetectLanguageButton()}, label: {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(isDetectLanguageOn ? .black : .clear)
+                        .foregroundColor(viewModel.isDetectLanguageOn ? .black : .clear)
                     Text("Detect Language")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
@@ -40,10 +35,10 @@ struct MenuListView: View {
             })
                 .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-            Button(action: {siriShortcut()}, label: {
+            Button(action: {viewModel.toggleSiriShortcutButton()}, label: {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(isSiriShortcutOn ? .black : .clear)
+                        .foregroundColor(viewModel.isSiriShortcutOn ? .black : .clear)
                     Text("Siri Shortcut")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
@@ -52,7 +47,7 @@ struct MenuListView: View {
             })
                 .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-            Button(action: {}, label: {
+            Button(action: {viewModel.toggleDeleteHistoryButton()}, label: {
                 HStack {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
@@ -70,18 +65,7 @@ struct MenuListView: View {
         .padding()
         .foregroundColor(.white)
         .frame(width: 300, height: 250, alignment: .center)
-    }
-    func autoPlay() {
-        isAutoPlayOn.toggle()
-        UserDefaults.standard.set(self.isAutoPlayOn, forKey: "isAutoPlayOn")
-    }
-    func detectLanguage() {
-        isDetectLanguageOn.toggle()
-        UserDefaults.standard.set(self.isDetectLanguageOn, forKey: "isDetectLanguageOn")
-    }
-    func siriShortcut() {
-        isSiriShortcutOn.toggle()
-        UserDefaults.standard.set(self.isSiriShortcutOn, forKey: "isSiriShortcutOn")
+        .onAppear {UITableView.appearance().backgroundColor = UIColor.clear}
     }
 }
 
@@ -89,13 +73,6 @@ struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
         MenuListView()
             .previewLayout(.fixed(width: 280, height: 250))
-    }
-}
-
-extension View {
-    func hasScrollEnabled(_ value: Bool) -> some View {
-        self.onAppear {
-            UITableView.appearance().isScrollEnabled = value
-        }
+            .opacity(0.95)
     }
 }
