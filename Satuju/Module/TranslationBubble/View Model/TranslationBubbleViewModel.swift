@@ -8,16 +8,14 @@
 import SwiftUI
 
 class TranslationBubbleViewModel: NSObject, ObservableObject {
-    @Published var isAutoPlayOn = true
-    @Published var isDetectLanguageOn = true
-    @Published var isSiriShortcutOn = true
-    override init() {
-        isAutoPlayOn = UserDefaults.standard.bool(forKey: "isAutoPlayOn")
-        isDetectLanguageOn = UserDefaults.standard.bool(forKey: "isDetectLanguageOn")
-        isSiriShortcutOn = UserDefaults.standard.bool(forKey: "isSiriShortcutOn")
+    @Published var isAutoPlayOn = UserDefaults.standard.bool(forKey: "isAutoPlayOn")
+    @Published var isDetectLanguageOn = UserDefaults.standard.bool(forKey: "isDetectLanguageOn")
+    @Published var isSiriShortcutOn = UserDefaults.standard.bool(forKey: "isSiriShortcutOn")
+    func reloadView() {
+        objectWillChange.send()
     }
     func textToVoice(read: String, language: String) {
-        //TextToVoiceService().speak(read: read, language: language)
+        TextToVoiceService().speak(read: read, language: language)
     }
     func toggleAutoPlayButton() {
         isAutoPlayOn.toggle()
