@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TranslationBubble: View {
+    @StateObject private var viewModel = TranslationBubbleViewModel()
     @State var isLeft: Bool
     var textTranslationInput: String
     var textTranslationResult: String
@@ -34,7 +35,9 @@ struct TranslationBubble: View {
                 VStack {
                     HStack {
                         Spacer()
-                        ButtonReplayView {}
+                        ButtonReplayView {
+                            viewModel.textToVoice(read: textTranslationResult, language: "id")
+                        }
                     }
                 }
                 .frame(maxWidth: 278)

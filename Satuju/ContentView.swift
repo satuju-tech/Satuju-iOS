@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var manager = LocationManagerService()
     @State var isMenuListHidden: Bool = true
     var body: some View {
         ZStack {
             VStack {
+                LanguageSettingView()
                 Spacer()
                 HStack {
                     Spacer()
