@@ -8,31 +8,12 @@
 import SwiftUI
 
 final class LanguageSettingViewModel: ObservableObject {
-    @AppStorage("originLangCode") var countryNameButtonOrigin: String = "test"
-    @AppStorage("destLangCode") var countryNameButtonDestination: String = "test"
-    
+    @AppStorage("originLangCode") var countryCodeOrigin: String = "id"
+    @AppStorage("originLangName") var countryNameButtonOrigin: String = "Indonesia"
+    @AppStorage("destLangCode") var countryCodeDestination: String = "en"
+    @AppStorage("destLangName") var countryNameButtonDestination: String = "English"
     @Published var imageNameButtonOrigin = "INA"
     @Published var colorNameButtonOrigin = "PurplePrimary"
     @Published var imageNameButtonDestination = "UK"
     @Published var colorNameButtonDestination = "AquaSecondary"
-    func changeLanguageButtonOrigin() {
-        imageNameButtonOrigin = "UK"
-        countryNameButtonOrigin = "England"
-    }
-    func changeLanguageButtonDestination() {
-        imageNameButtonDestination = "INA"
-        countryNameButtonDestination = "Indonesia"
-    }
-    func changeButtonDestinationBasedOnLocation(countryName: String) {
-        imageNameButtonDestination = "INA"
-        countryNameButtonDestination = countryName
-    }
-    func switchButton() {
-        let countryNameTempOrigin = countryNameButtonOrigin
-        let imageNameTempOrigin = imageNameButtonOrigin
-        countryNameButtonOrigin = countryNameButtonDestination
-        imageNameButtonOrigin = imageNameButtonDestination
-        countryNameButtonDestination = countryNameTempOrigin
-        imageNameButtonDestination = imageNameTempOrigin
-    }
 }
