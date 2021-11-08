@@ -20,7 +20,7 @@ struct LanguageSettingView: View {
                 showLanguageListModalView = true
             },
                                imageName: $LanguageSettingVM.imageNameButtonOrigin,
-                               countryName: $LanguageSettingVM.test,
+                               countryName: $LanguageSettingVM.countryNameButtonOrigin,
                                colorName: $LanguageSettingVM.colorNameButtonOrigin
             )
             if !TranslationBubbleVM.isDetectLanguageOn {
@@ -30,7 +30,7 @@ struct LanguageSettingView: View {
             }
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = false
-//                LanguageSettingVM.changeLanguageButtonDestination()
+                //                LanguageSettingVM.changeLanguageButtonDestination()
                 showLanguageListModalView = true
             },
                                imageName: $LanguageSettingVM.imageNameButtonDestination,
