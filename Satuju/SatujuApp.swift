@@ -11,7 +11,9 @@ import SwiftUI
 struct SatujuApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
     @AppStorage("originLangCode") var originLangCode: String?
+    @AppStorage("originLangName") var originLangName: String?
     @AppStorage("destLangCode") var destLangCode: String?
+    @AppStorage("destLangName") var destLangName: String?
     // TODOs: - Assign system language to origin button text
 
     init() {

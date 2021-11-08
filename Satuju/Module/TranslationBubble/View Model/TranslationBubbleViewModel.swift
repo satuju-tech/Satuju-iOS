@@ -8,9 +8,9 @@
 import SwiftUI
 
 class TranslationBubbleViewModel: NSObject, ObservableObject {
-    @Published var isAutoPlayOn = UserDefaults.standard.bool(forKey: "isAutoPlayOn")
-    @Published var isDetectLanguageOn = UserDefaults.standard.bool(forKey: "isDetectLanguageOn")
-    @Published var isSiriShortcutOn = UserDefaults.standard.bool(forKey: "isSiriShortcutOn")
+    @AppStorage("destLangName") var isAutoPlayOn: Bool = false
+    @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
+    @AppStorage("isSiriShortcutOn") var isSiriShortcutOn: Bool = false
     func reloadView() {
         objectWillChange.send()
     }

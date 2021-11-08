@@ -5,8 +5,11 @@
 //  Created by Gede Wicaksana on 06/11/21.
 //
 import CoreLocation
+import SwiftUI
 
 final class LocationManagerService: NSObject, CLLocationManagerDelegate, ObservableObject {
+    @AppStorage("destLangName") var countryNameDestination: String?
+    @AppStorage("destLangCode") var countryCodeDestination: String?
     private let manager = CLLocationManager()
     override init() {
         super.init()
@@ -28,7 +31,9 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             placeMark = placemarks?[0]
             // Country
             if let country = placeMark.country {
-                LanguageSettingViewModel().changeButtonDestinationBasedOnLocation(countryName: country)
+                self.countryNameDestination = LocationEnum(rawValue: country)?.getCountryName()
+                self.countryCodeDestination = LocationEnum(rawValue: country)?.getCountryID()
+                print(country)
             }
         })
     }
