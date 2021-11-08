@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct LanguageListView: View {
-    @State private var isOrigin: Bool = false
+    @State var isOrigin: Bool
     @State private var searchQuery: String = ""
+    @Binding var showModal: Bool
     @ObservedObject var languageListViewModel = LanguageListViewModel()
+
+    @AppStorage("originLangCode") var originLangCode: String?
+    @AppStorage("destLangCode") var destLangCode: String?
     var body: some View {
         VStack {
             HStack {
@@ -51,10 +55,14 @@ struct LanguageListView: View {
                     LanguangeItem(action: {
                         ///TODOs add dismiss modal after click the list
                         if isOrigin {
-                            SatujuApp().originLangCode = key
+                            originLangCode = key
+                            print(originLangCode)
                         } else {
-                            SatujuApp().destLangCode = key
+                            destLangCode = key
                         }
+
+                        
+                        showModal.toggle()
                         print("\(key) - \(valueText)")
                     }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""):
                                     key.elementsEqual(SatujuApp().destLangCode ?? ""))
@@ -82,8 +90,8 @@ struct LanguageListView: View {
     }
 }
 
-struct LanguageList_Previews: PreviewProvider {
-    static var previews: some View {
-        LanguageListView()
-    }
-}
+//struct LanguageList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LanguageListView(showModal: <#T##Binding<Bool>#>)
+//    }
+//}
