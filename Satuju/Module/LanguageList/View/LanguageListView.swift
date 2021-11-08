@@ -15,6 +15,8 @@ struct LanguageListView: View {
 
     @AppStorage("originLangCode") var originLangCode: String?
     @AppStorage("destLangCode") var destLangCode: String?
+    @AppStorage("originLangName") var originLangName: String?
+    @AppStorage("destLangName") var destLangName: String?
     var body: some View {
         VStack {
             HStack {
@@ -53,17 +55,16 @@ struct LanguageListView: View {
                     $0.1 < $1.1
                 }, id: \.key ) { key, valueText in
                     LanguangeItem(action: {
-                        ///TODOs add dismiss modal after click the list
+                        // MARK: - TODOs add dismiss modal after click the list
                         if isOrigin {
                             originLangCode = key
-                            print(originLangCode)
+                            originLangName = valueText
                         } else {
                             destLangCode = key
+                            destLangName = valueText
                         }
 
-                        
                         showModal.toggle()
-                        print("\(key) - \(valueText)")
                     }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""):
                                     key.elementsEqual(SatujuApp().destLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
@@ -89,9 +90,3 @@ struct LanguageListView: View {
         }
     }
 }
-
-//struct LanguageList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LanguageListView(showModal: <#T##Binding<Bool>#>)
-//    }
-//}

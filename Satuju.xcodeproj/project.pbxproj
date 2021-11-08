@@ -58,6 +58,7 @@
 		B7AD0041273682B900F15FC0 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD0040273682B900F15FC0 /* LanguageButtonView.swift */; };
 		B7AD00432736927C00F15FC0 /* LanguageSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00422736927C00F15FC0 /* LanguageSettingViewModel.swift */; };
 		B7AD00452737571000F15FC0 /* LanguageSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00442737571000F15FC0 /* LanguageSettingView.swift */; };
+		B7AD00472739370100F15FC0 /* LocationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00462739370100F15FC0 /* LocationEnum.swift */; };
 		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
 		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 		B7AD0040273682B900F15FC0 /* LanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonView.swift; sourceTree = "<group>"; };
 		B7AD00422736927C00F15FC0 /* LanguageSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingViewModel.swift; sourceTree = "<group>"; };
 		B7AD00442737571000F15FC0 /* LanguageSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingView.swift; sourceTree = "<group>"; };
+		B7AD00462739370100F15FC0 /* LocationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEnum.swift; sourceTree = "<group>"; };
 		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -297,6 +299,7 @@
 				8E16CA88272ECCE500013049 /* SupportedLanguages.swift */,
 				8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */,
 				8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */,
+				B7AD00462739370100F15FC0 /* LocationEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				6AE209E327328B970045651C /* LanguageListViewModel.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
+				B7AD00472739370100F15FC0 /* LocationEnum.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
 				8E437FFE2738F64E00C995FD /* TranslationViewModel.swift in Sources */,
 				8E4380042738F67E00C995FD /* VoiceButtonGroup.swift in Sources */,
@@ -845,6 +849,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Satuju/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We’ll use your approximate device location to define your translated language";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone to use voice translation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -876,6 +882,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Satuju/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We’ll use your approximate device location to define your translated language";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone to use voice translation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

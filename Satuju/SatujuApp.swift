@@ -11,6 +11,7 @@ import SwiftUI
 struct SatujuApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
     @AppStorage("originLangCode") var originLangCode: String?
+    @AppStorage("originLangName") var originLangName: String?
     @AppStorage("destLangCode") var destLangCode: String?
 
     init() {
