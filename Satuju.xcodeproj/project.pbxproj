@@ -17,6 +17,9 @@
 		8E16CA85272E7E2600013049 /* TranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA84272E7E2600013049 /* TranslationRepository.swift */; };
 		8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA88272ECCE500013049 /* SupportedLanguages.swift */; };
 		8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */; };
+		8E437FFE2738F64E00C995FD /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E437FFD2738F64E00C995FD /* TranslationViewModel.swift */; };
+		8E4380022738F66600C995FD /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4380012738F66600C995FD /* TranslationView.swift */; };
+		8E4380042738F67E00C995FD /* VoiceButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4380032738F67E00C995FD /* VoiceButtonGroup.swift */; };
 		8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* SatujuApp.swift */; };
 		8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41072728FF0500EDE747 /* ContentView.swift */; };
 		8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B41092728FF0600EDE747 /* Assets.xcassets */; };
@@ -86,6 +89,9 @@
 		8E16CA84272E7E2600013049 /* TranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationRepository.swift; sourceTree = "<group>"; };
 		8E16CA88272ECCE500013049 /* SupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLanguages.swift; sourceTree = "<group>"; };
 		8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedLanguage.swift; sourceTree = "<group>"; };
+		8E437FFD2738F64E00C995FD /* TranslationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
+		8E4380012738F66600C995FD /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
+		8E4380032738F67E00C995FD /* VoiceButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceButtonGroup.swift; sourceTree = "<group>"; };
 		8E4B41022728FF0500EDE747 /* Satuju.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satuju.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41052728FF0500EDE747 /* SatujuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuApp.swift; sourceTree = "<group>"; };
 		8E4B41072728FF0500EDE747 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -179,6 +185,32 @@
 			isa = PBXGroup;
 			children = (
 				6AE209E227328B970045651C /* LanguageListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E437FFA2738F60C00C995FD /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				8E437FFC2738F63B00C995FD /* ViewModel */,
+				8E437FFB2738F63100C995FD /* View */,
+			);
+			path = Translation;
+			sourceTree = "<group>";
+		};
+		8E437FFB2738F63100C995FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E4380012738F66600C995FD /* TranslationView.swift */,
+				8E4380032738F67E00C995FD /* VoiceButtonGroup.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E437FFC2738F63B00C995FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E437FFD2738F64E00C995FD /* TranslationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -301,6 +333,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				8E437FFA2738F60C00C995FD /* Translation */,
 				B7AD003D2736808700F15FC0 /* LanguageSetting */,
 				A56A66BF27341BB20051A6A9 /* Soundwave */,
 				B7AD002E27350AF900F15FC0 /* VoiceRecognition */,
@@ -621,6 +654,7 @@
 				A55F227D272967DE00B6E260 /* SwitchButton.swift in Sources */,
 				B7AD00452737571000F15FC0 /* LanguageSettingView.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
+				8E4380022738F66600C995FD /* TranslationView.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */,
 				8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */,
@@ -642,6 +676,8 @@
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
 				8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */,
+				8E437FFE2738F64E00C995FD /* TranslationViewModel.swift in Sources */,
+				8E4380042738F67E00C995FD /* VoiceButtonGroup.swift in Sources */,
 				A56A66C127341D2B0051A6A9 /* SoundWaveInputVoice.swift in Sources */,
 				6AE209DC273288F80045651C /* LanguangeItem.swift in Sources */,
 				8E56B78A2731933B00848AEA /* TranslationHistoryView.swift in Sources */,
@@ -805,7 +841,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
-				DEVELOPMENT_TEAM = X9XRN4TUZZ;
+				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Satuju/Info.plist;
@@ -836,7 +872,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
-				DEVELOPMENT_TEAM = X9XRN4TUZZ;
+				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Satuju/Info.plist;
