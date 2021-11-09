@@ -17,6 +17,8 @@ struct TextFieldCard: View {
     var body: some View {
         VStack {
             TextEditor(text: $text)
+                .keyboardType(.asciiCapable)
+                .disableAutocorrection(true)
                 .onAppear(perform: {
                     if text.isEmpty {
                         text = placeholder
@@ -39,7 +41,6 @@ struct TextFieldCard: View {
                 }
                 .zIndex(2)
         }
-        .ignoresSafeArea(.keyboard)
         .padding(.init(top: 60, leading: 20, bottom: 20, trailing: 20))
         .background(
             RoundedCornersShape(corners: [.topLeft, .topRight], radius: 10)
