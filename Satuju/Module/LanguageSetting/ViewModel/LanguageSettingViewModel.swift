@@ -10,10 +10,10 @@ import SwiftUI
 final class LanguageSettingViewModel: ObservableObject {
     @AppStorage("originLangCode") var countryCodeOrigin: String = "id"
     @AppStorage("originLangName") var countryNameButtonOrigin: String = "Indonesia"
+    @AppStorage("originLangImage") var countryImageOrigin: String = "all"
     @AppStorage("destLangCode") var countryCodeDestination: String = "en"
     @AppStorage("destLangName") var countryNameButtonDestination: String = "English"
-    @Published var imageNameButtonOrigin = "INA"
+    @AppStorage("destLangImage") var countryImageDestination: String = "all"
     @Published var colorNameButtonOrigin = "PurplePrimary"
-    @Published var imageNameButtonDestination = "UK"
     @Published var colorNameButtonDestination = "AquaSecondary"
 }

@@ -41,7 +41,7 @@ struct TranslationView: View {
                         Spacer()
                         MenuListView()
                             .opacity(0.95)
-                            .padding(.bottom, 43)
+                            .padding(.bottom, 73)
                             .padding(.trailing, 9)
                     }
                 }

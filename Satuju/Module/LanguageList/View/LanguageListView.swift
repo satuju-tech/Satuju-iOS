@@ -10,17 +10,19 @@ import SwiftUI
 struct LanguageListView: View {
     @State var isOrigin: Bool
     @State private var searchQuery: String = ""
+    @Binding var title: String
     @Binding var showModal: Bool
     @ObservedObject var languageListViewModel = LanguageListViewModel()
-
     @AppStorage("originLangCode") var originLangCode: String?
-    @AppStorage("destLangCode") var destLangCode: String?
     @AppStorage("originLangName") var originLangName: String?
+    @AppStorage("destLangImage") var countryImageDestination: String?
+    @AppStorage("destLangCode") var destLangCode: String?
     @AppStorage("destLangName") var destLangName: String?
+    @AppStorage("originLangImage") var countryImageOrigin: String?
     var body: some View {
         VStack {
             HStack {
-                Text("Translate to")
+                Text(title)
                 Spacer()
             }
             .padding(
@@ -59,11 +61,12 @@ struct LanguageListView: View {
                         if isOrigin {
                             originLangCode = key
                             originLangName = valueText
+                            countryImageOrigin = ImageEnum(rawValue: key)?.getCountryName() ?? "all"
                         } else {
                             destLangCode = key
                             destLangName = valueText
+                            countryImageDestination = ImageEnum(rawValue: key)?.getCountryName() ?? "all"
                         }
-
                         showModal.toggle()
                     }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""):
                                     key.elementsEqual(SatujuApp().destLangCode ?? ""))

@@ -31,9 +31,8 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             placeMark = placemarks?[0]
             // Country
             if let country = placeMark.country {
-                self.countryNameDestination = LocationEnum(rawValue: country)?.getCountryName()
-                self.countryCodeDestination = LocationEnum(rawValue: country)?.getCountryID()
-                print(country)
+                self.countryNameDestination = LocationEnum(rawValue: country)?.getCountryName() ?? "English"
+                self.countryCodeDestination = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
             }
         })
     }
