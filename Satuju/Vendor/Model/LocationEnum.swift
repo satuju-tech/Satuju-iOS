@@ -9,27 +9,18 @@ import Foundation
 import SwiftUI
 
 enum LocationEnum: String {
-    case enEng = "England"
-    case enSoa = "South Africa"
-    case enBra = "Brazil"
-    case enUS = "United States"
-    case enAus = "Australia"
+    case zh = "China"
+    case ka = "Canada"
     case ru = "Russia"
     case hi = "India"
     case ja = "Japan"
     case id = "Indonesia"
     func getCountryID() -> String {
         switch self {
-        case .enEng:
-            return "en"
-        case .enSoa:
-            return "en"
-        case .enBra:
-            return "en"
-        case .enUS:
-            return "en"
-        case .enAus:
-            return "en"
+        case .ka:
+            return "ka"
+        case .zh:
+            return "zh"
         case .ru:
             return "ru"
         case .hi:
@@ -38,32 +29,22 @@ enum LocationEnum: String {
             return "ja"
         case .id:
             return "id"
-        default:
-            return "en"
         }
     }
     func getCountryName() -> String {
         switch self {
-        case .enEng:
-            return "Inggris"
-        case .enSoa:
-            return "Inggris"
-        case .enBra:
-            return "Inggris"
-        case .enUS:
-            return "Inggris"
-        case .enAus:
-            return "Inggris"
+        case .ka:
+            return "Canada"
+        case .zh:
+            return "Chinese"
         case .ru:
-            return "Rusia"
+            return "Russian"
         case .hi:
             return "India"
         case .ja:
-            return "Japan"
+            return "Japanese"
         case .id:
             return "Indonesia"
-        default:
-            return "Inggris"
         }
     }
 }

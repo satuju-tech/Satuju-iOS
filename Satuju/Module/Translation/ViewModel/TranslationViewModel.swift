@@ -12,8 +12,8 @@ class TranslationViewModel: ObservableObject {
     @Published var originText = ""
     @Published var translatedText = ""
 
-    @AppStorage("originLangCode") var originLangCode: String = "test"
-    @AppStorage("destLangCode") var destLangCode: String = "test"
+    @AppStorage("leftLangCode") var leftLangCode: String = "id"
+    @AppStorage("rightLangCode") var rightLangCode: String = "en"
 
     private let translationRepository: TranslationRepositoryProtocol
     private let translationHistoryRepository: TranslationHistoryRepositoryProtocol
@@ -27,13 +27,13 @@ class TranslationViewModel: ObservableObject {
 
     func translate() {
         if !originText.isEmpty {
-            let lang = "\(originLangCode)-\(destLangCode)"
+            let lang = "\(leftLangCode)-\(rightLangCode)"
             print(originText, lang)
             translationRepository.translate(text: originText, lang: lang) { response in
                 self.translatedText = response.text?[0] ?? ""
                 self.translationHistoryRepository.addTranslation(
-                    originLang: self.originLangCode,
-                    destinationLang: self.destLangCode,
+                    originLang: self.leftLangCode,
+                    destinationLang: self.rightLangCode,
                     originText: self.originText,
                     destinationText: self.translatedText,
                     isLeft: true)
