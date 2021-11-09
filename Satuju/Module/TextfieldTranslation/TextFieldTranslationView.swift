@@ -7,15 +7,33 @@
 
 import SwiftUI
 
-struct TextFieldCard: View {
+struct TextFieldTranslationView: View {
     @Binding var text: String
-    @State var placeholder: String = "Enter Text"
+    @State private var placeholder: String = "Enter Text"
     @State private var value: CGFloat = 0
-    @State var isFirstResponder = false
-    @State var isFirstTap: Bool = false
+    @State private var isFirstResponder = false
+    @State private var isFirstTap: Bool = false
+    @State private var isClick: Bool = false
+    @State private var isButtonCloseHidden: Bool = false
     var onEditingEnded: () -> Void
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            if isButtonCloseHidden {
+                HStack {
+                    Spacer()
+                    Image(systemName: "xmark")
+                        .font(.system(size: 17, weight: .black))
+                        .foregroundColor(Color("PurplePrimary"))
+                        .padding(.all, 10)
+                        .background(Color("Purple"))
+                        .mask(Circle())
+                        .onTapGesture {
+                            self.dismissKeyboard()
+                            isButtonCloseHidden.toggle()
+                            text = placeholder
+                        }
+                }
+            }
             TextEditor(text: $text)
                 .keyboardType(.asciiCapable)
                 .disableAutocorrection(true)
@@ -31,17 +49,19 @@ struct TextFieldCard: View {
                         self.text = ""
                         isFirstTap.toggle()
                     }
+                    isButtonCloseHidden.toggle()
                 }
                 .onChange(of: text) { value in
                     if value.contains("\n") {
                         text = value.replacingOccurrences(of: "\n", with: "")
                         self.dismissKeyboard()
                         self.onEditingEnded()
+                        isButtonCloseHidden.toggle()
                     }
                 }
                 .zIndex(2)
         }
-        .padding(.init(top: 60, leading: 20, bottom: 20, trailing: 20))
+        .padding(20)
         .background(
             RoundedCornersShape(corners: [.topLeft, .topRight], radius: 10)
                 .fill(Color.white)
@@ -51,7 +71,7 @@ struct TextFieldCard: View {
 
 struct TextFieldCard_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldCard(
+        TextFieldTranslationView(
             text: .constant("Enter Text"),
             onEditingEnded: {}
         )
