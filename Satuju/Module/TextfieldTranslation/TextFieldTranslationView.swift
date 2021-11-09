@@ -30,7 +30,7 @@ struct TextFieldTranslationView: View {
                         .onTapGesture {
                             self.dismissKeyboard()
                             isButtonCloseHidden.toggle()
-                            text = ""
+                            text = placeholder
                         }
                 }
             }
