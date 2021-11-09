@@ -8,8 +8,8 @@ import CoreLocation
 import SwiftUI
 
 final class LocationManagerService: NSObject, CLLocationManagerDelegate, ObservableObject {
-    @AppStorage("destLangName") var countryNameDestination: String?
-    @AppStorage("destLangCode") var countryCodeDestination: String?
+    @AppStorage("rightLangName") var rightCountryName: String?
+    @AppStorage("rightLangCode") var rightCountryCode: String?
     private let manager = CLLocationManager()
     override init() {
         super.init()
@@ -31,8 +31,8 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             placeMark = placemarks?[0]
             // Country
             if let country = placeMark.country {
-                self.countryNameDestination = LocationEnum(rawValue: country)?.getCountryName() ?? "English"
-                self.countryCodeDestination = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
+                self.rightCountryName = LocationEnum(rawValue: country)?.getCountryName() ?? "English"
+                self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
             }
         })
     }

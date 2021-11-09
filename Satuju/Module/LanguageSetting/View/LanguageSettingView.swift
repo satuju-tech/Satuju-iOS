@@ -20,18 +20,18 @@ struct LanguageSettingView: View {
                 showLanguageListModalView = true
                 title = "Translate From"
             },
-                               imageName: $LanguageSettingVM.countryImageOrigin,
-                               countryName: $LanguageSettingVM.countryNameButtonOrigin,
-                               colorName: $LanguageSettingVM.colorNameButtonOrigin
+                               imageName: $LanguageSettingVM.leftCountryImageName,
+                               countryName: $LanguageSettingVM.leftCountryNameButton,
+                               colorName: $LanguageSettingVM.leftColorNameButton
             )
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = false
                 showLanguageListModalView = true
                 title = "Translate To"
             },
-                               imageName: $LanguageSettingVM.countryImageDestination,
-                               countryName: $LanguageSettingVM.countryNameButtonDestination,
-                               colorName: $LanguageSettingVM.colorNameButtonDestination
+                               imageName: $LanguageSettingVM.rightCountryImageName,
+                               countryName: $LanguageSettingVM.rightCountryNameButton,
+                               colorName: $LanguageSettingVM.rightColorNameButton
             )
         }
         .padding(.top, 8)
