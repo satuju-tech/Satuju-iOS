@@ -10,17 +10,19 @@ import SwiftUI
 struct LanguageListView: View {
     @State var isOrigin: Bool
     @State private var searchQuery: String = ""
+    @Binding var title: String
     @Binding var showModal: Bool
     @ObservedObject var languageListViewModel = LanguageListViewModel()
-
-    @AppStorage("originLangCode") var originLangCode: String?
-    @AppStorage("destLangCode") var destLangCode: String?
-    @AppStorage("originLangName") var originLangName: String?
-    @AppStorage("destLangName") var destLangName: String?
+    @AppStorage("leftLangCode") var leftLangCode: String?
+    @AppStorage("leftLangName") var leftLangName: String?
+    @AppStorage("leftLangImage") var leftImageName: String?
+    @AppStorage("rightLangCode") var rightLangCode: String?
+    @AppStorage("rightLangName") var rightLangName: String?
+    @AppStorage("rightLangImage") var rightImageName: String?
     var body: some View {
         VStack {
             HStack {
-                Text("Translate to")
+                Text(title)
                 Spacer()
             }
             .padding(
@@ -55,18 +57,18 @@ struct LanguageListView: View {
                     $0.1 < $1.1
                 }, id: \.key ) { key, valueText in
                     LanguangeItem(action: {
-                        // MARK: - TODOs add dismiss modal after click the list
                         if isOrigin {
-                            originLangCode = key
-                            originLangName = valueText
+                            leftLangCode = key
+                            leftLangName = valueText
+                            leftImageName = ImageEnum(rawValue: key)?.getCountryName() ?? "all"
                         } else {
-                            destLangCode = key
-                            destLangName = valueText
+                            rightLangCode = key
+                            rightLangName = valueText
+                            rightImageName = ImageEnum(rawValue: key)?.getCountryName() ?? "all"
                         }
-
                         showModal.toggle()
-                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""):
-                                    key.elementsEqual(SatujuApp().destLangCode ?? ""))
+                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().leftLangCode ?? ""):
+                                    key.elementsEqual(SatujuApp().rightLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
                                        bottom: 10, trailing: 20)
                         )

@@ -19,6 +19,7 @@ struct LanguageButtonView: View {
             HStack(spacing: 8) {
                 Image(imageName)
                     .resizable()
+                    .scaledToFill()
                     .frame(width: 37.35, height: 37.35 )
                     .clipShape(Circle())
                     .padding(3)

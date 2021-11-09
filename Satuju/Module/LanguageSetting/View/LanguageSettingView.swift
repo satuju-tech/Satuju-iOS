@@ -12,28 +12,31 @@ struct LanguageSettingView: View {
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
     @State var showLanguageListModalView: Bool = false
     @State var isOrigin = true
+    @State var title = "Translate From"
     var body: some View {
         HStack(spacing: 35) {
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = true
                 showLanguageListModalView = true
+                title = "Translate From"
             },
-                               imageName: $LanguageSettingVM.imageNameButtonOrigin,
-                               countryName: $LanguageSettingVM.countryNameButtonOrigin,
-                               colorName: $LanguageSettingVM.colorNameButtonOrigin
+                               imageName: $LanguageSettingVM.leftCountryImageName,
+                               countryName: $LanguageSettingVM.leftCountryNameButton,
+                               colorName: $LanguageSettingVM.leftColorNameButton
             )
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = false
                 showLanguageListModalView = true
+                title = "Translate To"
             },
-                               imageName: $LanguageSettingVM.imageNameButtonDestination,
-                               countryName: $LanguageSettingVM.countryNameButtonDestination,
-                               colorName: $LanguageSettingVM.colorNameButtonDestination
+                               imageName: $LanguageSettingVM.rightCountryImageName,
+                               countryName: $LanguageSettingVM.rightCountryNameButton,
+                               colorName: $LanguageSettingVM.rightColorNameButton
             )
         }
         .padding(.top, 8)
         .sheet(isPresented: $showLanguageListModalView) {
-            LanguageListView(isOrigin: self.isOrigin, showModal: self.$showLanguageListModalView)
+            LanguageListView(isOrigin: self.isOrigin, title: self.$title, showModal: self.$showLanguageListModalView)
         }
     }
 }

@@ -60,6 +60,7 @@
 		B7AD00472739370100F15FC0 /* LocationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00462739370100F15FC0 /* LocationEnum.swift */; };
 		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
 		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
+		B7E4321A273A2AB0003FA949 /* ImageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E43219273A2AB0003FA949 /* ImageEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		B7AD00462739370100F15FC0 /* LocationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEnum.swift; sourceTree = "<group>"; };
 		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
+		B7E43219273A2AB0003FA949 /* ImageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 				8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */,
 				8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */,
 				B7AD00462739370100F15FC0 /* LocationEnum.swift */,
+				B7E43219273A2AB0003FA949 /* ImageEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				8E4380022738F66600C995FD /* TranslationView.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */,
+				B7E4321A273A2AB0003FA949 /* ImageEnum.swift in Sources */,
 				8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */,
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				B7AD0039273675D700F15FC0 /* TextToVoiceService.swift in Sources */,

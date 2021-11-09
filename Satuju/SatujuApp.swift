@@ -10,13 +10,12 @@ import SwiftUI
 @main
 struct SatujuApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
-    @AppStorage("originLangCode") var originLangCode: String?
-    @AppStorage("originLangName") var originLangName: String?
-    @AppStorage("destLangCode") var destLangCode: String?
+    @AppStorage("leftLangCode") var leftLangCode: String?
+    @AppStorage("rightLangCode") var rightLangCode: String?
 
     init() {
         if isFirstLaunch {
-            originLangCode = Locale.current.languageCode
+            leftLangCode = Locale.current.languageCode
             isFirstLaunch = false
         }
     }

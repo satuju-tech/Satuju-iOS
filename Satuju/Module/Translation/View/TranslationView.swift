@@ -20,9 +20,9 @@ struct TranslationView: View {
                 TranslationHistoryView()
                     .padding(.top, 88)
                 ZStack(alignment: .bottom) {
-                    TextfieldTranslationView(action: {
-                        translationViewModel.translate()
-                    }, text: $translationViewModel.originText)
+//                    TextfieldTranslationView(action: {
+//                        translationViewModel.translate()
+//                    }, text: $translationViewModel.originText)
                     HStack {
                         Spacer()
                         VoiceButtonGroup()
@@ -41,7 +41,7 @@ struct TranslationView: View {
                         Spacer()
                         MenuListView()
                             .opacity(0.95)
-                            .padding(.bottom, 43)
+                            .padding(.bottom, 73)
                             .padding(.trailing, 9)
                     }
                 }
