@@ -11,31 +11,29 @@ struct LanguageSettingView: View {
     @StateObject private var TranslationBubbleVM = TranslationBubbleViewModel()
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
     @State var showLanguageListModalView: Bool = false
+    @State var isOrigin = true
     var body: some View {
-        HStack {
+        HStack(spacing: 35) {
             LanguageButtonView(toggleLanguageButton: {
-                LanguageSettingVM.changeLanguageButtonOrigin()
+                isOrigin = true
                 showLanguageListModalView = true
             },
                                imageName: $LanguageSettingVM.imageNameButtonOrigin,
                                countryName: $LanguageSettingVM.countryNameButtonOrigin,
                                colorName: $LanguageSettingVM.colorNameButtonOrigin
             )
-            if !TranslationBubbleVM.isDetectLanguageOn {
-                SwitchButton(action: {LanguageSettingVM.switchButton()})
-            } else {
-                SwitchButton(action: {LanguageSettingVM.switchButton()}).hidden()
-            }
             LanguageButtonView(toggleLanguageButton: {
-                LanguageSettingVM.changeLanguageButtonDestination()
+                isOrigin = false
                 showLanguageListModalView = true
             },
                                imageName: $LanguageSettingVM.imageNameButtonDestination,
                                countryName: $LanguageSettingVM.countryNameButtonDestination,
                                colorName: $LanguageSettingVM.colorNameButtonDestination
             )
-        }.sheet(isPresented: $showLanguageListModalView) {
-            LanguageListView()
+        }
+        .padding(.top, 8)
+        .sheet(isPresented: $showLanguageListModalView) {
+            LanguageListView(isOrigin: self.isOrigin, showModal: self.$showLanguageListModalView)
         }
     }
 }

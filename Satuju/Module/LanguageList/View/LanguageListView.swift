@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct LanguageListView: View {
-    @State private var isOrigin: Bool = false
+    @State var isOrigin: Bool
     @State private var searchQuery: String = ""
+    @Binding var showModal: Bool
     @ObservedObject var languageListViewModel = LanguageListViewModel()
+
+    @AppStorage("originLangCode") var originLangCode: String?
+    @AppStorage("destLangCode") var destLangCode: String?
+    @AppStorage("originLangName") var originLangName: String?
+    @AppStorage("destLangName") var destLangName: String?
     var body: some View {
         VStack {
             HStack {
@@ -49,13 +55,16 @@ struct LanguageListView: View {
                     $0.1 < $1.1
                 }, id: \.key ) { key, valueText in
                     LanguangeItem(action: {
-                        ///TODOs add dismiss modal after click the list
+                        // MARK: - TODOs add dismiss modal after click the list
                         if isOrigin {
-                            SatujuApp().originLangCode = key
+                            originLangCode = key
+                            originLangName = valueText
                         } else {
-                            SatujuApp().destLangCode = key
+                            destLangCode = key
+                            destLangName = valueText
                         }
-                        print("\(key) - \(valueText)")
+
+                        showModal.toggle()
                     }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().originLangCode ?? ""):
                                     key.elementsEqual(SatujuApp().destLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
@@ -79,11 +88,5 @@ struct LanguageListView: View {
             return languageListViewModel.langs
                 .filter { $0.value.contains(searchQuery) }
         }
-    }
-}
-
-struct LanguageList_Previews: PreviewProvider {
-    static var previews: some View {
-        LanguageListView()
     }
 }

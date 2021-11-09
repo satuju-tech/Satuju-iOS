@@ -8,34 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var manager = LocationManagerService()
-    @State var isMenuListHidden: Bool = true
     var body: some View {
-        ZStack {
-            VStack {
-                LanguageSettingView()
-                Spacer()
-                HStack {
-                    Spacer()
-                    MenuButtonView(toggleMenuButton: {
-                        isMenuListHidden.toggle()
-                    })
-                        .padding(9)
-                }.padding(.trailing, 26)
-            }
-            VStack {
-                Spacer()
-                if !isMenuListHidden {
-                    HStack {
-                        Spacer()
-                        MenuListView()
-                            .opacity(0.95)
-                            .padding(.bottom, 43)
-                            .padding(.trailing, 9)
-                    }
-                }
-            }
-        }
+        TranslationView()
     }
 }
 
