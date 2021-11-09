@@ -43,10 +43,8 @@
 		A56A66C3273420860051A6A9 /* SoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A66C2273420860051A6A9 /* SoundWaveView.swift */; };
 		A56A66C5273420E00051A6A9 /* SoundWaveItemBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A66C4273420E00051A6A9 /* SoundWaveItemBarView.swift */; };
 		A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09EC1272FC17B00710550 /* TranslationBubble.swift */; };
-		A5A09ECF2730C98D00710550 /* TextfieldTranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */; };
 		A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */; };
-		A5A09ED32730CC5C00710550 /* TextFieldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED22730CC5C00710550 /* TextFieldCard.swift */; };
-		A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED42730CCCF00710550 /* CloseButton.swift */; };
+		A5A09ED32730CC5C00710550 /* TextFieldTranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A09ED22730CC5C00710550 /* TextFieldTranslationView.swift */; };
 		A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */; };
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
 		B7AD002D2735094B00F15FC0 /* DetectLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002C2735094B00F15FC0 /* DetectLanguageButtonView.swift */; };
@@ -119,10 +117,8 @@
 		A56A66C2273420860051A6A9 /* SoundWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveView.swift; sourceTree = "<group>"; };
 		A56A66C4273420E00051A6A9 /* SoundWaveItemBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWaveItemBarView.swift; sourceTree = "<group>"; };
 		A5A09EC1272FC17B00710550 /* TranslationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubble.swift; sourceTree = "<group>"; };
-		A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldTranslationView.swift; sourceTree = "<group>"; };
 		A5A09ED02730CA1A00710550 /* CustomRoundedCornerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedCornerShape.swift; sourceTree = "<group>"; };
-		A5A09ED22730CC5C00710550 /* TextFieldCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCard.swift; sourceTree = "<group>"; };
-		A5A09ED42730CCCF00710550 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		A5A09ED22730CC5C00710550 /* TextFieldTranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTranslationView.swift; sourceTree = "<group>"; };
 		A5F2624F272BDF6A00A390E6 /* ButtonReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReplayView.swift; sourceTree = "<group>"; };
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
 		B7AD002C2735094B00F15FC0 /* DetectLanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLanguageButtonView.swift; sourceTree = "<group>"; };
@@ -403,9 +399,7 @@
 		A5A09ECD2730C95B00710550 /* TextfieldTranslation */ = {
 			isa = PBXGroup;
 			children = (
-				A5A09ECE2730C98D00710550 /* TextfieldTranslationView.swift */,
-				A5A09ED22730CC5C00710550 /* TextFieldCard.swift */,
-				A5A09ED42730CCCF00710550 /* CloseButton.swift */,
+				A5A09ED22730CC5C00710550 /* TextFieldTranslationView.swift */,
 			);
 			path = TextfieldTranslation;
 			sourceTree = "<group>";
@@ -671,14 +665,11 @@
 				B7AD00432736927C00F15FC0 /* LanguageSettingViewModel.swift in Sources */,
 				B7AD0041273682B900F15FC0 /* LanguageButtonView.swift in Sources */,
 				6AE209E0273289210045651C /* LanguageListView.swift in Sources */,
-				A5A09ED32730CC5C00710550 /* TextFieldCard.swift in Sources */,
-				8EF425932736368C007EAAAA /* DictationService.swift in Sources */,
-				A5A09ED52730CCCF00710550 /* CloseButton.swift in Sources */,
+				A5A09ED32730CC5C00710550 /* TextFieldTranslationView.swift in Sources */,
 				A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
 				B7AD003B2736804700F15FC0 /* LocationManagerService.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
-				A5A09ECF2730C98D00710550 /* TextfieldTranslationView.swift in Sources */,
 				6AE209E327328B970045651C /* LanguageListViewModel.swift in Sources */,
 				8E4B41082728FF0500EDE747 /* ContentView.swift in Sources */,
 				8E4B41062728FF0500EDE747 /* SatujuApp.swift in Sources */,
