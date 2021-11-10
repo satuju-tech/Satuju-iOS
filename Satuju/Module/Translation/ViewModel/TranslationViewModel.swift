@@ -25,10 +25,10 @@ class TranslationViewModel: ObservableObject {
             self.translationHistoryRepository = translationHistoryRepository
         }
 
-    func translate() {
+    func translate(originLangCode: String, destLangCode: String) {
+        print("masuk")
         if !originText.isEmpty {
-            let lang = "\(leftLangCode)-\(rightLangCode)"
-            print(originText, lang)
+            let lang = "\(originLangCode)-\(destLangCode)"
             translationRepository.translate(text: originText, lang: lang) { response in
                 self.translatedText = response.text?[0] ?? ""
                 self.translationHistoryRepository.addTranslation(
@@ -37,6 +37,7 @@ class TranslationViewModel: ObservableObject {
                     originText: self.originText,
                     destinationText: self.translatedText,
                     isLeft: true)
+                self.originText = ""
             } failCompletion: { error in
                 print(error)
             }
