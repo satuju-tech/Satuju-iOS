@@ -14,7 +14,9 @@ struct KeyboardViewModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content.offset(y: -1 * offset).onAppear {
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
+            _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
+                                                       object: nil,
+                                                       queue: .main) { (notification) in
                 if let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                     let frame = value.cgRectValue
                     let height = frame.size.height
@@ -22,7 +24,7 @@ struct KeyboardViewModifier: ViewModifier {
                 }
             }
 
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+            _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
                 self.offset = 0
             }
         }
