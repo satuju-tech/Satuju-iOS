@@ -8,19 +8,26 @@
 import Foundation
 
 protocol TranslationRepositoryProtocol {
-    func translate(text: String, lang: String, successCompletion: @escaping (Translation) -> Void, failCompletion: @escaping (String) -> Void)
 
-    func getLanguages(originLang: String, successCompletion: @escaping (SupportedLanguages) -> Void, failCompletion: @escaping (String) -> Void)
+    func translate(text: String,
+                   lang: String,
+                   successCompletion: @escaping (Translation) -> Void,
+                   failCompletion: @escaping (String) -> Void)
 
-    func translateWithLanguageDetection(
-        firstLang: String,
-        secondLang: String,
-        text: String,
-        successCompletion: @escaping (Translation) -> Void,
-        failCompletion: @escaping (String) -> Void)
+    func getLanguages(originLang: String,
+                      successCompletion: @escaping (SupportedLanguages) -> Void,
+                      failCompletion: @escaping (String) -> Void)
+
+    func translateWithLanguageDetection(firstLang: String,
+                                        secondLang: String,
+                                        text: String,
+                                        successCompletion: @escaping (Translation) -> Void,
+                                        failCompletion: @escaping (String) -> Void)
+
 }
 
 final class TranslationRepository: TranslationRepositoryProtocol {
+
     private let apiService: TranslationAPIServiceProtocol
 
     init(apiService: TranslationAPIServiceProtocol = TranslationAPIService()) {
@@ -69,4 +76,5 @@ final class TranslationRepository: TranslationRepositoryProtocol {
             failCompletion(error.errorDescription ?? "error")
         }
     }
+
 }

@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct LanguageButtonView: View {
+
     @State var toggleLanguageButton: (() -> Void)
+
     @Binding var imageName: String
     @Binding var countryName: String
     @Binding var colorName: String
+
     var body: some View {
         Button(action: {
             toggleLanguageButton()
@@ -28,6 +31,7 @@ struct LanguageButtonView: View {
                             .stroke(lineWidth: 1)
                             .foregroundColor(.white)
                     )
+
                 Text(countryName)
                     .font(.custom("NotoSans-Bold", size: 12))
                     .foregroundColor(.white)

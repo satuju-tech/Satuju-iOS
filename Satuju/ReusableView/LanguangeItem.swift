@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct LanguangeItem: View {
+
     var action: () -> Void
+
     @State var language: String = ""
     @State var isSelected: Bool = false
+
     var body: some View {
         HStack {
             Text(language)
+
             Spacer()
+
             if isSelected {
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundColor(.black)
@@ -25,6 +30,7 @@ struct LanguangeItem: View {
             action()
         }
     }
+
 }
 
 struct LanguangeItem_Previews: PreviewProvider {

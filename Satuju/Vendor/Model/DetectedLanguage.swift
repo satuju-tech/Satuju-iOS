@@ -8,5 +8,7 @@
 import Foundation
 
 struct DetectedLanguage: Codable {
+
     let lang: String?
+
 }

@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct TextFieldTranslationView: View {
+
     @Binding var text: String
+
     @State private var placeholder: String = "Enter Text"
     @State private var value: CGFloat = 0
     @State private var isFirstResponder = false
     @State private var isFirstTap: Bool = false
     @State private var isClick: Bool = false
     @State private var isButtonCloseHidden: Bool = false
+
     var onEditingEnded: () -> Void
+
     var body: some View {
         VStack(spacing: 0) {
             if isButtonCloseHidden {
@@ -34,6 +38,7 @@ struct TextFieldTranslationView: View {
                         }
                 }
             }
+
             TextEditor(text: $text)
                 .keyboardType(.asciiCapable)
                 .disableAutocorrection(true)
@@ -67,6 +72,7 @@ struct TextFieldTranslationView: View {
                 .fill(Color.white)
         )
     }
+
 }
 
 struct TextFieldCard_Previews: PreviewProvider {
@@ -79,7 +85,8 @@ struct TextFieldCard_Previews: PreviewProvider {
 }
 
 extension View {
-  func  dismissKeyboard() {
+
+  func dismissKeyboard() {
         let keyWindow = UIApplication.shared.connectedScenes
                 .filter({$0.activationState == .foregroundActive})
                 .map({$0 as? UIWindowScene})
@@ -88,4 +95,5 @@ extension View {
                 .filter({$0.isKeyWindow}).first
         keyWindow?.endEditing(true)
     }
+
 }

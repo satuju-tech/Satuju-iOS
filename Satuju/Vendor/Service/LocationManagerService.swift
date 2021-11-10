@@ -8,9 +8,12 @@ import CoreLocation
 import SwiftUI
 
 final class LocationManagerService: NSObject, CLLocationManagerDelegate, ObservableObject {
+
     @AppStorage("rightLangName") var rightCountryName: String?
     @AppStorage("rightLangCode") var rightCountryCode: String?
+
     private let manager = CLLocationManager()
+
     override init() {
         super.init()
         manager.delegate = self
@@ -18,11 +21,13 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
     }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locations.last.map {
             convertLatLongToAddress(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
         }
     }
+
     func convertLatLongToAddress(latitude: Double, longitude: Double) {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: latitude, longitude: longitude)

@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct PolygonShapeView: View {
+
     var body: some View {
         Polygon()
             .frame(width: 8, height: 16)
             .padding(.bottom, 24)
             .foregroundColor(.white)
     }
+
 }
 
 struct Polygon: Shape {
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let width = rect.size.width
@@ -32,6 +35,7 @@ struct Polygon: Shape {
         path.closeSubpath()
         return path
     }
+
 }
 
 struct PolygonShapeView_Previews: PreviewProvider {

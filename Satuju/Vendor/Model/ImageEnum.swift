@@ -8,6 +8,7 @@ import Foundation
 import SwiftUI
 
 enum ImageEnum: String {
+
     case chinese = "zh"
     case english = "en"
     case spanish = "es"
@@ -18,4 +19,5 @@ enum ImageEnum: String {
     case korean = "ko"
     case portugize = "pt"
     case russia = "ru"
+
 }

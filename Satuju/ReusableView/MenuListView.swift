@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MenuListView: View {
+
     @StateObject private var viewModel = TranslationBubbleViewModel()
+
     var body: some View {
         List {
             Button(action: {viewModel.toggleAutoPlayButton()}, label: {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(viewModel.isAutoPlayOn ? .black : .clear)
+
                     Text("Auto Play Translation")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
@@ -23,15 +26,18 @@ struct MenuListView: View {
             })
                 .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+
             Button(action: {viewModel.toggleAutoDetectLanguageButton()}, label: {
                 HStack {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(viewModel.isDetectLanguageOn ? .black : .clear)
+
                     Text("Detect Language")
                         .foregroundColor(.black)
                         .font(.system(size: 17))
                         .frame(maxWidth: 300, alignment: .leading)
-                }.contentShape(Rectangle())
+                }
+                .contentShape(Rectangle())
             })
                 .buttonStyle(PlainButtonStyle())
                 .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
@@ -67,6 +73,7 @@ struct MenuListView: View {
         .frame(width: 300, height: 250, alignment: .center)
         .onAppear {UITableView.appearance().backgroundColor = UIColor.clear}
     }
+
 }
 
 struct MenuListView_Previews: PreviewProvider {

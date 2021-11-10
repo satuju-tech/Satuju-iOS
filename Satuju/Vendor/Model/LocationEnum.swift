@@ -8,6 +8,7 @@ import Foundation
 import SwiftUI
 
 enum LocationEnum: String {
+
     case zh = "China"
     case ka = "Canada"
     case ru = "Russia"
@@ -48,4 +49,5 @@ enum LocationEnum: String {
             return "Indonesia"
         }
     }
+
 }

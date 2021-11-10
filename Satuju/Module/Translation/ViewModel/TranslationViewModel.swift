@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class TranslationViewModel: ObservableObject {
+
     @Published var originText = ""
     @Published var translatedText = ""
 
@@ -18,15 +19,13 @@ class TranslationViewModel: ObservableObject {
     private let translationRepository: TranslationRepositoryProtocol
     private let translationHistoryRepository: TranslationHistoryRepositoryProtocol
 
-    init(
-        translationRepository: TranslationRepositoryProtocol = TranslationRepository(),
-        translationHistoryRepository: TranslationHistoryRepositoryProtocol = TranslationHistoryRepository()) {
-            self.translationRepository = translationRepository
-            self.translationHistoryRepository = translationHistoryRepository
-        }
+    init(translationRepository: TranslationRepositoryProtocol = TranslationRepository(),
+         translationHistoryRepository: TranslationHistoryRepositoryProtocol = TranslationHistoryRepository()) {
+        self.translationRepository = translationRepository
+        self.translationHistoryRepository = translationHistoryRepository
+    }
 
     func translate(originLangCode: String, destLangCode: String) {
-        print("masuk")
         if !originText.isEmpty {
             let lang = "\(originLangCode)-\(destLangCode)"
             translationRepository.translate(text: originText, lang: lang) { response in
@@ -43,4 +42,5 @@ class TranslationViewModel: ObservableObject {
             }
         }
     }
+
 }

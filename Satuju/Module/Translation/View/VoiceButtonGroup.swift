@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VoiceButtonGroup: View {
+
     let actionLeftVoiceButton: () -> Void
     let actionRightVoiceButton: () -> Void
 
@@ -22,6 +23,7 @@ struct VoiceButtonGroup: View {
             })
         }
     }
+
 }
 
 struct VoiceButtonGroup_Previews: PreviewProvider {

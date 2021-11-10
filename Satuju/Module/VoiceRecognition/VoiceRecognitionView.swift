@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct VoiceRecognitionView: View {
+
     @ObservedObject var voiceRecognitionViewModel = VoiceRecognitionViewModel()
+
     var body: some View {
-        ZStack {
-            if !voiceRecognitionViewModel.isAutoDetectLanguageHidden {
-                DetectLanguageButtonView(action: {
-                    voiceRecognitionViewModel.autoDetectLanguageButtonClicked()
-                })
-            }
+
+        if !voiceRecognitionViewModel.isAutoDetectLanguageHidden {
+            DetectLanguageButtonView(action: {
+                voiceRecognitionViewModel.autoDetectLanguageButtonClicked()
+            })
         }
+
     }
+
 }
 
 struct VoiceRecognitionView_Previews: PreviewProvider {

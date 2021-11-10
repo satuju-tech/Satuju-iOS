@@ -8,24 +8,31 @@
 import SwiftUI
 
 struct TranslationBubble: View {
-    @StateObject private var viewModel = TranslationBubbleViewModel()
+
     @State var isLeft: Bool
+
     var textTranslationInput: String
     var textTranslationResult: String
     var destinationLangCode: String
+
+    @StateObject private var viewModel = TranslationBubbleViewModel()
+
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
             PolygonShapeView()
                 .zIndex(1)
                 .rotation3DEffect(isLeft ? .degrees(0) : .degrees(180), axis: (x: 0, y: 1, z: 0))
+
             VStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(textTranslationInput)
                         .font(
                             .custom("NotoSans-Bold", size: 15)
                         )
+
                     Divider()
                         .background(Color("Off-Color"))
+
                     Text(textTranslationResult)
                         .font(
                             .custom("NotoSans-Bold", size: 15)
@@ -33,9 +40,11 @@ struct TranslationBubble: View {
                         .foregroundColor(Color("PurplePrimary"))
                 }
                 .frame(maxWidth: 278)
+
                 VStack {
                     HStack {
                         Spacer()
+
                         ButtonReplayView {
                             viewModel.textToVoice(read: textTranslationResult, language: destinationLangCode)
                         }

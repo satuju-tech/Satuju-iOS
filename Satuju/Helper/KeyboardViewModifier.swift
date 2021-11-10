@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct KeyboardViewModifier: ViewModifier {
+
     @State var offset: CGFloat = 0
 
     func body(content: Content) -> some View {
@@ -26,10 +27,13 @@ struct KeyboardViewModifier: ViewModifier {
             }
         }
     }
+
 }
 
 extension View {
+
     func keyboardResponsive() -> ModifiedContent<Self, KeyboardViewModifier> {
         return modifier(KeyboardViewModifier())
     }
+
 }
