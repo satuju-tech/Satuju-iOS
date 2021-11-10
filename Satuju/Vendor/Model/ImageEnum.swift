@@ -9,38 +9,39 @@ import Foundation
 import SwiftUI
 
 enum ImageEnum: String {
-    case chinese = "zh"
-    case english = "en"
-    case spanish = "es"
-    case hindi = "hi"
-    case indonesia = "id"
-    case japan = "ja"
-    case canda = "kn"
-    case korean = "ko"
-    case portugize = "pt"
-    case russia = "ru"
-    func getCountryName() -> String {
+    case russian = "sah"
+    case india1 = "gu"
+    case india2 = "ml"
+    case india3 = "mr"
+    case india4 = "te"
+    case indonesia1 = "jv"
+    case indonesia2 = "su"
+    case southAfrica = "zu"
+    case israel = "yi"
+    case pakistan = "ur"
+    case belanda = "lb"
+    case denmark = "da"
+    case cuba = "pap"
+    func getCountryImage() -> String {
         switch self {
-        case .chinese:
-            return "zh"
-        case .english:
-            return "en"
-        case .spanish:
-            return "es"
-        case .hindi:
-            return "hi"
-        case .indonesia:
-            return "id"
-        case .japan:
-            return "ja"
-        case .canda:
-            return "kn"
-        case .korean:
-            return "ko"
-        case .portugize:
-            return "pt"
-        case .russia:
+        case .russian:
             return "ru"
+        case .india1, .india2, .india3, .india4:
+            return "hi"
+        case .indonesia1, .indonesia2:
+            return "id"
+        case .southAfrica:
+            return "af"
+        case .israel:
+            return "he"
+        case .pakistan:
+            return "pa"
+        case .belanda:
+            return "nl"
+        case .denmark:
+            return "dk"
+        case .cuba:
+            return "ceb"
         }
     }
 }

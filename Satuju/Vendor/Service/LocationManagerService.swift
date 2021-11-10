@@ -10,6 +10,7 @@ import SwiftUI
 final class LocationManagerService: NSObject, CLLocationManagerDelegate, ObservableObject {
     @AppStorage("rightLangName") var rightCountryName: String?
     @AppStorage("rightLangCode") var rightCountryCode: String?
+    @AppStorage("rightLangImage") var rightCountryImageName: String?
     private let manager = CLLocationManager()
     override init() {
         super.init()
@@ -33,6 +34,7 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             if let country = placeMark.country {
                 self.rightCountryName = LocationEnum(rawValue: country)?.getCountryName() ?? "English"
                 self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
+                self.rightCountryImageName = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
             }
         })
     }
