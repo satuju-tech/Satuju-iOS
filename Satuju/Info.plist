@@ -8,6 +8,8 @@
 	<string>Please allow microphone to use voice translation</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>You can translate with voice.</string>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSans-Bold.ttf</string>
