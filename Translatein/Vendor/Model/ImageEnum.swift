@@ -8,6 +8,7 @@ import Foundation
 import SwiftUI
 
 enum ImageEnum: String {
+
     case russian = "sah"
     case india1 = "gu"
     case india2 = "ml"
@@ -21,7 +22,7 @@ enum ImageEnum: String {
     case belanda = "lb"
     case denmark = "da"
     case cuba = "pap"
-    
+
     func getCountryImage() -> String {
         switch self {
         case .russian:
@@ -44,4 +45,5 @@ enum ImageEnum: String {
             return "ceb"
         }
     }
+
 }
