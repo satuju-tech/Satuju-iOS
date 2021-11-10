@@ -8,5 +8,7 @@
 import Foundation
 
 struct SupportedLanguages: Codable {
+
     let langs: [String: String]?
+
 }

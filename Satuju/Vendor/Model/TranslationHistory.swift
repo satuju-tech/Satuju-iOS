@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 class TranslationHistory: Object {
+
     @objc dynamic var id = UUID()
     @objc dynamic var originLang = ""
     @objc dynamic var destinationLang = ""
@@ -19,4 +20,5 @@ class TranslationHistory: Object {
     override class func primaryKey() -> String? {
         return "id"
     }
+
 }

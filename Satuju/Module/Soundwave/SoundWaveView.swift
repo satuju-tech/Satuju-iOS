@@ -8,14 +8,28 @@
 import SwiftUI
 
 var numberOfBar: Int = 36
-var leftGradientColor: Color = Color(red: 255 / 255, green: 71 / 255, blue: 23 / 255)
-var centerGradientColor: Color = Color(red: 158 / 255, green: 13 / 255, blue: 168 / 255)
-var rightGradientColor: Color = Color(red: 20 / 255, green: 145 / 255, blue: 156 / 255)
+var leftGradientColor: Color = Color(red: 255 / 255,
+                                     green: 71 / 255,
+                                     blue: 23 / 255)
+
+var centerGradientColor: Color = Color(red: 158 / 255,
+                                       green: 13 / 255,
+                                       blue: 168 / 255)
+
+var rightGradientColor: Color = Color(red: 20 / 255,
+                                      green: 145 / 255,
+                                      blue: 156 / 255)
 
 struct SoundWaveView: View {
+
     @ObservedObject private var mic = SoundWaveInputVoice(numberOfSamples: numberOfBar)
+
+    var action: () -> Void
+
     var body: some View {
-        VStack {
+        Button {
+            action()
+        } label: {
             Rectangle()
                 .fill(
                     LinearGradient(
@@ -33,16 +47,20 @@ struct SoundWaveView: View {
                     }
                 )
         }
+
     }
+
     private func normalizeSoundLevel(level: Float) -> CGFloat {
         let level = max(10, CGFloat(level) + 25) / 2
         return CGFloat(level * (100 / 30))
     }
+
 }
 
 struct SoundWaveView_Previews: PreviewProvider {
     static var previews: some View {
-        SoundWaveView()
+        SoundWaveView(action: {
+        })
             .previewLayout(.sizeThatFits)
     }
 }

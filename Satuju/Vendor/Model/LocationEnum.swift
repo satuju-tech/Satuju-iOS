@@ -4,17 +4,18 @@
 //
 //  Created by Gede Wicaksana on 08/11/21.
 //
-
 import Foundation
 import SwiftUI
 
 enum LocationEnum: String {
+
     case zh = "China"
     case ka = "Canada"
     case ru = "Russia"
     case hi = "India"
     case ja = "Japan"
     case id = "Indonesia"
+
     func getCountryID() -> String {
         switch self {
         case .ka:
@@ -31,7 +32,8 @@ enum LocationEnum: String {
             return "id"
         }
     }
-    func getCountryName() -> String {
+
+    func getLanguageName() -> String {
         switch self {
         case .ka:
             return "Canada"
@@ -47,4 +49,5 @@ enum LocationEnum: String {
             return "Indonesia"
         }
     }
+
 }

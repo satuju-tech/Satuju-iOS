@@ -9,13 +9,20 @@ import SwiftUI
 import RealmSwift
 
 struct TranslationHistoryView: View {
-    @ObservedObject var translationHistory = TranslationHistoryViewModel(translationHistoryResults: try! Realm().objects(TranslationHistory.self))
+
+    @ObservedObject private var translationHistory = TranslationHistoryViewModel(
+        translationHistoryResults: try! Realm().objects(TranslationHistory.self)
+    )
 
     var body: some View {
         ScrollView {
             LazyVStack {
                 ForEach(translationHistory.results, id: \.id) { item in
-                    TranslationBubble(isLeft: item.isLeft, textTranslationInput: item.originText, textTranslationResult: item.destinationText)
+                    TranslationBubble(
+                        isLeft: item.isLeft,
+                        textTranslationInput: item.originText,
+                        textTranslationResult: item.destinationText,
+                        destinationLangCode: item.destinationLang)
                 }
             }
         }

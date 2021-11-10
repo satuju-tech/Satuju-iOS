@@ -14,6 +14,7 @@ final class LanguageSettingViewModel: ObservableObject {
     @AppStorage("rightLangCode") var rightCountryCode: String = "en"
     @AppStorage("rightLangName") var rightCountryNameButton: String = "English"
     @AppStorage("rightLangImage") var rightCountryImageName: String = "en"
+
     @Published var leftColorNameButton = "PurplePrimary"
     @Published var rightColorNameButton = "AquaSecondary"
 }

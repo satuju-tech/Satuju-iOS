@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SwitchButton: View {
+
     var action: () -> Void
+
     var body: some View {
         Button {
             action()
@@ -19,6 +21,7 @@ struct SwitchButton: View {
                 .foregroundColor(Color("Purple"))
         }
     }
+
 }
 
 struct SwitchButton_Previews: PreviewProvider {
