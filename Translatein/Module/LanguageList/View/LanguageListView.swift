@@ -75,11 +75,11 @@ struct LanguageListView: View {
                         if isOrigin {
                             leftLangCode = key
                             leftLangName = valueText
-                            leftImageName = ImageEnum(rawValue: key)?.rawValue ?? "all"
+                            leftImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
                         } else {
                             rightLangCode = key
                             rightLangName = valueText
-                            rightImageName = ImageEnum(rawValue: key)?.rawValue ?? "all"
+                            rightImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
                         }
                         showModal.toggle()
                     }, language: valueText, isSelected: isOrigin ? key.elementsEqual(TranslateinApp().leftLangCode ?? ""):
