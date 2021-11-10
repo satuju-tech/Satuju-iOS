@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct DetectLanguageButtonView: View {
+
     var action: () -> Void
+
     var body: some View {
         Button {
             action()

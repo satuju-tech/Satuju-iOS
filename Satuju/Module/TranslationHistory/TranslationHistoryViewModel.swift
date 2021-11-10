@@ -9,7 +9,9 @@ import Foundation
 import RealmSwift
 
 class TranslationHistoryViewModel<Element>: ObservableObject where Element: RealmSwift.RealmCollectionValue {
+
     var results: Results<Element>
+
     private var token: NotificationToken!
 
     init(translationHistoryResults: Results<Element>) {

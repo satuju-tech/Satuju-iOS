@@ -11,7 +11,9 @@ import Speech
 import SwiftUI
 
 struct DictationService {
+
     private class SpeechAssist {
+
         var audioEngine: AVAudioEngine?
         var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
         var recognitionTask: SFSpeechRecognitionTask?
@@ -118,4 +120,5 @@ struct DictationService {
             binding.wrappedValue = message
         }
     }
+
 }

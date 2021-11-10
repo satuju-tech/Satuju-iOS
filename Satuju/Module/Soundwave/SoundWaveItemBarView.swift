@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SoundWaveItemBarView: View {
+
     var value: CGFloat
     var numberOfSamples: Int
 
@@ -22,6 +23,7 @@ struct SoundWaveItemBarView: View {
             )
             .frame(width: 4, height: value)
     }
+
 }
 
 struct SoundWaveItemBarView_Previews: PreviewProvider {

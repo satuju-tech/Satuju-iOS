@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ButtonReplayView: View {
+
     var action: () -> Void
+
     var body: some View {
         Button {
            action()
