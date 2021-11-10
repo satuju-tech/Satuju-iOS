@@ -21,6 +21,7 @@ enum ImageEnum: String {
     case belanda = "lb"
     case denmark = "da"
     case cuba = "pap"
+    
     func getCountryImage() -> String {
         switch self {
         case .russian:

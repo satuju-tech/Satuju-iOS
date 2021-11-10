@@ -36,7 +36,7 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
             placeMark = placemarks?[0]
             // Country
             if let country = placeMark.country {
-                self.rightCountryName = LocationEnum(rawValue: country)?.getCountryName() ?? "English"
+                self.rightCountryName = LocationEnum(rawValue: country)?.getLanguageName() ?? "English"
                 self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
                 self.rightCountryImageName = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
             }
