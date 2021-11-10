@@ -12,6 +12,7 @@ struct TranslationBubble: View {
     @State var isLeft: Bool
     var textTranslationInput: String
     var textTranslationResult: String
+    var destinationLangCode: String
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
             PolygonShapeView()
@@ -36,7 +37,7 @@ struct TranslationBubble: View {
                     HStack {
                         Spacer()
                         ButtonReplayView {
-                            viewModel.textToVoice(read: textTranslationResult, language: "id")
+                            viewModel.textToVoice(read: textTranslationResult, language: destinationLangCode)
                         }
                     }
                 }
@@ -63,13 +64,13 @@ struct TranslationBubble_Previews: PreviewProvider {
         TranslationBubble(
             isLeft: false,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won")
+            textTranslationResult: "Ini adalah dua ratus won", destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
         TranslationBubble(
             isLeft: true,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won")
+            textTranslationResult: "Ini adalah dua ratus won", destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
     }
