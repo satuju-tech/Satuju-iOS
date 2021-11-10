@@ -8,10 +8,14 @@
 import Foundation
 
 class LanguageListViewModel: ObservableObject {
-    private var repository: TranslationRepository!
+
     @Published var langs: [String: String] = [:]
-    init() {
-        repository = TranslationRepository()
+
+    private var repository: TranslationRepositoryProtocol
+
+    init(repository: TranslationRepositoryProtocol = TranslationRepository()) {
+        self.repository = repository
+
         fetchLanguage()
     }
     func fetchLanguage() {
