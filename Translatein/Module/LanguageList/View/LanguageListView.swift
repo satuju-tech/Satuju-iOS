@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LanguageListView: View {
+
     @State var isOrigin: Bool
     @State private var searchQuery: String = ""
 
