@@ -1,5 +1,5 @@
 //
-//  SatujuApp.swift
+//  TranslateinApp.swift
 //  Satuju
 //
 //  Created by Yossan Rahmadi on 27/10/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SatujuApp: App {
+struct TranslateinApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
     @AppStorage("leftLangCode") var leftLangCode: String?
     @AppStorage("rightLangCode") var rightLangCode: String?

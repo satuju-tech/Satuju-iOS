@@ -19,15 +19,15 @@
 		8E16CA8B272ED14C00013049 /* DetectedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16CA8A272ED14C00013049 /* DetectedLanguage.swift */; };
 		8E2F8EDA273B63B10055878F /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F227C272967DE00B6E260 /* SwitchButton.swift */; };
 		8E2F8EDB273B63D40055878F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41072728FF0500EDE747 /* ContentView.swift */; };
-		8E2F8EDC273B63F60055878F /* SatujuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* SatujuApp.swift */; };
+		8E2F8EDC273B63F60055878F /* TranslateinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41052728FF0500EDE747 /* TranslateinApp.swift */; };
 		8E437FFE2738F64E00C995FD /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E437FFD2738F64E00C995FD /* TranslationViewModel.swift */; };
 		8E4380022738F66600C995FD /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4380012738F66600C995FD /* TranslationView.swift */; };
 		8E4380042738F67E00C995FD /* VoiceButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4380032738F67E00C995FD /* VoiceButtonGroup.swift */; };
 		8E4B410A2728FF0600EDE747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B41092728FF0600EDE747 /* Assets.xcassets */; };
 		8E4B410D2728FF0600EDE747 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B410C2728FF0600EDE747 /* Preview Assets.xcassets */; };
-		8E4B41172728FF0600EDE747 /* SatujuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41162728FF0600EDE747 /* SatujuTests.swift */; };
-		8E4B41212728FF0600EDE747 /* SatujuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41202728FF0600EDE747 /* SatujuUITests.swift */; };
-		8E4B41232728FF0600EDE747 /* SatujuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */; };
+		8E4B41172728FF0600EDE747 /* TranslateinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41162728FF0600EDE747 /* TranslateinTests.swift */; };
+		8E4B41212728FF0600EDE747 /* TranslateinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41202728FF0600EDE747 /* TranslateinUITests.swift */; };
+		8E4B41232728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41222728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift */; };
 		8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */; };
 		8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */; };
 		8E56B7882731932B00848AEA /* TranslationHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */; };
@@ -94,16 +94,16 @@
 		8E437FFD2738F64E00C995FD /* TranslationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
 		8E4380012738F66600C995FD /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		8E4380032738F67E00C995FD /* VoiceButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceButtonGroup.swift; sourceTree = "<group>"; };
-		8E4B41022728FF0500EDE747 /* Satuju.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satuju.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E4B41052728FF0500EDE747 /* SatujuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuApp.swift; sourceTree = "<group>"; };
+		8E4B41022728FF0500EDE747 /* Translatein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translatein.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4B41052728FF0500EDE747 /* TranslateinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateinApp.swift; sourceTree = "<group>"; };
 		8E4B41072728FF0500EDE747 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8E4B41092728FF0600EDE747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Satuju/Asset/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		8E4B41092728FF0600EDE747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Translatein/Asset/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8E4B410C2728FF0600EDE747 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8E4B41122728FF0600EDE747 /* SatujuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatujuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E4B41162728FF0600EDE747 /* SatujuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuTests.swift; sourceTree = "<group>"; };
-		8E4B411C2728FF0600EDE747 /* SatujuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatujuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E4B41202728FF0600EDE747 /* SatujuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuUITests.swift; sourceTree = "<group>"; };
-		8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatujuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E4B41122728FF0600EDE747 /* TranslateinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslateinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4B41162728FF0600EDE747 /* TranslateinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateinTests.swift; sourceTree = "<group>"; };
+		8E4B411C2728FF0600EDE747 /* TranslateinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslateinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4B41202728FF0600EDE747 /* TranslateinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateinUITests.swift; sourceTree = "<group>"; };
+		8E4B41222728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateinUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistory.swift; sourceTree = "<group>"; };
 		8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryRepository.swift; sourceTree = "<group>"; };
 		8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -222,9 +222,9 @@
 		8E4B40F92728FF0500EDE747 = {
 			isa = PBXGroup;
 			children = (
-				8E4B41042728FF0500EDE747 /* Satuju */,
-				8E4B41152728FF0600EDE747 /* SatujuTests */,
-				8E4B411F2728FF0600EDE747 /* SatujuUITests */,
+				8E4B41042728FF0500EDE747 /* Translatein */,
+				8E4B41152728FF0600EDE747 /* TranslateinTests */,
+				8E4B411F2728FF0600EDE747 /* TranslateinUITests */,
 				8E4B41032728FF0500EDE747 /* Products */,
 				B7AD001C27328EDF00F15FC0 /* Recovered References */,
 			);
@@ -233,14 +233,14 @@
 		8E4B41032728FF0500EDE747 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E4B41022728FF0500EDE747 /* Satuju.app */,
-				8E4B41122728FF0600EDE747 /* SatujuTests.xctest */,
-				8E4B411C2728FF0600EDE747 /* SatujuUITests.xctest */,
+				8E4B41022728FF0500EDE747 /* Translatein.app */,
+				8E4B41122728FF0600EDE747 /* TranslateinTests.xctest */,
+				8E4B411C2728FF0600EDE747 /* TranslateinUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8E4B41042728FF0500EDE747 /* Satuju */ = {
+		8E4B41042728FF0500EDE747 /* Translatein */ = {
 			isa = PBXGroup;
 			children = (
 				A55F2274272939A200B6E260 /* Info.plist */,
@@ -249,10 +249,10 @@
 				8E4B4134272901BC00EDE747 /* Asset */,
 				8E4B41352729037D00EDE747 /* Module */,
 				8E4B412F2729019900EDE747 /* ReusableView */,
-				8E4B41052728FF0500EDE747 /* SatujuApp.swift */,
+				8E4B41052728FF0500EDE747 /* TranslateinApp.swift */,
 				8E4B41072728FF0500EDE747 /* ContentView.swift */,
 			);
-			path = Satuju;
+			path = Translatein;
 			sourceTree = "<group>";
 		};
 		8E4B410B2728FF0600EDE747 /* Preview Content */ = {
@@ -263,21 +263,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8E4B41152728FF0600EDE747 /* SatujuTests */ = {
+		8E4B41152728FF0600EDE747 /* TranslateinTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E4B41162728FF0600EDE747 /* SatujuTests.swift */,
+				8E4B41162728FF0600EDE747 /* TranslateinTests.swift */,
 			);
-			path = SatujuTests;
+			path = TranslateinTests;
 			sourceTree = "<group>";
 		};
-		8E4B411F2728FF0600EDE747 /* SatujuUITests */ = {
+		8E4B411F2728FF0600EDE747 /* TranslateinUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8E4B41202728FF0600EDE747 /* SatujuUITests.swift */,
-				8E4B41222728FF0600EDE747 /* SatujuUITestsLaunchTests.swift */,
+				8E4B41202728FF0600EDE747 /* TranslateinUITests.swift */,
+				8E4B41222728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift */,
 			);
-			path = SatujuUITests;
+			path = TranslateinUITests;
 			sourceTree = "<group>";
 		};
 		8E4B412F2729019900EDE747 /* ReusableView */ = {
@@ -481,9 +481,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E4B41012728FF0500EDE747 /* Satuju */ = {
+		8E4B41012728FF0500EDE747 /* Translatein */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E4B41262728FF0600EDE747 /* Build configuration list for PBXNativeTarget "Satuju" */;
+			buildConfigurationList = 8E4B41262728FF0600EDE747 /* Build configuration list for PBXNativeTarget "Translatein" */;
 			buildPhases = (
 				8E4B414927290AEF00EDE747 /* Run SwiftLint */,
 				8E4B40FE2728FF0500EDE747 /* Sources */,
@@ -494,19 +494,19 @@
 			);
 			dependencies = (
 			);
-			name = Satuju;
+			name = Translatein;
 			packageProductDependencies = (
 				8EBE67B0272A40D3009C9F02 /* Realm */,
 				8EBE67B2272A40D3009C9F02 /* RealmSwift */,
 				8E16CA7C272E762800013049 /* Alamofire */,
 			);
 			productName = Satuju;
-			productReference = 8E4B41022728FF0500EDE747 /* Satuju.app */;
+			productReference = 8E4B41022728FF0500EDE747 /* Translatein.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8E4B41112728FF0600EDE747 /* SatujuTests */ = {
+		8E4B41112728FF0600EDE747 /* TranslateinTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E4B41292728FF0600EDE747 /* Build configuration list for PBXNativeTarget "SatujuTests" */;
+			buildConfigurationList = 8E4B41292728FF0600EDE747 /* Build configuration list for PBXNativeTarget "TranslateinTests" */;
 			buildPhases = (
 				8E4B410E2728FF0600EDE747 /* Sources */,
 				8E4B410F2728FF0600EDE747 /* Frameworks */,
@@ -517,14 +517,14 @@
 			dependencies = (
 				8E4B41142728FF0600EDE747 /* PBXTargetDependency */,
 			);
-			name = SatujuTests;
+			name = TranslateinTests;
 			productName = SatujuTests;
-			productReference = 8E4B41122728FF0600EDE747 /* SatujuTests.xctest */;
+			productReference = 8E4B41122728FF0600EDE747 /* TranslateinTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8E4B411B2728FF0600EDE747 /* SatujuUITests */ = {
+		8E4B411B2728FF0600EDE747 /* TranslateinUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E4B412C2728FF0600EDE747 /* Build configuration list for PBXNativeTarget "SatujuUITests" */;
+			buildConfigurationList = 8E4B412C2728FF0600EDE747 /* Build configuration list for PBXNativeTarget "TranslateinUITests" */;
 			buildPhases = (
 				8E4B41182728FF0600EDE747 /* Sources */,
 				8E4B41192728FF0600EDE747 /* Frameworks */,
@@ -535,9 +535,9 @@
 			dependencies = (
 				8E4B411E2728FF0600EDE747 /* PBXTargetDependency */,
 			);
-			name = SatujuUITests;
+			name = TranslateinUITests;
 			productName = SatujuUITests;
-			productReference = 8E4B411C2728FF0600EDE747 /* SatujuUITests.xctest */;
+			productReference = 8E4B411C2728FF0600EDE747 /* TranslateinUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -563,7 +563,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E4B40FD2728FF0500EDE747 /* Build configuration list for PBXProject "Satuju" */;
+			buildConfigurationList = 8E4B40FD2728FF0500EDE747 /* Build configuration list for PBXProject "Translatein" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -580,9 +580,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E4B41012728FF0500EDE747 /* Satuju */,
-				8E4B41112728FF0600EDE747 /* SatujuTests */,
-				8E4B411B2728FF0600EDE747 /* SatujuUITests */,
+				8E4B41012728FF0500EDE747 /* Translatein */,
+				8E4B41112728FF0600EDE747 /* TranslateinTests */,
+				8E4B411B2728FF0600EDE747 /* TranslateinUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -643,7 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E2F8EDC273B63F60055878F /* SatujuApp.swift in Sources */,
+				8E2F8EDC273B63F60055878F /* TranslateinApp.swift in Sources */,
 				8E2F8EDB273B63D40055878F /* ContentView.swift in Sources */,
 				8E2F8EDA273B63B10055878F /* SwitchButton.swift in Sources */,
 				B7AD0037273674DF00F15FC0 /* TranslationBubbleViewModel.swift in Sources */,
@@ -693,7 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E4B41172728FF0600EDE747 /* SatujuTests.swift in Sources */,
+				8E4B41172728FF0600EDE747 /* TranslateinTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,8 +701,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E4B41232728FF0600EDE747 /* SatujuUITestsLaunchTests.swift in Sources */,
-				8E4B41212728FF0600EDE747 /* SatujuUITests.swift in Sources */,
+				8E4B41232728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift in Sources */,
+				8E4B41212728FF0600EDE747 /* TranslateinUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,12 +711,12 @@
 /* Begin PBXTargetDependency section */
 		8E4B41142728FF0600EDE747 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E4B41012728FF0500EDE747 /* Satuju */;
+			target = 8E4B41012728FF0500EDE747 /* Translatein */;
 			targetProxy = 8E4B41132728FF0600EDE747 /* PBXContainerItemProxy */;
 		};
 		8E4B411E2728FF0600EDE747 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E4B41012728FF0500EDE747 /* Satuju */;
+			target = 8E4B41012728FF0500EDE747 /* Translatein */;
 			targetProxy = 8E4B411D2728FF0600EDE747 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -846,11 +846,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Translatein/Asset/Preview\\ Content";
 				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Satuju/Info.plist;
+				INFOPLIST_FILE = Translatein/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We’ll use your approximate device location to define your translated language";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone to use voice translation";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can translate with voice.";
@@ -867,7 +867,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yossansr.Satuju;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yossansr.Translatein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -883,11 +883,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Satuju/Asset/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Translatein/Asset/Preview\\ Content";
 				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Satuju/Info.plist;
+				INFOPLIST_FILE = Translatein/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We’ll use your approximate device location to define your translated language";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone to use voice translation";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can translate with voice.";
@@ -904,7 +904,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yossansr.Satuju;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yossansr.Translatein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -933,7 +933,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Satuju.app/Satuju";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Translatein.app/Translatein";
 			};
 			name = Debug;
 		};
@@ -958,7 +958,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Satuju.app/Satuju";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Translatein.app/Translatein";
 			};
 			name = Release;
 		};
@@ -1011,7 +1011,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E4B40FD2728FF0500EDE747 /* Build configuration list for PBXProject "Satuju" */ = {
+		8E4B40FD2728FF0500EDE747 /* Build configuration list for PBXProject "Translatein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E4B41242728FF0600EDE747 /* Debug */,
@@ -1020,7 +1020,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E4B41262728FF0600EDE747 /* Build configuration list for PBXNativeTarget "Satuju" */ = {
+		8E4B41262728FF0600EDE747 /* Build configuration list for PBXNativeTarget "Translatein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E4B41272728FF0600EDE747 /* Debug */,
@@ -1029,7 +1029,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E4B41292728FF0600EDE747 /* Build configuration list for PBXNativeTarget "SatujuTests" */ = {
+		8E4B41292728FF0600EDE747 /* Build configuration list for PBXNativeTarget "TranslateinTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E4B412A2728FF0600EDE747 /* Debug */,
@@ -1038,7 +1038,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E4B412C2728FF0600EDE747 /* Build configuration list for PBXNativeTarget "SatujuUITests" */ = {
+		8E4B412C2728FF0600EDE747 /* Build configuration list for PBXNativeTarget "TranslateinUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E4B412D2728FF0600EDE747 /* Debug */,

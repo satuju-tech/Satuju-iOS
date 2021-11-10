@@ -1,13 +1,13 @@
 //
-//  SatujuUITestsLaunchTests.swift
-//  SatujuUITests
+//  TranslateinUITestsLaunchTests.swift
+//  TranslateinUITests
 //
 //  Created by Yossan Rahmadi on 27/10/21.
 //
 
 import XCTest
 
-class SatujuUITestsLaunchTests: XCTestCase {
+class TranslateinUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

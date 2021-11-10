@@ -82,8 +82,8 @@ struct LanguageListView: View {
                             rightImageName = ImageEnum(rawValue: key)?.rawValue ?? "all"
                         }
                         showModal.toggle()
-                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(SatujuApp().leftLangCode ?? ""):
-                                    key.elementsEqual(SatujuApp().rightLangCode ?? ""))
+                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(TranslateinApp().leftLangCode ?? ""):
+                                    key.elementsEqual(TranslateinApp().rightLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
                                        bottom: 10, trailing: 20)
                         )

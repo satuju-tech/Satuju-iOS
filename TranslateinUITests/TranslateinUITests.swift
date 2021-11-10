@@ -1,13 +1,13 @@
 //
-//  SatujuUITests.swift
-//  SatujuUITests
+//  TranslateinUITests.swift
+//  TranslateinUITests
 //
 //  Created by Yossan Rahmadi on 27/10/21.
 //
 
 import XCTest
 
-class SatujuUITests: XCTestCase {
+class TranslateinUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
