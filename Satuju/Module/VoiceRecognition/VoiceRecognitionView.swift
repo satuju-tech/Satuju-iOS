@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VoiceRecognitionView: View {
 
-    @ObservedObject var voiceRecognitionViewModel = VoiceRecognitionViewModel()
+    @ObservedObject private var voiceRecognitionViewModel = VoiceRecognitionViewModel()
 
     var body: some View {
 

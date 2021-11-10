@@ -14,7 +14,7 @@ struct LanguageListView: View {
     @Binding var title: String
     @Binding var showModal: Bool
 
-    @ObservedObject var languageListViewModel = LanguageListViewModel()
+    @ObservedObject private var languageListViewModel = LanguageListViewModel()
 
     @AppStorage("leftLangCode") var leftLangCode: String?
     @AppStorage("leftLangName") var leftLangName: String?

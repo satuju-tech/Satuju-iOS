@@ -10,7 +10,9 @@ import RealmSwift
 
 struct TranslationHistoryView: View {
 
-    @ObservedObject var translationHistory = TranslationHistoryViewModel(translationHistoryResults: try! Realm().objects(TranslationHistory.self))
+    @ObservedObject private var translationHistory = TranslationHistoryViewModel(
+        translationHistoryResults: try! Realm().objects(TranslationHistory.self)
+    )
 
     var body: some View {
         ScrollView {
