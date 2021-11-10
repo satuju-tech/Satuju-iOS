@@ -15,7 +15,11 @@ struct SatujuApp: App {
 
     init() {
         if isFirstLaunch {
-            leftLangCode = Locale.current.languageCode
+            let locale = Locale.current
+            if let languageName = locale.localizedString(forLanguageCode: locale.languageCode ?? "en") {
+                leftLangCode = languageName
+            }
+            leftLangCode = locale.languageCode
             isFirstLaunch = false
         }
     }
