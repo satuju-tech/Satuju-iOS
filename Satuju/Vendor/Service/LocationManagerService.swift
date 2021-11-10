@@ -26,13 +26,15 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
     func convertLatLongToAddress(latitude: Double, longitude: Double) {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: latitude, longitude: longitude)
-        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-            var placeMark: CLPlacemark!
-            placeMark = placemarks?[0]
-            // Country
-            if let country = placeMark.country {
-                self.rightCountryName = LocationEnum(rawValue: country)?.getCountryName() ?? "English"
-                self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID() ?? "en"
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
+            if let placeMark: CLPlacemark = placemarks?[0] {
+                if let country = placeMark.country {
+                    self.rightCountryName = LocationEnum(rawValue: country)?.getLanguageName()
+                    self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID()
+                }
+            } else {
+                self.rightCountryName = "English"
+                self.rightCountryCode = "en"
             }
         })
     }
