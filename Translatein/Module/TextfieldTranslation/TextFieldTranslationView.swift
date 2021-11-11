@@ -10,6 +10,7 @@ import SwiftUI
 struct TextFieldTranslationView: View {
 
     @Binding var text: String
+    @Binding var isDisable: Bool
     @State private var placeholder: String = "Enter Text"
     @State var isFocused: Bool = false
 
@@ -68,6 +69,7 @@ struct TextFieldTranslationView: View {
                 .fill(Color.white)
         )
         .offset(y: isFocused ? 31 : 0)
+        .disabled(isDisable)
     }
 }
 
@@ -75,7 +77,7 @@ struct TextFieldCard_Previews: PreviewProvider {
     static var previews: some View {
         TextFieldTranslationView(
             text: .constant("Enter Text"),
-            onEditingEnded: {}
+            isDisable: .constant(true), onEditingEnded: {}
         )
             .previewLayout(.sizeThatFits)
     }
