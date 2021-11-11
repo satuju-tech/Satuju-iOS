@@ -36,7 +36,7 @@ class TranslationViewModel: ObservableObject {
                     originText: self.originText,
                     destinationText: self.translatedText,
                     isLeft: true)
-                self.originText = ""
+                self.originText = "Enter Text"
             } failCompletion: { error in
                 print(error)
             }
