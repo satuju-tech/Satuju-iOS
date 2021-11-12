@@ -25,7 +25,7 @@ struct TranslationView: View {
                     .padding(.top, 21)
                 ZStack(alignment: isRecording ? .center : .bottom) {
                     TextFieldTranslationView(
-                        text: $translationViewModel.originText, 
+                        text: $translationViewModel.originText,
                         isDisable: $isRecording,
                         onEditingEnded: {
                             translationViewModel.translate(

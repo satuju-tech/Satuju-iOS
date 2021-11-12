@@ -50,7 +50,6 @@ struct TranslationBubble: View {
                 .frame(maxWidth: 278)
             }
             .padding(.init(top: 24, leading: 32, bottom: 24, trailing: 32))
-            .frame(maxWidth: 342, minHeight: 156)
             .background(Color.white)
             .clipShape(
                 RoundedRectangle(
