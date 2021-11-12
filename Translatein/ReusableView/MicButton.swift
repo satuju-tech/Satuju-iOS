@@ -10,19 +10,15 @@ struct MicButton: View {
         Button {
             action()
         } label: {
-            Label(
-                title: {},
-                icon: { Image("micIcon")
-                        .resizable()
-                        .frame(width: 27, height: 41, alignment: .center)
-                        .foregroundColor(.white)
-                        .frame(width: 66, height: 66, alignment: .center)
-                        .background(
-                            color
-                        )
-                        .clipShape(Circle())
-                }
-            )
+            Image("micIcon")
+                .resizable()
+                .frame(width: 27, height: 41, alignment: .center)
+                .foregroundColor(.white)
+                .frame(width: 66, height: 66, alignment: .center)
+                .background(
+                    color
+                )
+                .clipShape(Circle())
         }
     }
 }
