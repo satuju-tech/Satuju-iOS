@@ -17,7 +17,7 @@ struct VoiceButtonGroup: View {
             MicButton(action: {
                 actionLeftVoiceButton()
             }, color: Color("PurplePrimary"))
-            
+
             MicButton(action: {
                 actionRightVoiceButton()
             }, color: Color("AquaSecondary"))
