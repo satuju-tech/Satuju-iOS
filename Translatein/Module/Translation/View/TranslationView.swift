@@ -10,27 +10,23 @@ import SwiftUI
 struct TranslationView: View {
 
     @StateObject private var translationViewModel = TranslationViewModel()
-
     @State private var isMenuListHidden: Bool = true
     @State private var isLeft: Bool = true
     @State private var transcript = ""
     @State private var isRecording = false
-
     private let speechRecognizer = DictationService()
 
     var body: some View {
         ZStack {
             Color("Off-Color").ignoresSafeArea()
-
-            VStack {
+            VStack(spacing: 0) {
                 LanguageSettingView()
-
                 TranslationHistoryView()
                     .padding(.top, 21)
-
                 ZStack(alignment: isRecording ? .center : .bottom) {
                     TextFieldTranslationView(
-                        text: $translationViewModel.originText,
+                        text: $translationViewModel.originText, 
+                        isDisable: $isRecording,
                         onEditingEnded: {
                             translationViewModel.translate(
                                 originLangCode: translationViewModel.leftLangCode,
@@ -66,7 +62,6 @@ struct TranslationView: View {
                         .padding(.bottom, 30)
                     }
                 }
-
             }
 
             VStack {
