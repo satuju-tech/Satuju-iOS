@@ -10,19 +10,15 @@ import SwiftUI
 struct TextFieldTranslationView: View {
 
     @Binding var text: String
-
+    @Binding var isDisable: Bool
     @State private var placeholder: String = "Enter Text"
-    @State private var value: CGFloat = 0
-    @State private var isFirstResponder = false
-    @State private var isFirstTap: Bool = false
-    @State private var isClick: Bool = false
-    @State private var isButtonCloseHidden: Bool = false
+    @State var isFocused: Bool = false
 
     var onEditingEnded: () -> Void
 
     var body: some View {
         VStack(spacing: 0) {
-            if isButtonCloseHidden {
+            if isFocused {
                 HStack {
                     Spacer()
                     Image(systemName: "xmark")
@@ -33,7 +29,7 @@ struct TextFieldTranslationView: View {
                         .mask(Circle())
                         .onTapGesture {
                             self.dismissKeyboard()
-                            isButtonCloseHidden.toggle()
+                            isFocused.toggle()
                             text = placeholder
                         }
                 }
@@ -43,44 +39,47 @@ struct TextFieldTranslationView: View {
                 .keyboardType(.asciiCapable)
                 .disableAutocorrection(true)
                 .onAppear(perform: {
-                    if text.isEmpty {
+                    if !isFocused {
                         text = placeholder
                     }
                 })
                 .font(.custom("NotoSans-Bold", size: 22))
                 .foregroundColor(Color("DividerColor"))
                 .onTapGesture {
-                    if !isFirstTap {
+                    if !isFocused {
                         self.text = ""
-                        isFirstTap.toggle()
+                        isFocused.toggle()
                     }
-                    isButtonCloseHidden.toggle()
+
                 }
                 .onChange(of: text) { value in
                     if value.contains("\n") {
                         text = value.replacingOccurrences(of: "\n", with: "")
                         self.dismissKeyboard()
                         self.onEditingEnded()
-                        isButtonCloseHidden.toggle()
+                        isFocused.toggle()
                     }
                 }
                 .zIndex(2)
         }
+        .frame(minHeight: isFocused ? 390 : 305)
         .padding(20)
         .background(
             RoundedCornersShape(corners: [.topLeft, .topRight], radius: 10)
                 .fill(Color.white)
         )
+        .offset(y: isFocused ? 31 : 0)
+        .disabled(isDisable)
     }
-
 }
 
 struct TextFieldCard_Previews: PreviewProvider {
     static var previews: some View {
         TextFieldTranslationView(
             text: .constant("Enter Text"),
-            onEditingEnded: {}
+            isDisable: .constant(true), onEditingEnded: {}
         )
+            .previewLayout(.sizeThatFits)
     }
 }
 
