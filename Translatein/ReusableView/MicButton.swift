@@ -1,8 +1,10 @@
 import SwiftUI
 
-struct DetectLanguageButtonView: View {
+struct MicButton: View {
 
     var action: () -> Void
+
+    var color: Color
 
     var body: some View {
         Button {
@@ -16,12 +18,7 @@ struct DetectLanguageButtonView: View {
                         .foregroundColor(.white)
                         .frame(width: 66, height: 66, alignment: .center)
                         .background(
-                            LinearGradient(
-                                gradient: Gradient(
-                                    colors: [Color("AquaSecondary"), Color("PurplePrimary")]
-                                ),
-                                startPoint: .top, endPoint: .bottom
-                            )
+                            color
                         )
                         .clipShape(Circle())
                 }
@@ -32,7 +29,7 @@ struct DetectLanguageButtonView: View {
 
 struct DetectLanguageButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DetectLanguageButtonView(action: {})
+        MicButton(action: {}, color: Color("Aqua"))
             .previewLayout(.fixed(width: 66, height: 66))
     }
 }

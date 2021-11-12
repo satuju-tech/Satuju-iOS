@@ -14,13 +14,13 @@ struct VoiceButtonGroup: View {
 
     var body: some View {
         HStack(spacing: 25) {
-            DetectLanguageButtonView(action: {
+            MicButton(action: {
                 actionLeftVoiceButton()
-            })
-
-            DetectLanguageButtonView(action: {
+            }, color: Color("PurplePrimary"))
+            
+            MicButton(action: {
                 actionRightVoiceButton()
-            })
+            }, color: Color("AquaSecondary"))
         }
     }
 
