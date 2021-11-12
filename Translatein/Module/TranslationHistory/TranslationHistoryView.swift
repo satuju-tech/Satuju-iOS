@@ -36,26 +36,47 @@ struct TranslationHistoryView: View {
             }
             .frame(width: 129, alignment: .center)
         } else {
-            ScrollView(showsIndicators: false) {
-                VStack {
-                    ForEach(translationHistory.results, id: \.id) { item in
-                        TranslationBubble(
-                            isLeft: item.isLeft,
-                            textTranslationInput: item.originText,
-                            textTranslationResult: item.destinationText,
-                            destinationLangCode: item.destinationLang)
-                            .padding(.bottom, 20)
+            ScrollViewReader { proxy in
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        ForEach(translationHistory.results, id: \.id) { item in
+                            if item.id == translationHistory.results.last?.id {
+                                TranslationBubble(
+                                    isLeft: item.isLeft,
+                                    textTranslationInput: item.originText,
+                                    textTranslationResult: item.destinationText,
+                                    destinationLangCode: item.destinationLang)
+                                    .id(bottomID)
+                                    .padding(.bottom, 40)
+                            } else {
+                                TranslationBubble(
+                                    isLeft: item.isLeft,
+                                    textTranslationInput: item.originText,
+                                    textTranslationResult: item.destinationText,
+                                    destinationLangCode: item.destinationLang)
+                                    .padding(.bottom, 20)
+                            }
+                        }
+                    }
+                    .frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        minHeight: 0,
+                        maxHeight: .infinity,
+                        alignment: .top
+                    )
+                }
+                .onAppear(perform: {
+                    withAnimation {
+                        proxy.scrollTo(bottomID)
+                    }
+                })
+                .onChange(of: translationHistory.results.count) { _ in
+                    withAnimation {
+                        proxy.scrollTo(bottomID)
                     }
                 }
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    minHeight: 0,
-                    maxHeight: .infinity,
-                    alignment: .top
-                )
             }
-
         }
     }
 }
