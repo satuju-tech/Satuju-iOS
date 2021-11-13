@@ -50,7 +50,6 @@
 		A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */; };
 		B7AD002D2735094B00F15FC0 /* MicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD002C2735094B00F15FC0 /* MicButton.swift */; };
 		B7AD00342736737500F15FC0 /* View+hasScrollEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00332736737500F15FC0 /* View+hasScrollEnabled.swift */; };
-		B7AD0037273674DF00F15FC0 /* TranslationBubbleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD0036273674DF00F15FC0 /* TranslationBubbleViewModel.swift */; };
 		B7AD0039273675D700F15FC0 /* TextToVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD0038273675D700F15FC0 /* TextToVoiceService.swift */; };
 		B7AD003B2736804700F15FC0 /* LocationManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD003A2736804700F15FC0 /* LocationManagerService.swift */; };
 		B7AD0041273682B900F15FC0 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD0040273682B900F15FC0 /* LanguageButtonView.swift */; };
@@ -124,7 +123,6 @@
 		A5F26254272BDFEF00A390E6 /* PolygonShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShapeView.swift; sourceTree = "<group>"; };
 		B7AD002C2735094B00F15FC0 /* MicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicButton.swift; sourceTree = "<group>"; };
 		B7AD00332736737500F15FC0 /* View+hasScrollEnabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+hasScrollEnabled.swift"; sourceTree = "<group>"; };
-		B7AD0036273674DF00F15FC0 /* TranslationBubbleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBubbleViewModel.swift; sourceTree = "<group>"; };
 		B7AD0038273675D700F15FC0 /* TextToVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToVoiceService.swift; sourceTree = "<group>"; };
 		B7AD003A2736804700F15FC0 /* LocationManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerService.swift; sourceTree = "<group>"; };
 		B7AD0040273682B900F15FC0 /* LanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonView.swift; sourceTree = "<group>"; };
@@ -408,7 +406,6 @@
 		A5F26246272BDDA000A390E6 /* TranslationBubble */ = {
 			isa = PBXGroup;
 			children = (
-				B7AD0035273674C300F15FC0 /* View Model */,
 				A5F26251272BDF6E00A390E6 /* View */,
 			);
 			path = TranslationBubble;
@@ -429,14 +426,6 @@
 			children = (
 			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		B7AD0035273674C300F15FC0 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				B7AD0036273674DF00F15FC0 /* TranslationBubbleViewModel.swift */,
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		B7AD003D2736808700F15FC0 /* LanguageSetting */ = {
@@ -632,7 +621,6 @@
 				8E2F8EDC273B63F60055878F /* TranslateinApp.swift in Sources */,
 				8E2F8EDB273B63D40055878F /* ContentView.swift in Sources */,
 				8E2F8EDA273B63B10055878F /* SwitchButton.swift in Sources */,
-				B7AD0037273674DF00F15FC0 /* TranslationBubbleViewModel.swift in Sources */,
 				B7AD002D2735094B00F15FC0 /* MicButton.swift in Sources */,
 				8E56B7882731932B00848AEA /* TranslationHistoryViewModel.swift in Sources */,
 				B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */,
