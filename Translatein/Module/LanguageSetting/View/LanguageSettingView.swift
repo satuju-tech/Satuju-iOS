@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LanguageSettingView: View {
 
-    @StateObject private var TranslationBubbleVM = TranslationBubbleViewModel()
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
 
     @State var showLanguageListModalView: Bool = false
