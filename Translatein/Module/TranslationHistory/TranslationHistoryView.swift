@@ -20,6 +20,7 @@ struct TranslationHistoryView: View {
                 ForEach(translationHistory.results, id: \.id) { item in
                     TranslationBubble(
                         isLeft: item.isLeft,
+                        action: {},
                         textTranslationInput: item.originText,
                         textTranslationResult: item.destinationText,
                         destinationLangCode: item.destinationLang)
