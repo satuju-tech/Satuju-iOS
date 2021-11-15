@@ -15,8 +15,6 @@ struct TranslationBubble: View {
     var textTranslationResult: String
     var destinationLangCode: String
 
-    @StateObject private var viewModel = TranslationBubbleViewModel()
-
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
             PolygonShapeView()
@@ -24,36 +22,32 @@ struct TranslationBubble: View {
                 .rotation3DEffect(isLeft ? .degrees(0) : .degrees(180), axis: (x: 0, y: 1, z: 0))
 
             VStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 0) {
                     Text(textTranslationInput)
                         .font(
                             .custom("NotoSans-Bold", size: 15)
                         )
-
+                        .frame(maxWidth: 250, alignment: .leading)
+                        .padding(.bottom, 10)
                     Divider()
                         .background(Color("Off-Color"))
-
-                    Text(textTranslationResult)
-                        .font(
-                            .custom("NotoSans-Bold", size: 15)
-                        )
+                    HStack(alignment: .bottom) {
+                        Text(textTranslationResult)
+                            .font(
+                                .custom("NotoSans-Bold", size: 15)
+                            )
+                            .frame(maxWidth: 250, alignment: .leading)
+                            .padding(.bottom, 10)
                         .foregroundColor(Color("PurplePrimary"))
-                }
-                .frame(maxWidth: 278)
-
-                VStack {
-                    HStack {
-                        Spacer()
-
                         ButtonReplayView {
-                            viewModel.textToVoice(read: textTranslationResult, language: destinationLangCode)
+                            TextToVoiceService().speak(read: textTranslationResult, language: destinationLangCode)
                         }
                     }
+                    .padding(.top, 10)
                 }
                 .frame(maxWidth: 278)
             }
             .padding(.init(top: 24, leading: 32, bottom: 24, trailing: 32))
-            .frame(maxWidth: 342, minHeight: 156)
             .background(Color.white)
             .clipShape(
                 RoundedRectangle(
@@ -73,13 +67,15 @@ struct TranslationBubble_Previews: PreviewProvider {
         TranslationBubble(
             isLeft: false,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won", destinationLangCode: "id")
+            textTranslationResult: "Ini adalah dua ratus won yang",
+            destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
         TranslationBubble(
             isLeft: true,
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won", destinationLangCode: "id")
+            textTranslationResult: "Ini adalah dua ratus won, aku hanya ingin tau  ypurhnekbjax nckewnklf dknwndoiwe ndonweodnw ndionweoind ndionwdn",
+            destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
     }
