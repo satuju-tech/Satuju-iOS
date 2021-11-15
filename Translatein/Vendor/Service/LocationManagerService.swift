@@ -42,12 +42,7 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
                         self.rightCountryImageName = LocationEnum(rawValue: country)?.getCountryID()
                         self.lastCountryLocation = country
                     }
-                }
-            } else {
-                self.rightCountryName = "English"
-                self.rightCountryCode = "en"
-                self.rightCountryImageName = "en"
-            }
+                }}
         })
     }
 }
