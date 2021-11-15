@@ -10,7 +10,7 @@ import SwiftUI
 struct TranslationBubble: View {
 
     @State var isLeft: Bool
-
+    var action: () -> Void
     var textTranslationInput: String
     var textTranslationResult: String
     var destinationLangCode: String
@@ -28,6 +28,10 @@ struct TranslationBubble: View {
                             .custom("NotoSans-Bold", size: 15)
                         )
                         .frame(maxWidth: 250, alignment: .leading)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            action()
+                        }
                         .padding(.bottom, 10)
                     Divider()
                         .background(Color("Off-Color"))
@@ -66,13 +70,14 @@ struct TranslationBubble_Previews: PreviewProvider {
     static var previews: some View {
         TranslationBubble(
             isLeft: false,
+            action: {},
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
             textTranslationResult: "Ini adalah dua ratus won yang",
             destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
         TranslationBubble(
-            isLeft: true,
+            isLeft: true, action: {},
             textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
             textTranslationResult: "Ini adalah dua ratus won, aku hanya ingin tau  ypurhnekbjax nckewnklf dknwndoiwe ndonweodnw ndionweoind ndionwdn",
             destinationLangCode: "id")
