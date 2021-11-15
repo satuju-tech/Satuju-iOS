@@ -37,6 +37,7 @@ struct TranslationView: View {
                                 originLangCode: translationViewModel.leftLangCode,
                                 destLangCode: translationViewModel.rightLangCode)
                         })
+                        .disabled(!isMenuListHidden)
                         .keyboardResponsive()
 
                     if isRecording {
