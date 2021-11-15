@@ -10,18 +10,20 @@ import SwiftUI
 @main
 struct TranslateinApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
-    @AppStorage("leftLangCode") var leftLangCode: String?
-    @AppStorage("rightLangCode") var rightLangCode: String?
+    @AppStorage("leftLangCode") var leftCountryCode: String = "id"
+    @AppStorage("leftLangName") var leftCountryNameButton: String = "Indonesia"
+    @AppStorage("leftLangImage") var leftCountryImageName: String = "id"
 
     init() {
         if isFirstLaunch {
             let locale = Locale.current
 
             if let languageName = locale.localizedString(forLanguageCode: locale.languageCode ?? "en") {
-                leftLangCode = languageName
+                leftCountryNameButton = languageName
             }
 
-            leftLangCode = locale.languageCode
+            leftCountryCode = locale.languageCode ?? "en"
+            leftCountryImageName = ImageEnum(rawValue: leftCountryCode)?.getCountryImage() ?? leftCountryCode
             isFirstLaunch = false
         }
     }

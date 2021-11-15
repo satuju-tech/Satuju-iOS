@@ -9,28 +9,25 @@ import SwiftUI
 
 struct TranslationView: View {
 
+    @StateObject var manager = LocationManagerService()
     @StateObject private var translationViewModel = TranslationViewModel()
-
     @State private var isMenuListHidden: Bool = true
     @State private var isLeft: Bool = true
     @State private var transcript = ""
     @State private var isRecording = false
-
     private let speechRecognizer = DictationService()
 
     var body: some View {
         ZStack {
             Color("Off-Color").ignoresSafeArea()
-
-            VStack {
+            VStack(spacing: 0) {
                 LanguageSettingView()
-
                 TranslationHistoryView()
                     .padding(.top, 21)
-
                 ZStack(alignment: isRecording ? .center : .bottom) {
                     TextFieldTranslationView(
                         text: $translationViewModel.originText,
+                        isDisable: $isRecording,
                         onEditingEnded: {
                             translationViewModel.translate(
                                 originLangCode: translationViewModel.leftLangCode,
@@ -66,22 +63,33 @@ struct TranslationView: View {
                         .padding(.bottom, 30)
                     }
                 }
-
             }
 
-            VStack {
-                Spacer()
-
-                if !isMenuListHidden {
-                    HStack {
-                        Spacer()
-
-                        MenuListView()
-                            .opacity(0.95)
-                            .padding(.bottom, 73)
-                            .padding(.trailing, 9)
+            if !isMenuListHidden {
+                GeometryReader {geometry in
+                    Button {
+                        isMenuListHidden.toggle()
+                    } label: {
+                        Text("").frame( width: geometry.size.width, height: geometry.size.height)
                     }
                 }
+                VStack {
+                    Spacer()
+
+                    HStack {
+                        Spacer()
+                        MenuListView(
+                            toggleAutoPlayButton: {isMenuListHidden.toggle()},
+                            toggleAutoDetectLanguageButton: {isMenuListHidden.toggle()},
+                            toggleSiriShortcutButton: {isMenuListHidden.toggle()},
+                            toggleClearHistoryButton: {isMenuListHidden.toggle()}
+                        )
+                            .opacity(0.95)
+                            .padding(.bottom, 94.5)
+                            .padding(.trailing, 25)
+                    }
+                }
+
             }
         }
         .edgesIgnoringSafeArea(.bottom)

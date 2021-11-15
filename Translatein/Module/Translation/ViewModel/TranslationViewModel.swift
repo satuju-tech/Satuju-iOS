@@ -15,6 +15,7 @@ class TranslationViewModel: ObservableObject {
 
     @AppStorage("leftLangCode") var leftLangCode: String = "id"
     @AppStorage("rightLangCode") var rightLangCode: String = "en"
+    @AppStorage("isAutoPlayOn") var isAutoPlayOn: Bool = false
 
     private let translationRepository: TranslationRepositoryProtocol
     private let translationHistoryRepository: TranslationHistoryRepositoryProtocol
@@ -30,13 +31,21 @@ class TranslationViewModel: ObservableObject {
             let lang = "\(originLangCode)-\(destLangCode)"
             translationRepository.translate(text: originText, lang: lang) { response in
                 self.translatedText = response.text?[0] ?? ""
+
+                // Add to Translation History (Realm)
                 self.translationHistoryRepository.addTranslation(
                     originLang: self.leftLangCode,
                     destinationLang: self.rightLangCode,
                     originText: self.originText,
                     destinationText: self.translatedText,
                     isLeft: true)
-                self.originText = ""
+
+                // Autoplay if isAutoPlayOn is true
+                if self.isAutoPlayOn {
+                    TextToVoiceService().speak(read: self.translatedText, language: self.rightLangCode)
+                }
+
+                self.originText = "Enter Text"
             } failCompletion: { error in
                 print(error)
             }
