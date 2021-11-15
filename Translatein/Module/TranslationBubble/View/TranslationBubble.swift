@@ -43,6 +43,7 @@ struct TranslationBubble: View {
                                 .custom("NotoSans-Bold", size: 15)
                             )
                             .frame(maxWidth: 250, alignment: .leading)
+                            .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom, 10)
                         .foregroundColor(Color("PurplePrimary"))
                         ButtonReplayView {
@@ -74,14 +75,14 @@ struct TranslationBubble_Previews: PreviewProvider {
         TranslationBubble(
             isLeft: false,
             action: {},
-            textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won yang", destinationLangCode: "id")
+            textTranslationInput: "This is two hundred won, i just want",
+            textTranslationResult: "Ini adalah dua ratus won yangdjlwq", destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
         TranslationBubble(
             isLeft: true, action: {},
-            textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won, aku hanya ingin tau  ypurhnekbjax nckewnklf dknwndoiwe ndonweodnw ndionweoind ndionwdn",
+            textTranslationInput: "Hi I want to tell you I have something sweet but I know something sweet is dangerous",
+            textTranslationResult: "Hai, saya ingin memberi tahu Anda bahwa saya memiliki sesuatu yang manis tetapi saya tahu sesuatu yang manis itu berbahaya",
             destinationLangCode: "id"
         )
             .previewLayout(.sizeThatFits)
