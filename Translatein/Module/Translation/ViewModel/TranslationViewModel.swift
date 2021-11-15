@@ -44,10 +44,13 @@ class TranslationViewModel: ObservableObject {
                 if self.isAutoPlayOn {
                     TextToVoiceService().speak(read: self.translatedText, language: self.rightLangCode)
                 }
+
                 self.originText = "Enter Text"
             } failCompletion: { error in
                 print(error)
             }
+        } else {
+            self.originText = "Enter Text"
         }
     }
 

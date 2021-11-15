@@ -20,14 +20,17 @@ struct TranslationView: View {
     var body: some View {
         ZStack {
             Color("Off-Color").ignoresSafeArea()
+
             VStack(spacing: 0) {
                 LanguageSettingView()
                     .disabled(isRecording)
+
                 TranslationHistoryView()
                     .padding(.top, 21)
+
                 ZStack(alignment: isRecording ? .center : .bottom) {
                     TextFieldTranslationView(
-                        text: $translationViewModel.originText, 
+                        text: $translationViewModel.originText,
                         isDisable: $isRecording,
                         onEditingEnded: {
                             translationViewModel.translate(
@@ -67,18 +70,21 @@ struct TranslationView: View {
             }
 
             if !isMenuListHidden {
-                GeometryReader {geometry in
+                GeometryReader { geometry in
                     Button {
                         isMenuListHidden.toggle()
                     } label: {
-                        Text("").frame( width: geometry.size.width, height: geometry.size.height)
+                        Text("")
+                            .frame(width: geometry.size.width, height: geometry.size.height)
                     }
                 }
+
                 VStack {
                     Spacer()
 
                     HStack {
                         Spacer()
+
                         MenuListView(
                             toggleAutoPlayButton: {isMenuListHidden.toggle()},
                             toggleAutoDetectLanguageButton: {isMenuListHidden.toggle()},
@@ -101,6 +107,7 @@ struct TranslationView: View {
 extension TranslationView {
 
     func listenAndTranslate() {
+        translationViewModel.originText = "Listening..."
         if isLeft {
             speechRecognizer.changeLocale(locale: translationViewModel.leftLangCode)
         } else {
