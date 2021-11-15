@@ -77,12 +77,5 @@ struct TranslationBubble_Previews: PreviewProvider {
             destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
-        TranslationBubble(
-            isLeft: true, action: {},
-            textTranslationInput: "This is two hundred won, i just want to know ypurhnekbjax",
-            textTranslationResult: "Ini adalah dua ratus won, aku hanya ingin tau  ypurhnekbjax nckewnklf dknwndoiwe ndonweodnw ndionweoind ndionwdn",
-            destinationLangCode: "id")
-            .previewLayout(.sizeThatFits)
-            .padding()
     }
 }
