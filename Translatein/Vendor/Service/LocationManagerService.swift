@@ -12,6 +12,7 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
     @AppStorage("rightLangName") var rightCountryName: String?
     @AppStorage("rightLangCode") var rightCountryCode: String?
     @AppStorage("rightLangImage") var rightCountryImageName: String?
+    @AppStorage("lastCountryLocation") var lastCountryLocation: String?
 
     private let manager = CLLocationManager()
 
@@ -35,9 +36,12 @@ final class LocationManagerService: NSObject, CLLocationManagerDelegate, Observa
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
             if let placeMark: CLPlacemark = placemarks?[0] {
                 if let country = placeMark.country {
-                    self.rightCountryName = LocationEnum(rawValue: country)?.getLanguageName()
-                    self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID()
-                    self.rightCountryImageName = LocationEnum(rawValue: country)?.getCountryID()
+                    if self.lastCountryLocation != country {
+                        self.rightCountryName = LocationEnum(rawValue: country)?.getLanguageName()
+                        self.rightCountryCode = LocationEnum(rawValue: country)?.getCountryID()
+                        self.rightCountryImageName = LocationEnum(rawValue: country)?.getCountryID()
+                        self.lastCountryLocation = country
+                    }
                 }
             } else {
                 self.rightCountryName = "English"
