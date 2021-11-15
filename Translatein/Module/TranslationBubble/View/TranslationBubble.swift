@@ -79,13 +79,5 @@ struct TranslationBubble_Previews: PreviewProvider {
             textTranslationResult: "Ini adalah dua ratus won yangdjlwq", destinationLangCode: "id")
             .previewLayout(.sizeThatFits)
             .padding()
-        TranslationBubble(
-            isLeft: true, action: {},
-            textTranslationInput: "Hi I want to tell you I have something sweet but I know something sweet is dangerous",
-            textTranslationResult: "Hai, saya ingin memberi tahu Anda bahwa saya memiliki sesuatu yang manis tetapi saya tahu sesuatu yang manis itu berbahaya",
-            destinationLangCode: "id"
-        )
-            .previewLayout(.sizeThatFits)
-            .padding()
     }
 }
