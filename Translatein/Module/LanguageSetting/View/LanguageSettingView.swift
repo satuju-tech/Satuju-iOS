@@ -12,7 +12,7 @@ struct LanguageSettingView: View {
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
 
     @State var showLanguageListModalView: Bool = false
-    @State var isOrigin = true
+    @State var isOrigin: Bool = true
     @State var title = "Translate From"
 
     var body: some View {
@@ -38,7 +38,7 @@ struct LanguageSettingView: View {
         }
         .padding(.top, 8)
         .sheet(isPresented: $showLanguageListModalView) {
-            LanguageListView(isOrigin: self.isOrigin, title: self.$title, showModal: self.$showLanguageListModalView)
+            LanguageListView(isOrigin: self.$isOrigin, title: self.$title, showModal: self.$showLanguageListModalView)
         }
     }
 

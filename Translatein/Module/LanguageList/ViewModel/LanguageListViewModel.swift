@@ -19,7 +19,7 @@ class LanguageListViewModel: ObservableObject {
         fetchLanguage()
     }
     func fetchLanguage() {
-        repository.getLanguages(originLang: TranslateinApp().leftLangCode ?? "") { supportedLanguages in
+        repository.getLanguages(originLang: TranslateinApp().leftCountryCode ?? "") { supportedLanguages in
             self.langs = supportedLanguages.langs ?? [ "": "" ]
         } failCompletion: { error in
             print(error)
