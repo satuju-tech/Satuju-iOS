@@ -15,8 +15,6 @@ struct TranslationBubble: View {
     var textTranslationResult: String
     var destinationLangCode: String
 
-    @StateObject private var viewModel = TranslationBubbleViewModel()
-
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
             PolygonShapeView()
@@ -42,7 +40,7 @@ struct TranslationBubble: View {
                             .padding(.bottom, 10)
                         .foregroundColor(Color("PurplePrimary"))
                         ButtonReplayView {
-                            viewModel.textToVoice(read: textTranslationResult, language: destinationLangCode)
+                            TextToVoiceService().speak(read: textTranslationResult, language: destinationLangCode)
                         }
                     }
                     .padding(.top, 10)

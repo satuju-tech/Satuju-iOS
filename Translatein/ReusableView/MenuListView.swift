@@ -6,80 +6,113 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct MenuListView: View {
 
-    @StateObject private var viewModel = TranslationBubbleViewModel()
+    @StateObject var translationViewModel = TranslationViewModel()
+    @AppStorage("isAutoPlayOn") var isAutoPlayOn: Bool = false
+    @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
+    @AppStorage("isSiriShortcutOn") var isSiriShortcutOn: Bool = false
+
+    @State var realm = try! Realm().objects(TranslationHistory.self)
+    @State var toggleAutoPlayButton: (() -> Void)
+    @State var toggleAutoDetectLanguageButton: (() -> Void)
+    @State var toggleSiriShortcutButton: (() -> Void)
+    @State var toggleClearHistoryButton: (() -> Void)
+    @State var frameHeight = 170.0
 
     var body: some View {
         List {
-            Button(action: {viewModel.toggleAutoPlayButton()}, label: {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(viewModel.isAutoPlayOn ? .black : .clear)
+            MenuListItem(
+                action: {
+                    toggleAutoPlayButton()
+                    isAutoPlayOn.toggle()
+                },
+                checkMark: isAutoPlayOn,
+                buttonText: "Auto Play Translation",
+                systemName: "checkmark.circle.fill",
+                textColor: .black
+            )
 
-                    Text("Auto Play Translation")
-                        .foregroundColor(.black)
-                        .font(.system(size: 17))
-                        .frame(maxWidth: 300, alignment: .leading)
-                }.contentShape(Rectangle())
-            })
-                .buttonStyle(PlainButtonStyle())
-                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+            MenuListItem(
+                action: {
+                    toggleAutoDetectLanguageButton()
+                    isDetectLanguageOn.toggle()
+                },
+                checkMark: isDetectLanguageOn,
+                buttonText: "Detect Language",
+                systemName: "checkmark.circle.fill",
+                textColor: .black
+            )
 
-            Button(action: {viewModel.toggleAutoDetectLanguageButton()}, label: {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(viewModel.isDetectLanguageOn ? .black : .clear)
+            MenuListItem(
+                action: {
+                    toggleSiriShortcutButton()
+                    isSiriShortcutOn.toggle()
+                },
+                checkMark: isSiriShortcutOn,
+                buttonText: "Siri Shortcut",
+                systemName: "checkmark.circle.fill",
+                textColor: .black
+            )
 
-                    Text("Detect Language")
-                        .foregroundColor(.black)
-                        .font(.system(size: 17))
-                        .frame(maxWidth: 300, alignment: .leading)
-                }
-                .contentShape(Rectangle())
-            })
-                .buttonStyle(PlainButtonStyle())
-                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-            Button(action: {viewModel.toggleSiriShortcutButton()}, label: {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(viewModel.isSiriShortcutOn ? .black : .clear)
-                    Text("Siri Shortcut")
-                        .foregroundColor(.black)
-                        .font(.system(size: 17))
-                        .frame(maxWidth: 300, alignment: .leading)
-                }.contentShape(Rectangle())
-            })
-                .buttonStyle(PlainButtonStyle())
-                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-            Button(action: {viewModel.toggleDeleteHistoryButton()}, label: {
-                HStack {
-                    Image(systemName: "trash")
-                        .foregroundColor(.red)
-                    Text("Clear History")
-                        .foregroundColor(.red)
-                        .font(.system(size: 17))
-                        .frame(maxWidth: 300, alignment: .leading)
-                }.contentShape(Rectangle())
-            })
-                .buttonStyle(PlainButtonStyle())
-                .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+            if !realm.isEmpty {
+                MenuListItem(
+                    action: {
+                        toggleClearHistoryButton()
+                        TranslationHistoryRepository().deleteTranslationHistory()
+                    },
+                    checkMark: true,
+                    buttonText: "Clear History",
+                    systemName: "trash",
+                    textColor: .red
+                )
+            }
+
         }
+        .onAppear { UITableView.appearance().backgroundColor = UIColor.clear }
         .hasScrollEnabled(false)
         .cornerRadius(14)
-        .padding()
-        .foregroundColor(.white)
-        .frame(width: 300, height: 250, alignment: .center)
-        .onAppear {UITableView.appearance().backgroundColor = UIColor.clear}
-    }
+        .frame(maxWidth: 266, maxHeight: (realm.isEmpty ? 170.0 : 212.0), alignment: .center)
+        .listStyle(InsetGroupedListStyle())
 
+    }
 }
 
 struct MenuListView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuListView()
-            .previewLayout(.fixed(width: 280, height: 250))
-            .opacity(0.95)
+        MenuListView(
+            toggleAutoPlayButton: {},
+            toggleAutoDetectLanguageButton: {},
+            toggleSiriShortcutButton: {},
+            toggleClearHistoryButton: {}
+        ).opacity(0.95)
+    }
+}
+
+struct MenuListItem: View {
+
+    @State var action: (() -> Void)
+    @State var checkMark: Bool
+    @State var buttonText: String
+    @State var systemName: String
+    @State var textColor: Color
+
+    var body: some View {
+        Button(action: {
+            action()
+        }, label: {
+            HStack {
+                Image(systemName: systemName)
+                    .foregroundColor(checkMark ? textColor : .clear)
+
+                Text(buttonText)
+                    .foregroundColor(textColor)
+                    .font(.system(size: 17))
+                    .frame(maxWidth: 300, alignment: .leading)
+            }
+        })
+            .listRowBackground(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
     }
 }
