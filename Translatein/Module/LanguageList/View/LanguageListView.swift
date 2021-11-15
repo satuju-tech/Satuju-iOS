@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LanguageListView: View {
 
-    @State var isOrigin: Bool
     @State private var searchQuery: String = ""
 
+    @Binding var isOrigin: Bool
     @Binding var title: String
     @Binding var showModal: Bool
 
@@ -67,7 +67,13 @@ struct LanguageListView: View {
                 .init(top: 0, leading: 24,
                       bottom: 20, trailing: 24)
             )
-
+            if langItem.isEmpty {
+                HStack {
+                    Text("Language unavailable")
+                        .padding(16)
+                    Spacer()
+                }
+            }
             ScrollView {
                 ForEach( langItem.sorted {
                     $0.1 < $1.1
@@ -83,8 +89,8 @@ struct LanguageListView: View {
                             rightImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
                         }
                         showModal.toggle()
-                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(TranslateinApp().leftLangCode ?? ""):
-                                    key.elementsEqual(TranslateinApp().rightLangCode ?? ""))
+                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(leftLangCode ?? ""):
+                                    key.elementsEqual(rightLangCode ?? ""))
                         .padding(.init(top: 10, leading: 20,
                                        bottom: 10, trailing: 20)
                         )
