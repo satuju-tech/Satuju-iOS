@@ -22,11 +22,12 @@ struct TranslationView: View {
             Color("Off-Color").ignoresSafeArea()
             VStack(spacing: 0) {
                 LanguageSettingView()
+                    .disabled(isRecording)
                 TranslationHistoryView()
                     .padding(.top, 21)
                 ZStack(alignment: isRecording ? .center : .bottom) {
                     TextFieldTranslationView(
-                        text: $translationViewModel.originText,
+                        text: $translationViewModel.originText, 
                         isDisable: $isRecording,
                         onEditingEnded: {
                             translationViewModel.translate(
