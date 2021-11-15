@@ -43,6 +43,7 @@ struct TranslationHistoryView: View {
                             if item.id == translationHistory.results.last?.id {
                                 TranslationBubble(
                                     isLeft: item.isLeft,
+                                    action: {},
                                     textTranslationInput: item.originText,
                                     textTranslationResult: item.destinationText,
                                     destinationLangCode: item.destinationLang)
@@ -51,6 +52,7 @@ struct TranslationHistoryView: View {
                             } else {
                                 TranslationBubble(
                                     isLeft: item.isLeft,
+                                    action: {},
                                     textTranslationInput: item.originText,
                                     textTranslationResult: item.destinationText,
                                     destinationLangCode: item.destinationLang)
