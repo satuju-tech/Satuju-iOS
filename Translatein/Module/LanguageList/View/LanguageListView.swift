@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LanguageListView: View {
 
-    @State var isOrigin: Bool
     @State private var searchQuery: String = ""
 
+    @Binding var isOrigin: Bool
     @Binding var title: String
     @Binding var showModal: Bool
 
@@ -34,72 +34,83 @@ struct LanguageListView: View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                Text(title)
+        ZStack {
+            if langItem.isEmpty && searchQuery.isEmpty {
+                ProgressView()
+            }
+            VStack {
+                HStack {
+                    Text(title)
+                    Spacer()
+                }
+                .padding(
+                    .init(top: 36, leading: 24,
+                          bottom: 20, trailing: 24)
+                )
+
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(Color("ItemSearchColor"))
+                    TextField(
+                        "Search",
+                        text: $searchQuery
+                    ).foregroundColor(Color("ItemSearchColor"))
+                    Button {
+                    } label: {
+                        Image(systemName: "mic.fill")
+                            .foregroundColor(Color("ItemSearchColor"))
+                    }
+                }
+                .padding(
+                    .init(top: 8, leading: 8,
+                          bottom: 8, trailing: 8)
+                )
+                .background(Color("SearchColor"))
+                .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 0.5).foregroundColor(Color.gray))
+                .padding(
+                    .init(top: 0, leading: 24,
+                          bottom: 20, trailing: 24)
+                )
+                if !searchQuery.isEmpty && langItem.isEmpty {
+                    HStack {
+                        Text("Language unavailable")
+                            .padding(16)
+                        Spacer()
+                    }
+                }
+                ScrollView {
+                    ForEach( langItem.sorted {
+                        $0.1 < $1.1
+                    }, id: \.key ) { key, valueText in
+                        LanguangeItem(action: {
+                            if isOrigin {
+                                leftLangCode = key
+                                leftLangName = valueText
+                                leftImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
+                            } else {
+                                rightLangCode = key
+                                rightLangName = valueText
+                                rightImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
+                            }
+                            showModal.toggle()
+                        }, language: valueText, isSelected: isOrigin ? key.elementsEqual(leftLangCode ?? ""):
+                                        key.elementsEqual(rightLangCode ?? ""))
+                            .padding(.init(top: 10, leading: 20,
+                                           bottom: 10, trailing: 20)
+                            )
+
+                        Divider().padding(
+                            .init(top: 0, leading: 20,
+                                  bottom: 0, trailing: 20)
+                        )
+                    }
+                }
+
                 Spacer()
             }
-            .padding(
-                .init(top: 36, leading: 24,
-                      bottom: 20, trailing: 24)
-            )
-
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(Color("ItemSearchColor"))
-                TextField(
-                    "Search",
-                    text: $searchQuery
-                ).foregroundColor(Color("ItemSearchColor"))
-                Button {
-                } label: {
-                    Image(systemName: "mic.fill")
-                        .foregroundColor(Color("ItemSearchColor"))
-                }
+            .onAppear {
+                languageListViewModel.fetchLanguage()
             }
-            .padding(
-                .init(top: 8, leading: 8,
-                      bottom: 8, trailing: 8)
-            )
-            .background(Color("SearchColor"))
-            .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 0.5).foregroundColor(Color.gray))
-            .padding(
-                .init(top: 0, leading: 24,
-                      bottom: 20, trailing: 24)
-            )
-
-            ScrollView {
-                ForEach( langItem.sorted {
-                    $0.1 < $1.1
-                }, id: \.key ) { key, valueText in
-                    LanguangeItem(action: {
-                        if isOrigin {
-                            leftLangCode = key
-                            leftLangName = valueText
-                            leftImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
-                        } else {
-                            rightLangCode = key
-                            rightLangName = valueText
-                            rightImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
-                        }
-                        showModal.toggle()
-                    }, language: valueText, isSelected: isOrigin ? key.elementsEqual(TranslateinApp().leftLangCode ?? ""):
-                                    key.elementsEqual(TranslateinApp().rightLangCode ?? ""))
-                        .padding(.init(top: 10, leading: 20,
-                                       bottom: 10, trailing: 20)
-                        )
-
-                    Divider().padding(
-                        .init(top: 0, leading: 20,
-                              bottom: 0, trailing: 20)
-                    )
-                }
-            }
-
-            Spacer()
-        }
-        .onAppear {
-            languageListViewModel.fetchLanguage()
         }
     }
 

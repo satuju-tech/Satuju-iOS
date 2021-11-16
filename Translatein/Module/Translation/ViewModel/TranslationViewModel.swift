@@ -15,6 +15,8 @@ class TranslationViewModel: ObservableObject {
 
     @AppStorage("leftLangCode") var leftLangCode: String = "id"
     @AppStorage("rightLangCode") var rightLangCode: String = "en"
+    @AppStorage("isAutoPlayOn") var isAutoPlayOn: Bool = false
+    @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
 
     private let translationRepository: TranslationRepositoryProtocol
     private let translationHistoryRepository: TranslationHistoryRepositoryProtocol
@@ -25,22 +27,55 @@ class TranslationViewModel: ObservableObject {
         self.translationHistoryRepository = translationHistoryRepository
     }
 
-    func translate(originLangCode: String, destLangCode: String) {
+    func translate(originLangCode: String, destLangCode: String, isVoice: Bool) {
         if !originText.isEmpty {
-            let lang = "\(originLangCode)-\(destLangCode)"
-            translationRepository.translate(text: originText, lang: lang) { response in
-                self.translatedText = response.text?[0] ?? ""
-                self.translationHistoryRepository.addTranslation(
-                    originLang: self.leftLangCode,
-                    destinationLang: self.rightLangCode,
-                    originText: self.originText,
-                    destinationText: self.translatedText,
-                    isLeft: true)
-                self.originText = "Enter Text"
-            } failCompletion: { error in
-                print(error)
+            let text = originText
+            originText = "Translating..."
+            if isDetectLanguageOn && !isVoice {
+                translationRepository.translateWithLanguageDetection(
+                    firstLang: originLangCode,
+                    secondLang: destLangCode,
+                    text: text) { response in
+                        self.configureTranslatedText(originText: text,
+                                                     translatedText: response.text?[0] ?? "",
+                                                     originLangCode: originLangCode,
+                                                     destLangCode: destLangCode)
+                    } failCompletion: { error in
+                        print(error)
+                    }
+            } else {
+                let lang = "\(originLangCode)-\(destLangCode)"
+                translationRepository.translate(text: text, lang: lang) { response in
+                    self.configureTranslatedText(originText: text,
+                                                 translatedText: response.text?[0] ?? "",
+                                                 originLangCode: originLangCode,
+                                                 destLangCode: destLangCode)
+                } failCompletion: { error in
+                    print(error)
+                }
             }
+        } else {
+            self.originText = "Enter Text"
         }
+    }
+
+    private func configureTranslatedText(originText: String, translatedText: String, originLangCode: String, destLangCode: String) {
+        self.translatedText = translatedText
+
+        // Add to Translation History (Realm)
+        self.translationHistoryRepository.addTranslation(
+            originLang: self.leftLangCode,
+            destinationLang: self.rightLangCode,
+            originText: originText,
+            destinationText: self.translatedText,
+            isLeft: true)
+
+        // Autoplay if isAutoPlayOn is true
+        if self.isAutoPlayOn {
+            TextToVoiceService().speak(read: self.translatedText, language: self.rightLangCode)
+        }
+
+        self.originText = "Enter Text"
     }
 
 }

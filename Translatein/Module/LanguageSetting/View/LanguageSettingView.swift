@@ -9,15 +9,16 @@ import SwiftUI
 
 struct LanguageSettingView: View {
 
-    @StateObject private var TranslationBubbleVM = TranslationBubbleViewModel()
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
 
+    @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
+
     @State var showLanguageListModalView: Bool = false
-    @State var isOrigin = true
+    @State var isOrigin: Bool = true
     @State var title = "Translate From"
 
     var body: some View {
-        HStack(spacing: 35) {
+        HStack(spacing: 10) {
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = true
                 showLanguageListModalView = true
@@ -26,6 +27,13 @@ struct LanguageSettingView: View {
                                imageName: $LanguageSettingVM.leftCountryImageName,
                                countryName: $LanguageSettingVM.leftCountryNameButton,
                                colorName: $LanguageSettingVM.leftColorNameButton)
+
+            if !isDetectLanguageOn {
+                SwitchButton()
+            } else {
+                SwitchButton()
+                    .hidden()
+            }
 
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = false
@@ -39,7 +47,7 @@ struct LanguageSettingView: View {
         }
         .padding(.top, 8)
         .sheet(isPresented: $showLanguageListModalView) {
-            LanguageListView(isOrigin: self.isOrigin, title: self.$title, showModal: self.$showLanguageListModalView)
+            LanguageListView(isOrigin: self.$isOrigin, title: self.$title, showModal: self.$showLanguageListModalView)
         }
     }
 

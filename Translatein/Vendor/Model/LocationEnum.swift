@@ -46,7 +46,7 @@ enum LocationEnum: String {
         case .ja:
             return "Japanese"
         case .id:
-            return "Indonesia"
+            return "Indonesian"
         }
     }
 

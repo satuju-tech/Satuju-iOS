@@ -17,4 +17,5 @@ final class LanguageSettingViewModel: ObservableObject {
 
     @Published var leftColorNameButton = "PurplePrimary"
     @Published var rightColorNameButton = "AquaSecondary"
+
 }

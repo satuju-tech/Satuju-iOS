@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TranslationView: View {
 
+    @StateObject var manager = LocationManagerService()
     @StateObject private var translationViewModel = TranslationViewModel()
     @State private var isMenuListHidden: Bool = true
     @State private var isLeft: Bool = true
@@ -19,19 +20,24 @@ struct TranslationView: View {
     var body: some View {
         ZStack {
             Color("Off-Color").ignoresSafeArea()
+
             VStack(spacing: 0) {
                 LanguageSettingView()
+                    .disabled(isRecording)
+
                 TranslationHistoryView()
                     .padding(.top, 21)
+
                 ZStack(alignment: isRecording ? .center : .bottom) {
                     TextFieldTranslationView(
-                        text: $translationViewModel.originText, 
+                        text: $translationViewModel.originText,
                         isDisable: $isRecording,
                         onEditingEnded: {
                             translationViewModel.translate(
                                 originLangCode: translationViewModel.leftLangCode,
-                                destLangCode: translationViewModel.rightLangCode)
+                                destLangCode: translationViewModel.rightLangCode, isVoice: false)
                         })
+                        .disabled(!isMenuListHidden)
                         .keyboardResponsive()
 
                     if isRecording {
@@ -64,19 +70,34 @@ struct TranslationView: View {
                 }
             }
 
-            VStack {
-                Spacer()
+            if !isMenuListHidden {
+                GeometryReader { geometry in
+                    Button {
+                        isMenuListHidden.toggle()
+                    } label: {
+                        Text("")
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
+                }
 
-                if !isMenuListHidden {
+                VStack {
+                    Spacer()
+
                     HStack {
                         Spacer()
 
-                        MenuListView()
+                        MenuListView(
+                            toggleAutoPlayButton: {isMenuListHidden.toggle()},
+                            toggleAutoDetectLanguageButton: {isMenuListHidden.toggle()},
+                            toggleSiriShortcutButton: {isMenuListHidden.toggle()},
+                            toggleClearHistoryButton: {isMenuListHidden.toggle()}
+                        )
                             .opacity(0.95)
-                            .padding(.bottom, 73)
-                            .padding(.trailing, 9)
+                            .padding(.bottom, 94.5)
+                            .padding(.trailing, 25)
                     }
                 }
+
             }
         }
         .edgesIgnoringSafeArea(.bottom)
@@ -87,6 +108,7 @@ struct TranslationView: View {
 extension TranslationView {
 
     func listenAndTranslate() {
+        translationViewModel.originText = "Listening..."
         if isLeft {
             speechRecognizer.changeLocale(locale: translationViewModel.leftLangCode)
         } else {
@@ -104,9 +126,13 @@ extension TranslationView {
         translationViewModel.originText = transcript
 
         if isLeft {
-            translationViewModel.translate(originLangCode: translationViewModel.leftLangCode, destLangCode: translationViewModel.rightLangCode)
+            translationViewModel.translate(originLangCode: translationViewModel.leftLangCode,
+                                           destLangCode: translationViewModel.rightLangCode,
+                                           isVoice: true)
         } else {
-            translationViewModel.translate(originLangCode: translationViewModel.rightLangCode, destLangCode: translationViewModel.leftLangCode)
+            translationViewModel.translate(originLangCode: translationViewModel.rightLangCode,
+                                           destLangCode: translationViewModel.leftLangCode,
+                                           isVoice: true)
         }
     }
 
