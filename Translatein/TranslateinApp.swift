@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct TranslateinApp: App {
-    
+
     @AppStorage("isFirstLaunch") var isFirstLaunch = true
     @AppStorage("leftLangCode") var leftCountryCode: String = "id"
     @AppStorage("leftLangName") var leftCountryNameButton: String = "Indonesia"
