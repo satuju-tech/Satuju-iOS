@@ -29,19 +29,27 @@ class TranslationViewModel: ObservableObject {
 
     func translate(originLangCode: String, destLangCode: String) {
         if !originText.isEmpty {
+            let text = originText
+            originText = "Translating..."
             if isDetectLanguageOn {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
                     secondLang: destLangCode,
-                    text: originText) { response in
-                        self.configureTranslatedText(translatedText: response.text?[0] ?? "", originLangCode: originLangCode, destLangCode: destLangCode)
+                    text: text) { response in
+                        self.configureTranslatedText(originText: text,
+                                                     translatedText: response.text?[0] ?? "",
+                                                     originLangCode: originLangCode,
+                                                     destLangCode: destLangCode)
                     } failCompletion: { error in
                         print(error)
                     }
             } else {
                 let lang = "\(originLangCode)-\(destLangCode)"
                 translationRepository.translate(text: originText, lang: lang) { response in
-                    self.configureTranslatedText(translatedText: response.text?[0] ?? "", originLangCode: originLangCode, destLangCode: destLangCode)
+                    self.configureTranslatedText(originText: text,
+                                                 translatedText: response.text?[0] ?? "",
+                                                 originLangCode: originLangCode,
+                                                 destLangCode: destLangCode)
                 } failCompletion: { error in
                     print(error)
                 }
@@ -51,14 +59,14 @@ class TranslationViewModel: ObservableObject {
         }
     }
 
-    private func configureTranslatedText(translatedText: String, originLangCode: String, destLangCode: String) {
+    private func configureTranslatedText(originText: String, translatedText: String, originLangCode: String, destLangCode: String) {
         self.translatedText = translatedText
 
         // Add to Translation History (Realm)
         self.translationHistoryRepository.addTranslation(
             originLang: self.leftLangCode,
             destinationLang: self.rightLangCode,
-            originText: self.originText,
+            originText: originText,
             destinationText: self.translatedText,
             isLeft: true)
 
