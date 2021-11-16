@@ -27,11 +27,11 @@ class TranslationViewModel: ObservableObject {
         self.translationHistoryRepository = translationHistoryRepository
     }
 
-    func translate(originLangCode: String, destLangCode: String) {
+    func translate(originLangCode: String, destLangCode: String, isVoice: Bool) {
         if !originText.isEmpty {
             let text = originText
             originText = "Translating..."
-            if isDetectLanguageOn {
+            if isDetectLanguageOn && !isVoice {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
                     secondLang: destLangCode,

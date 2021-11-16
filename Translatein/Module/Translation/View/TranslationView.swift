@@ -35,7 +35,7 @@ struct TranslationView: View {
                         onEditingEnded: {
                             translationViewModel.translate(
                                 originLangCode: translationViewModel.leftLangCode,
-                                destLangCode: translationViewModel.rightLangCode)
+                                destLangCode: translationViewModel.rightLangCode, isVoice: false)
                         })
                         .disabled(!isMenuListHidden)
                         .keyboardResponsive()
@@ -126,9 +126,13 @@ extension TranslationView {
         translationViewModel.originText = transcript
 
         if isLeft {
-            translationViewModel.translate(originLangCode: translationViewModel.leftLangCode, destLangCode: translationViewModel.rightLangCode)
+            translationViewModel.translate(originLangCode: translationViewModel.leftLangCode,
+                                           destLangCode: translationViewModel.rightLangCode,
+                                           isVoice: true)
         } else {
-            translationViewModel.translate(originLangCode: translationViewModel.rightLangCode, destLangCode: translationViewModel.leftLangCode)
+            translationViewModel.translate(originLangCode: translationViewModel.rightLangCode,
+                                           destLangCode: translationViewModel.leftLangCode,
+                                           isVoice: true)
         }
     }
 
