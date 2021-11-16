@@ -34,7 +34,8 @@ class TranslationViewModel: ObservableObject {
                     firstLang: originLangCode,
                     secondLang: destLangCode,
                     text: originText) { response in
-                        self.configureTranslatedText(translatedText: response.text?[0] ?? "", originLangCode: originLangCode, destLangCode: destLangCode)
+                        self.configureTranslatedText(translatedText: response.text?[0] ?? "",
+                                                     originLangCode: originLangCode, destLangCode: destLangCode)
                     } failCompletion: { error in
                         print(error)
                     }

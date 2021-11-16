@@ -17,4 +17,16 @@ final class LanguageSettingViewModel: ObservableObject {
 
     @Published var leftColorNameButton = "PurplePrimary"
     @Published var rightColorNameButton = "AquaSecondary"
+
+    func switchButton() {
+        let tempLanguageCode = leftCountryCode
+        let tempLanguageName = leftCountryNameButton
+        let tempLanguageImage = leftCountryImageName
+        leftCountryCode = rightCountryCode
+        leftCountryNameButton = rightCountryNameButton
+        leftCountryImageName = rightCountryImageName
+        rightCountryCode = tempLanguageCode
+        rightCountryNameButton = tempLanguageName
+        rightCountryImageName = tempLanguageImage
+    }
 }
