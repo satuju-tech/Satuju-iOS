@@ -9,11 +9,24 @@ import SwiftUI
 
 struct SwitchButton: View {
 
-    var action: () -> Void
+    @AppStorage("leftLangCode") var leftCountryCode: String?
+    @AppStorage("leftLangName") var leftCountryNameButton: String?
+    @AppStorage("leftLangImage") var leftCountryImageName: String?
+    @AppStorage("rightLangCode") var rightCountryCode: String?
+    @AppStorage("rightLangName") var rightCountryNameButton: String?
+    @AppStorage("rightLangImage") var rightCountryImageName: String?
 
     var body: some View {
         Button {
-            action()
+            let tempLanguageCode = leftCountryCode
+            let tempLanguageName = leftCountryNameButton
+            let tempLanguageImage = leftCountryImageName
+            leftCountryCode = rightCountryCode
+            leftCountryNameButton = rightCountryNameButton
+            leftCountryImageName = rightCountryImageName
+            rightCountryCode = tempLanguageCode
+            rightCountryNameButton = tempLanguageName
+            rightCountryImageName = tempLanguageImage
         } label: {
             Image("SwitchIcon")
                 .resizable()
@@ -26,7 +39,7 @@ struct SwitchButton: View {
 
 struct SwitchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SwitchButton(action: {})
+        SwitchButton()
             .previewLayout(.fixed(width: 48, height: 48))
     }
 }
