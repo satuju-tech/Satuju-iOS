@@ -45,7 +45,7 @@ class TranslationViewModel: ObservableObject {
                     }
             } else {
                 let lang = "\(originLangCode)-\(destLangCode)"
-                translationRepository.translate(text: originText, lang: lang) { response in
+                translationRepository.translate(text: text, lang: lang) { response in
                     self.configureTranslatedText(originText: text,
                                                  translatedText: response.text?[0] ?? "",
                                                  originLangCode: originLangCode,
