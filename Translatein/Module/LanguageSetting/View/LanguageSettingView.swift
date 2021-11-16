@@ -28,7 +28,7 @@ struct LanguageSettingView: View {
                                countryName: $LanguageSettingVM.leftCountryNameButton,
                                colorName: $LanguageSettingVM.leftColorNameButton)
 
-            if isDetectLanguageOn {
+            if !isDetectLanguageOn {
                 SwitchButton(action: LanguageSettingVM.switchButton)
             } else {
                 SwitchButton(action: LanguageSettingVM.switchButton)
