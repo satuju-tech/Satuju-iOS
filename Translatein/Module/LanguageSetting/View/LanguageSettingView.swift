@@ -11,12 +11,14 @@ struct LanguageSettingView: View {
 
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
 
+    @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
+
     @State var showLanguageListModalView: Bool = false
     @State var isOrigin: Bool = true
     @State var title = "Translate From"
 
     var body: some View {
-        HStack(spacing: 35) {
+        HStack(spacing: 10) {
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = true
                 showLanguageListModalView = true
@@ -25,6 +27,13 @@ struct LanguageSettingView: View {
                                imageName: $LanguageSettingVM.leftCountryImageName,
                                countryName: $LanguageSettingVM.leftCountryNameButton,
                                colorName: $LanguageSettingVM.leftColorNameButton)
+
+            if !isDetectLanguageOn {
+                SwitchButton(action: LanguageSettingVM.switchButton)
+            } else {
+                SwitchButton(action: LanguageSettingVM.switchButton)
+                    .hidden()
+            }
 
             LanguageButtonView(toggleLanguageButton: {
                 isOrigin = false
