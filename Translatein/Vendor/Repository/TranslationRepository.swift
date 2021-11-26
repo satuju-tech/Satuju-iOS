@@ -21,7 +21,7 @@ protocol TranslationRepositoryProtocol {
     func translateWithLanguageDetection(firstLang: String,
                                         secondLang: String,
                                         text: String,
-                                        successCompletion: @escaping (Translation) -> Void,
+                                        successCompletion: @escaping (Translation, Bool) -> Void,
                                         failCompletion: @escaping (String) -> Void)
 
 }
@@ -54,21 +54,24 @@ final class TranslationRepository: TranslationRepositoryProtocol {
         firstLang: String = "",
         secondLang: String = "",
         text: String,
-        successCompletion: @escaping (Translation) -> Void,
+        successCompletion: @escaping (Translation, Bool) -> Void,
         failCompletion: @escaping (String) -> Void) {
         let pairOfLanguage = "\(firstLang),\(secondLang)"
 
         apiService.detectLanguage(languagePair: pairOfLanguage, text: text) { detectedLanguage in
             var lang = ""
+            var isLeft = true
 
             if detectedLanguage.lang == firstLang {
                 lang = "\(firstLang)-\(secondLang)"
+                isLeft = true
             } else {
                 lang = "\(secondLang)-\(firstLang)"
+                isLeft = false
             }
 
             self.apiService.translate(text: text, lang: lang) { translation in
-                successCompletion(translation)
+                successCompletion(translation, isLeft)
             } failCompletion: { error in
                 failCompletion(error.errorDescription ?? "error")
             }
