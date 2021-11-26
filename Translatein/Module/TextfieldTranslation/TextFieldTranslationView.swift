@@ -64,7 +64,7 @@ struct TextFieldTranslationView: View {
                 .zIndex(2)
                 .padding(20)
         }
-        .frame(minHeight: isFocused ? 390 : 305)
+        .frame(maxHeight: isFocused ? 398 : 229)
         .background(
             RoundedCornersShape(corners: [.topLeft, .topRight], radius: 10)
                 .fill(Color.white)
