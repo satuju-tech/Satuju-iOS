@@ -51,7 +51,7 @@ struct MenuListView: View {
                     toggleSiriShortcutButton()
                     isSiriShortcutOn.toggle()
                 },
-                checkMark: isSiriShortcutOn,
+                checkMark: false,
                 buttonText: "Siri Shortcut",
                 systemName: "checkmark.circle.fill",
                 textColor: .black
