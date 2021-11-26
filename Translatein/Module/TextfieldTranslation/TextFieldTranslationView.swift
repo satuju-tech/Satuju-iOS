@@ -55,7 +55,7 @@ struct TextFieldTranslationView: View {
                 }
                 .onChange(of: text) { value in
                     if value.contains("\n") {
-                        text = value.replacingOccurrences(of: "\n", with: "")
+                        text = value
                         self.dismissKeyboard()
                         self.onEditingEnded()
                         isFocused.toggle()
