@@ -35,21 +35,27 @@ class TranslationViewModel: ObservableObject {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
                     secondLang: destLangCode,
-                    text: text) { response in
+                    text: text) { response, isLeft  in
                         self.configureTranslatedText(originText: text,
                                                      translatedText: response.text?[0] ?? "",
                                                      originLangCode: originLangCode,
-                                                     destLangCode: destLangCode)
+                                                     destLangCode: destLangCode,
+                                                     isLeft: isLeft)
                     } failCompletion: { error in
                         print(error)
                     }
             } else {
                 let lang = "\(originLangCode)-\(destLangCode)"
+                var isLeft = true
+                if originLangCode != leftLangCode {
+                    isLeft = false
+                }
                 translationRepository.translate(text: text, lang: lang) { response in
                     self.configureTranslatedText(originText: text,
                                                  translatedText: response.text?[0] ?? "",
                                                  originLangCode: originLangCode,
-                                                 destLangCode: destLangCode)
+                                                 destLangCode: destLangCode,
+                                                 isLeft: isLeft)
                 } failCompletion: { error in
                     print(error)
                 }
@@ -59,7 +65,7 @@ class TranslationViewModel: ObservableObject {
         }
     }
 
-    private func configureTranslatedText(originText: String, translatedText: String, originLangCode: String, destLangCode: String) {
+    private func configureTranslatedText(originText: String, translatedText: String, originLangCode: String, destLangCode: String, isLeft: Bool) {
         self.translatedText = translatedText
 
         // Add to Translation History (Realm)
@@ -68,7 +74,7 @@ class TranslationViewModel: ObservableObject {
             destinationLang: self.rightLangCode,
             originText: originText,
             destinationText: self.translatedText,
-            isLeft: true)
+            isLeft: isLeft)
 
         // Autoplay if isAutoPlayOn is true
         if self.isAutoPlayOn {
