@@ -11,16 +11,22 @@ struct VoiceButtonGroup: View {
 
     let actionLeftVoiceButton: () -> Void
     let actionRightVoiceButton: () -> Void
+    @State private var isMicLeftDisable: Bool = false
+    @State private var isMicRightDisable: Bool = false
 
     var body: some View {
         HStack(spacing: 25) {
             MicButton(action: {
                 actionLeftVoiceButton()
+                isMicRightDisable.toggle()
             }, color: Color("PurplePrimary"))
+                .disabled(isMicLeftDisable)
 
             MicButton(action: {
                 actionRightVoiceButton()
+                isMicLeftDisable.toggle()
             }, color: Color("AquaSecondary"))
+                .disabled(isMicRightDisable)
         }
     }
 
