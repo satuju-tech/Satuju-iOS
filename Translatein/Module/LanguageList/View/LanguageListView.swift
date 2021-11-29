@@ -98,7 +98,9 @@ struct LanguageListView: View {
                             showModal.toggle()
                         },
                                       language: item.name ?? "",
-                                      isSelected: isOrigin ? item.language?.elementsEqual(leftLangCode ?? "") ?? false : item.language?.elementsEqual(rightLangCode ?? "") ?? false)
+                                      isSelected: isOrigin ?
+                                        item.language?.elementsEqual(leftLangCode ?? "") ?? false :
+                                        item.language?.elementsEqual(rightLangCode ?? "") ?? false)
                             .padding(.init(top: 10, leading: 20,
                                            bottom: 10, trailing: 20)
                             )
