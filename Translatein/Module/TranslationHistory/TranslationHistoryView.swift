@@ -14,38 +14,13 @@ struct TranslationHistoryView: View {
         translationHistoryResults: try! Realm().objects(TranslationHistory.self)
     )
 
-    @State var tempDate = Date(timeIntervalSince1970: 1)
+    @State private var tempDate = Date(timeIntervalSince1970: 1)
+    @State private var date: [UUID: Date] = [:]
+    @State private var translationHistoryIdx = 0
 
-    @State var translationHistoryIdx = 0
+    @Namespace private var bottomID
 
-    @Namespace var bottomID
-
-    @State var date: [UUID: Date] = [:]
-
-    let dateFormatter = DateFormatter()
-
-    init() {
-        dateFormatter.dateFormat = "EEEE, d MMM"
-    }
-
-    private func initTempDate() {
-        var tempDate = Date(timeIntervalSince1970: 1)
-        for item in translationHistory.results {
-            if Calendar.current.compare(tempDate,
-                                        to: item.date,
-                                        toGranularity: .hour).rawValue != 0 {
-                date[item.id] = item.date
-                tempDate = item.date
-            }
-        }
-    }
-
-    private func updateTempDate(id: UUID, newDate: Date) {
-        if Calendar.current.compare(tempDate, to: newDate, toGranularity: .hour).rawValue != 0 {
-            date[id] = newDate
-            tempDate = newDate
-        }
-    }
+    private let dateFormatter: () = DateFormatter().dateFormat = "EEEE, d MMM"
 
     var body: some View {
         if translationHistory.results.isEmpty {
@@ -109,7 +84,7 @@ struct TranslationHistoryView: View {
                     }
                     .frame(
                         maxHeight: .infinity,
-                        alignment: .bottom
+                        alignment: .top
                     )
                 }
                 .onAppear(perform: {
@@ -128,6 +103,25 @@ struct TranslationHistoryView: View {
             }
         }
     }
+
+    private func initTempDate() {
+        for item in translationHistory.results {
+            if Calendar.current.compare(tempDate,
+                                        to: item.date,
+                                        toGranularity: .hour).rawValue != 0 {
+                date[item.id] = item.date
+                tempDate = item.date
+            }
+        }
+    }
+
+    private func updateTempDate(id: UUID, newDate: Date) {
+        if Calendar.current.compare(tempDate, to: newDate, toGranularity: .hour).rawValue != 0 {
+            date[id] = newDate
+            tempDate = newDate
+        }
+    }
+
 }
 
 struct TranslationHistoryView_Previews: PreviewProvider {
