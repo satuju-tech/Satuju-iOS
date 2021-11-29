@@ -28,7 +28,7 @@ struct TranslationView: View {
                 TranslationHistoryView()
                     .padding(.top, 21)
 
-                ZStack(alignment: isRecording ? .center : .bottom) {
+                ZStack(alignment: .bottom) {
                     TextFieldTranslationView(
                         text: $translationViewModel.originText,
                         isDisable: $isRecording,
@@ -40,24 +40,22 @@ struct TranslationView: View {
                         .disabled(!isMenuListHidden)
                         .keyboardResponsive()
 
-                    if isRecording {
-                        SoundWaveView {
-                            stopRecording()
-                        }
-                    } else {
                         HStack {
                             Spacer()
 
                             VoiceButtonGroup(
-                                actionLeftVoiceButton: {
+                                playLeftVoiceButton: {
                                     isLeft = true
                                     listenAndTranslate()
-                                },
-                                actionRightVoiceButton: {
+                                }, stopLeftVoiceButton: {
+                                    stopRecording()
+                                }, playRightVoiceButton: {
                                     isLeft = false
                                     listenAndTranslate()
-                                })
-
+                                }, stopRightVoiceButton: {
+                                    stopRecording()
+                                }
+                            )
                             MenuButtonView(toggleMenuButton: {
                                 isMenuListHidden.toggle()
                             })
@@ -66,7 +64,7 @@ struct TranslationView: View {
                         }
                         .padding(.trailing, 26)
                         .padding(.bottom, 30)
-                    }
+
                 }
             }
 
