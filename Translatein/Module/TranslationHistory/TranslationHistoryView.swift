@@ -10,11 +10,11 @@ import RealmSwift
 
 struct TranslationHistoryView: View {
 
-    @ObservedObject private var translationHistory = TranslationHistoryViewModel(
+    @StateObject private var translationHistory = TranslationHistoryViewModel(
         translationHistoryResults: try! Realm().objects(TranslationHistory.self)
     )
 
-    @State private var tempDate = Date(timeIntervalSince1970: 1)
+    @State private var tempDate = Date()
     @State private var date: [UUID: Date] = [:]
     @State private var translationHistoryIdx = 0
 
@@ -108,7 +108,8 @@ struct TranslationHistoryView: View {
         for item in translationHistory.results {
             if Calendar.current.compare(tempDate,
                                         to: item.date,
-                                        toGranularity: .hour).rawValue != 0 {
+                                        toGranularity: .hour).rawValue != 0
+                || item == translationHistory.results.first {
                 date[item.id] = item.date
                 tempDate = item.date
             }
