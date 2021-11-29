@@ -37,9 +37,9 @@ class TranslationViewModel: ObservableObject {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
                     secondLang: destLangCode,
-                    text: text) { response, isLeft  in
+                    text: text) { translatedText, isLeft in
                         self.configureTranslatedText(originText: text,
-                                                     translatedText: response.text?[0] ?? "",
+                                                     translatedText: translatedText,
                                                      originLangCode: originLangCode,
                                                      destLangCode: destLangCode,
                                                      isLeft: isLeft)
@@ -49,17 +49,12 @@ class TranslationViewModel: ObservableObject {
                         self.originText = "Please enable data connection and try again"
                     }
             } else {
-                let lang = "\(originLangCode)-\(destLangCode)"
-                var isLeft = true
-                if originLangCode != leftLangCode {
-                    isLeft = false
-                }
-                translationRepository.translate(text: text, lang: lang) { response in
+                translationRepository.translate(text: text, source: originLangCode, target: destLangCode) { translatedText in
                     self.configureTranslatedText(originText: text,
-                                                 translatedText: response.text?[0] ?? "",
+                                                 translatedText: translatedText,
                                                  originLangCode: originLangCode,
                                                  destLangCode: destLangCode,
-                                                 isLeft: isLeft)
+                                                 isLeft: true)
                 } failCompletion: { error in
                     print(error)
                     self.isTranslating = false
