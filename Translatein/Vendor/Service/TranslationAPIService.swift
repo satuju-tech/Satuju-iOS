@@ -33,7 +33,6 @@ final class TranslationAPIService: TranslationAPIServiceProtocol {
                    target: String,
                    successCompletion: @escaping (Translation) -> Void,
                    failCompletion: @escaping (AFError) -> Void) {
-        debugPrint(source, target, APIConstant.TRANSLATION_API_KEY)
         AF.request("\(APIConstant.TRANSLATION_BASE_API)",
                    method: .post,
                    parameters: ["q": text, "source": source, "target": target, "key": APIConstant.TRANSLATION_API_KEY])
