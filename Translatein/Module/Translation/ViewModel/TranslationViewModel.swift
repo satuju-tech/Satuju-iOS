@@ -12,6 +12,7 @@ class TranslationViewModel: ObservableObject {
 
     @Published var originText = ""
     @Published var translatedText = ""
+    @Published var isTranslating = false
 
     @AppStorage("leftLangCode") var leftLangCode: String = "id"
     @AppStorage("rightLangCode") var rightLangCode: String = "en"
@@ -31,6 +32,7 @@ class TranslationViewModel: ObservableObject {
         if !originText.isEmpty {
             let text = originText
             originText = "Translating..."
+            isTranslating = true
             if isDetectLanguageOn && !isVoice {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
@@ -43,6 +45,8 @@ class TranslationViewModel: ObservableObject {
                                                      isLeft: isLeft)
                     } failCompletion: { error in
                         print(error)
+                        self.isTranslating = false
+                        self.originText = "Please enable data connection and try again"
                     }
             } else {
                 let lang = "\(originLangCode)-\(destLangCode)"
@@ -58,10 +62,12 @@ class TranslationViewModel: ObservableObject {
                                                  isLeft: isLeft)
                 } failCompletion: { error in
                     print(error)
+                    self.isTranslating = false
+                    self.originText = "Please enable data connection and try again"
                 }
             }
         } else {
-            self.originText = "Enter Text"
+            self.originText = "Type or Tap Mic to Translate"
         }
     }
 
@@ -81,7 +87,8 @@ class TranslationViewModel: ObservableObject {
             TextToVoiceService().speak(read: self.translatedText, language: self.rightLangCode)
         }
 
-        self.originText = "Enter Text"
+        self.originText = "Type or Tap Mic to Translate"
+        self.isTranslating = false
     }
 
 }
