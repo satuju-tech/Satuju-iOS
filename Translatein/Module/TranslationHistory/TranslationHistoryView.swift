@@ -14,7 +14,38 @@ struct TranslationHistoryView: View {
         translationHistoryResults: try! Realm().objects(TranslationHistory.self)
     )
 
+    @State var tempDate = Date(timeIntervalSince1970: 1)
+
+    @State var translationHistoryIdx = 0
+
     @Namespace var bottomID
+
+    @State var date: [UUID: Date] = [:]
+
+    let dateFormatter = DateFormatter()
+
+    init() {
+        dateFormatter.dateFormat = "EEEE, d MMM"
+    }
+
+    private func initTempDate() {
+        var tempDate = Date(timeIntervalSince1970: 1)
+        for item in translationHistory.results {
+            if Calendar.current.compare(tempDate,
+                                        to: item.date,
+                                        toGranularity: .hour).rawValue != 0 {
+                date[item.id] = item.date
+                tempDate = item.date
+            }
+        }
+    }
+
+    private func updateTempDate(id: UUID, newDate: Date) {
+        if Calendar.current.compare(tempDate, to: newDate, toGranularity: .hour).rawValue != 0 {
+            date[id] = newDate
+            tempDate = newDate
+        }
+    }
 
     var body: some View {
         if translationHistory.results.isEmpty {
@@ -40,6 +71,16 @@ struct TranslationHistoryView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(translationHistory.results, id: \.id) { item in
+                            if let safeDate = date[item.id] {
+                                HStack {
+                                    Text("\(safeDate.getFormattedDate(format: "EEEE, d MMM"))")
+                                        .font(.custom("NotoSans-Regular", size: 11))
+
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 20)
+                            }
+
                             if item.id == translationHistory.results.last?.id {
                                 TranslationBubble(
                                     isLeft: item.isLeft,
@@ -49,6 +90,9 @@ struct TranslationHistoryView: View {
                                     destinationLangCode: item.destinationLang)
                                     .id(bottomID)
                                     .padding(.bottom, 40)
+                                    .onAppear {
+                                        translationHistoryIdx += 1
+                                    }
                             } else {
                                 TranslationBubble(
                                     isLeft: item.isLeft,
@@ -57,23 +101,26 @@ struct TranslationHistoryView: View {
                                     textTranslationResult: item.destinationText,
                                     destinationLangCode: item.destinationLang)
                                     .padding(.bottom, 20)
+                                    .onAppear {
+                                        translationHistoryIdx += 1
+                                    }
                             }
                         }
                     }
                     .frame(
-                        minWidth: 0,
-                        maxWidth: .infinity,
-                        minHeight: 0,
                         maxHeight: .infinity,
-                        alignment: .top
+                        alignment: .bottom
                     )
                 }
                 .onAppear(perform: {
+                    initTempDate()
+
                     withAnimation {
                         proxy.scrollTo(bottomID)
                     }
                 })
                 .onChange(of: translationHistory.results.count) { _ in
+                    updateTempDate(id: translationHistory.results.last?.id ?? UUID(), newDate: translationHistory.results.last?.date ?? Date())
                     withAnimation {
                         proxy.scrollTo(bottomID)
                     }
