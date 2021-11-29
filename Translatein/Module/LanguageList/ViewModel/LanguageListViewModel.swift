@@ -9,7 +9,7 @@ import Foundation
 
 class LanguageListViewModel: ObservableObject {
 
-    @Published var langs: [String: String] = [:]
+    @Published var langs: [Language] = []
 
     private var repository: TranslationRepositoryProtocol
 
@@ -19,8 +19,8 @@ class LanguageListViewModel: ObservableObject {
         fetchLanguage()
     }
     func fetchLanguage() {
-        repository.getLanguages(originLang: "en") { supportedLanguages in
-            self.langs = supportedLanguages.langs ?? ["": "" ]
+        repository.getLanguages(target: "en") { supportedLanguages in
+            self.langs = supportedLanguages.data?.languages ?? []
         } failCompletion: { error in
             print(error)
         }

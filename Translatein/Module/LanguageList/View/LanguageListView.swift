@@ -24,12 +24,17 @@ struct LanguageListView: View {
     @AppStorage("rightLangName") var rightLangName: String?
     @AppStorage("rightLangImage") var rightImageName: String?
 
-    var langItem: [String: String] {
+    var langItem: [Language] {
         if searchQuery.isEmpty {
             return languageListViewModel.langs
         } else {
             return languageListViewModel.langs
-                .filter { $0.value.contains(searchQuery) }
+                .filter {
+                    if let language = $0.name {
+                        return language.contains(searchQuery)
+                    }
+                    return false
+                }
         }
     }
 
@@ -79,22 +84,23 @@ struct LanguageListView: View {
                     }
                 }
                 ScrollView {
-                    ForEach( langItem.sorted {
-                        $0.1 < $1.1
-                    }, id: \.key ) { key, valueText in
+                    ForEach(langItem, id: \.language) { item in
                         LanguangeItem(action: {
                             if isOrigin {
-                                leftLangCode = key
-                                leftLangName = valueText
-                                leftImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
+                                leftLangCode = item.language
+                                leftLangName = item.name
+                                leftImageName = ImageEnum(rawValue: item.language ?? "")?.getCountryImage() ?? item.language
                             } else {
-                                rightLangCode = key
-                                rightLangName = valueText
-                                rightImageName = ImageEnum(rawValue: key)?.getCountryImage() ?? key
+                                rightLangCode = item.language
+                                rightLangName = item.name
+                                rightImageName = ImageEnum(rawValue: item.language ?? "")?.getCountryImage() ?? item.language
                             }
                             showModal.toggle()
-                        }, language: valueText, isSelected: isOrigin ? key.elementsEqual(leftLangCode ?? ""):
-                                        key.elementsEqual(rightLangCode ?? ""))
+                        },
+                                      language: item.name ?? "",
+                                      isSelected: isOrigin ?
+                                        item.language?.elementsEqual(leftLangCode ?? "") ?? false :
+                                        item.language?.elementsEqual(rightLangCode ?? "") ?? false)
                             .padding(.init(top: 10, leading: 20,
                                            bottom: 10, trailing: 20)
                             )

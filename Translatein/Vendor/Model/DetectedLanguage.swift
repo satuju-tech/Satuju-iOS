@@ -8,7 +8,14 @@
 import Foundation
 
 struct DetectedLanguage: Codable {
+    let data: DetectedLanguageData?
+}
 
-    let lang: String?
+struct DetectedLanguageData: Codable {
+    let detections: [[Detection]]?
+}
 
+// MARK: - Detection
+struct Detection: Codable {
+    let language: String?
 }
