@@ -13,7 +13,7 @@ struct TextFieldTranslationView: View {
     @Binding var isDisable: Bool
     @Binding var isTranslating: Bool
     @State private var placeholder: String = "Type or Tap Mic to Translate"
-    @State var isFocused: Bool = false
+    @FocusState var isFocused: Bool
 
     var onEditingEnded: () -> Void
 
@@ -47,12 +47,18 @@ struct TextFieldTranslationView: View {
                 })
                 .font(.custom("NotoSans-Bold", size: 20))
                 .foregroundColor(Color("DividerColor"))
-                .onTapGesture {
+                .simultaneousGesture(LongPressGesture().onEnded { _ in
                     if !isFocused {
                         self.text = ""
                         isFocused.toggle()
                     }
-                }
+                })
+                .simultaneousGesture(TapGesture().onEnded {
+                    if !isFocused {
+                        self.text = ""
+                        isFocused.toggle()
+                    }
+                })
                 .onChange(of: text) { value in
                     if value.contains("\n") {
                         text = value
@@ -61,6 +67,7 @@ struct TextFieldTranslationView: View {
                         isFocused.toggle()
                     }
                 }
+                .focused($isFocused)
                 .zIndex(2)
                 .padding(20)
         }
