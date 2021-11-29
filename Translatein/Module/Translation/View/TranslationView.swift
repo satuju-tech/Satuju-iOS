@@ -11,10 +11,12 @@ struct TranslationView: View {
 
     @StateObject var manager = LocationManagerService()
     @StateObject private var translationViewModel = TranslationViewModel()
+
     @State private var isMenuListHidden: Bool = true
     @State private var isLeft: Bool = true
     @State private var transcript = ""
     @State private var isRecording = false
+
     private let speechRecognizer = DictationService()
 
     var body: some View {
@@ -135,6 +137,8 @@ extension TranslationView {
                                            destLangCode: translationViewModel.leftLangCode,
                                            isVoice: true)
         }
+
+        transcript = ""
     }
 
 }
