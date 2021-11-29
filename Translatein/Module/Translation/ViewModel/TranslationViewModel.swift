@@ -12,6 +12,7 @@ class TranslationViewModel: ObservableObject {
 
     @Published var originText = ""
     @Published var translatedText = ""
+    @Published var isTranslating = false
 
     @AppStorage("leftLangCode") var leftLangCode: String = "id"
     @AppStorage("rightLangCode") var rightLangCode: String = "en"
@@ -31,6 +32,7 @@ class TranslationViewModel: ObservableObject {
         if !originText.isEmpty {
             let text = originText
             originText = "Translating..."
+            isTranslating = true
             if isDetectLanguageOn && !isVoice {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
@@ -39,26 +41,32 @@ class TranslationViewModel: ObservableObject {
                         self.configureTranslatedText(originText: text,
                                                      translatedText: translatedText,
                                                      originLangCode: originLangCode,
-                                                     destLangCode: destLangCode)
+                                                     destLangCode: destLangCode,
+                                                     isLeft: isLeft)
                     } failCompletion: { error in
                         print(error)
+                        self.isTranslating = false
+                        self.originText = "Please enable data connection and try again"
                     }
             } else {
                 translationRepository.translate(text: text, source: originLangCode, target: destLangCode) { translatedText in
                     self.configureTranslatedText(originText: text,
                                                  translatedText: translatedText,
                                                  originLangCode: originLangCode,
-                                                 destLangCode: destLangCode)
+                                                 destLangCode: destLangCode,
+                                                 isLeft: isLeft)
                 } failCompletion: { error in
                     print(error)
+                    self.isTranslating = false
+                    self.originText = "Please enable data connection and try again"
                 }
             }
         } else {
-            self.originText = "Enter Text"
+            self.originText = "Type or Tap Mic to Translate"
         }
     }
 
-    private func configureTranslatedText(originText: String, translatedText: String, originLangCode: String, destLangCode: String) {
+    private func configureTranslatedText(originText: String, translatedText: String, originLangCode: String, destLangCode: String, isLeft: Bool) {
         self.translatedText = translatedText
 
         // Add to Translation History (Realm)
@@ -67,14 +75,15 @@ class TranslationViewModel: ObservableObject {
             destinationLang: self.rightLangCode,
             originText: originText,
             destinationText: self.translatedText,
-            isLeft: true)
+            isLeft: isLeft)
 
         // Autoplay if isAutoPlayOn is true
         if self.isAutoPlayOn {
             TextToVoiceService().speak(read: self.translatedText, language: self.rightLangCode)
         }
 
-        self.originText = "Enter Text"
+        self.originText = "Type or Tap Mic to Translate"
+        self.isTranslating = false
     }
 
 }

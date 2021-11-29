@@ -32,6 +32,7 @@ struct TranslationView: View {
                     TextFieldTranslationView(
                         text: $translationViewModel.originText,
                         isDisable: $isRecording,
+                        isTranslating: $translationViewModel.isTranslating,
                         onEditingEnded: {
                             translationViewModel.translate(
                                 originLangCode: translationViewModel.leftLangCode,
