@@ -9,22 +9,31 @@ import SwiftUI
 
 struct VoiceButtonGroup: View {
 
-    let actionLeftVoiceButton: () -> Void
-    let actionRightVoiceButton: () -> Void
+    let playLeftVoiceButton: () -> Void
+    let stopLeftVoiceButton: () -> Void
+    let playRightVoiceButton: () -> Void
+    let stopRightVoiceButton: () -> Void
+
     @State private var isMicLeftDisable: Bool = false
     @State private var isMicRightDisable: Bool = false
 
     var body: some View {
         HStack(spacing: 25) {
-            MicButton(action: {
-                actionLeftVoiceButton()
-                isMicRightDisable.toggle()
+            MicButton(playAction: {
+                playLeftVoiceButton()
+                isMicRightDisable = true
+            }, stopAction: {
+                stopLeftVoiceButton()
+                isMicRightDisable = false
             }, color: Color("PurplePrimary"))
                 .disabled(isMicLeftDisable)
 
-            MicButton(action: {
-                actionRightVoiceButton()
-                isMicLeftDisable.toggle()
+            MicButton(playAction: {
+                playRightVoiceButton()
+                isMicLeftDisable = true
+            }, stopAction: {
+                stopRightVoiceButton()
+                isMicLeftDisable = false
             }, color: Color("AquaSecondary"))
                 .disabled(isMicRightDisable)
         }
@@ -36,9 +45,12 @@ struct VoiceButtonGroup_Previews: PreviewProvider {
     static var previews: some View {
         VoiceButtonGroup {
 
-        } actionRightVoiceButton: {
+        } stopLeftVoiceButton: {
+
+        } playRightVoiceButton: {
+
+        } stopRightVoiceButton: {
 
         }
-
     }
 }
