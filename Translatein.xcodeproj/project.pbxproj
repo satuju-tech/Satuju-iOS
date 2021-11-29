@@ -28,6 +28,7 @@
 		8E4B41172728FF0600EDE747 /* TranslateinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41162728FF0600EDE747 /* TranslateinTests.swift */; };
 		8E4B41212728FF0600EDE747 /* TranslateinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41202728FF0600EDE747 /* TranslateinUITests.swift */; };
 		8E4B41232728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B41222728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift */; };
+		8E4B59CB2754CA7A00CDE07C /* Date+getFormattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B59CA2754CA7A00CDE07C /* Date+getFormattedDate.swift */; };
 		8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */; };
 		8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */; };
 		8E56B7882731932B00848AEA /* TranslationHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */; };
@@ -101,6 +102,7 @@
 		8E4B411C2728FF0600EDE747 /* TranslateinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslateinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B41202728FF0600EDE747 /* TranslateinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateinUITests.swift; sourceTree = "<group>"; };
 		8E4B41222728FF0600EDE747 /* TranslateinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E4B59CA2754CA7A00CDE07C /* Date+getFormattedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+getFormattedDate.swift"; sourceTree = "<group>"; };
 		8E56B77C272FF2CC00848AEA /* TranslationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistory.swift; sourceTree = "<group>"; };
 		8E56B7802731011500848AEA /* TranslationHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryRepository.swift; sourceTree = "<group>"; };
 		8E56B7872731932B00848AEA /* TranslationHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				8E16CA82272E783100013049 /* APIConstant.swift */,
 				B7AD00332736737500F15FC0 /* View+hasScrollEnabled.swift */,
 				8EAEE8FC273A0A20001B45D6 /* KeyboardViewModifier.swift */,
+				8E4B59CA2754CA7A00CDE07C /* Date+getFormattedDate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				A5A09ED32730CC5C00710550 /* TextFieldTranslationView.swift in Sources */,
 				A5A09ED12730CA1A00710550 /* CustomRoundedCornerShape.swift in Sources */,
 				8E16CA7F272E769C00013049 /* Translation.swift in Sources */,
+				8E4B59CB2754CA7A00CDE07C /* Date+getFormattedDate.swift in Sources */,
 				B7AD003B2736804700F15FC0 /* LocationManagerService.swift in Sources */,
 				8EA6D1BB273A420000BCCCA8 /* DictationService.swift in Sources */,
 				A5F26250272BDF6A00A390E6 /* ButtonReplayView.swift in Sources */,
@@ -819,7 +823,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "Translatein/Asset/Preview\\ Content";
-				DEVELOPMENT_TEAM = X9XRN4TUZZ;
+				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Translatein/Info.plist;
@@ -856,7 +860,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "Translatein/Asset/Preview\\ Content";
-				DEVELOPMENT_TEAM = X9XRN4TUZZ;
+				DEVELOPMENT_TEAM = M7Q7DN9JDX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Translatein/Info.plist;
