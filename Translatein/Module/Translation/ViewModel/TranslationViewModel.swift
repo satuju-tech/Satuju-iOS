@@ -35,19 +35,18 @@ class TranslationViewModel: ObservableObject {
                 translationRepository.translateWithLanguageDetection(
                     firstLang: originLangCode,
                     secondLang: destLangCode,
-                    text: text) { response in
+                    text: text) { translatedText in
                         self.configureTranslatedText(originText: text,
-                                                     translatedText: response.text?[0] ?? "",
+                                                     translatedText: translatedText,
                                                      originLangCode: originLangCode,
                                                      destLangCode: destLangCode)
                     } failCompletion: { error in
                         print(error)
                     }
             } else {
-                let lang = "\(originLangCode)-\(destLangCode)"
-                translationRepository.translate(text: text, lang: lang) { response in
+                translationRepository.translate(text: text, source: originLangCode, target: destLangCode) { translatedText in
                     self.configureTranslatedText(originText: text,
-                                                 translatedText: response.text?[0] ?? "",
+                                                 translatedText: translatedText,
                                                  originLangCode: originLangCode,
                                                  destLangCode: destLangCode)
                 } failCompletion: { error in

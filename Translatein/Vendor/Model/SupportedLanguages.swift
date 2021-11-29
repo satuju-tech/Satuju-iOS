@@ -7,8 +7,17 @@
 
 import Foundation
 
+// MARK: - Languages
 struct SupportedLanguages: Codable {
+    let data: SupportedLanguagesData?
+}
 
-    let langs: [String: String]?
+// MARK: - DataClass
+struct SupportedLanguagesData: Codable {
+    let languages: [Language]?
+}
 
+// MARK: - Language
+struct Language: Codable {
+    let language, name: String?
 }
