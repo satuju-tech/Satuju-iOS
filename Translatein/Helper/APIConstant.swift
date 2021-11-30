@@ -10,6 +10,6 @@ import Foundation
 struct APIConstant {
 
     static let TRANSLATION_BASE_API = "https://translation.googleapis.com/language/translate/v2"
-    static let TRANSLATION_API_KEY = ProcessInfo.processInfo.environment["GOOGLE_TRANSLATION_API_KEY"] ?? ""
+    static let TRANSLATION_API_KEY = "AIzaSyApsfGvw6kdNAGFOUikt-NTSkl0w0hT5Oo"
 
 }

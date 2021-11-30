@@ -50,13 +50,6 @@
             ReferencedContainer = "container:Translatein.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "GOOGLE_TRANSLATION_API_KEY"
-            value = "AIzaSyApsfGvw6kdNAGFOUikt-NTSkl0w0hT5Oo"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
