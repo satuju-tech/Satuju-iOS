@@ -37,6 +37,7 @@
 		8EAEE8FD273A0A20001B45D6 /* View+keyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEE8FC273A0A20001B45D6 /* View+keyboardResponsive.swift */; };
 		8EBE67B1272A40D3009C9F02 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B0272A40D3009C9F02 /* Realm */; };
 		8EBE67B3272A40D3009C9F02 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EBE67B2272A40D3009C9F02 /* RealmSwift */; };
+		A54D7C4C275CFDC000B79172 /* SiriActivationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D7C4B275CFDC000B79172 /* SiriActivationPageView.swift */; };
 		A55F22682729398D00B6E260 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */; };
 		A55F226B2729398D00B6E260 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */; };
 		A55F226E2729398D00B6E260 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */; };
@@ -109,6 +110,7 @@
 		8E56B7892731933B00848AEA /* TranslationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationHistoryView.swift; sourceTree = "<group>"; };
 		8EA6D1BA273A420000BCCCA8 /* DictationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictationService.swift; sourceTree = "<group>"; };
 		8EAEE8FC273A0A20001B45D6 /* View+keyboardResponsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+keyboardResponsive.swift"; sourceTree = "<group>"; };
+		A54D7C4B275CFDC000B79172 /* SiriActivationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriActivationPageView.swift; sourceTree = "<group>"; };
 		A55F22642729398C00B6E260 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		A55F22652729398C00B6E260 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 		A55F22662729398C00B6E260 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A54D7C4A275CFCA800B79172 /* SiriShortcut */,
 				8E437FFA2738F60C00C995FD /* Translation */,
 				B7AD003D2736808700F15FC0 /* LanguageSetting */,
 				A56A66BF27341BB20051A6A9 /* Soundwave */,
@@ -362,7 +365,6 @@
 			children = (
 				8E16CA82272E783100013049 /* APIConstant.swift */,
 				B7AD00332736737500F15FC0 /* View+hasScrollEnabled.swift */,
-				8EAEE8FC273A0A20001B45D6 /* KeyboardViewModifier.swift */,
 				8E4B59CA2754CA7A00CDE07C /* Date+getFormattedDate.swift */,
 				8EAEE8FC273A0A20001B45D6 /* View+keyboardResponsive.swift */,
 			);
@@ -376,6 +378,14 @@
 				8E56B7892731933B00848AEA /* TranslationHistoryView.swift */,
 			);
 			path = TranslationHistory;
+			sourceTree = "<group>";
+		};
+		A54D7C4A275CFCA800B79172 /* SiriShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				A54D7C4B275CFDC000B79172 /* SiriActivationPageView.swift */,
+			);
+			path = SiriShortcut;
 			sourceTree = "<group>";
 		};
 		A55F22632729390E00B6E260 /* Font */ = {
@@ -634,6 +644,7 @@
 				A56A66C3273420860051A6A9 /* SoundWaveView.swift in Sources */,
 				A56A66C5273420E00051A6A9 /* SoundWaveItemBarView.swift in Sources */,
 				B7AD00452737571000F15FC0 /* LanguageSettingView.swift in Sources */,
+				A54D7C4C275CFDC000B79172 /* SiriActivationPageView.swift in Sources */,
 				8E16CA89272ECCE500013049 /* SupportedLanguages.swift in Sources */,
 				8E4380022738F66600C995FD /* TranslationView.swift in Sources */,
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
