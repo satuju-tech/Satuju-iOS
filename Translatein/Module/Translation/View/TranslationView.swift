@@ -105,9 +105,6 @@ struct TranslationView: View {
 
             }
         }
-        .sheet(isPresented: $isSiriShortcutOn) {
-            SiriShortcutView()
-        }
         .edgesIgnoringSafeArea(.bottom)
     }
 
