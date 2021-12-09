@@ -148,21 +148,25 @@ struct SiriShortcutItemCard: View {
     @State var iconColor: Color
 
     var body: some View {
+
         VStack(alignment: .leading) {
             Text(title)
                 .font(.custom("NotoSans-Bold", size: 15))
                 .foregroundColor(Color.black)
                 .padding(.bottom, 10)
+
             Text(desc)
                 .font(.custom("NotoSans-Regular", size: 11))
                 .foregroundColor(Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255))
                 .opacity(0.35)
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 19)
+
             ZStack {
                 Circle()
                     .frame(width: 36, height: 36)
                     .foregroundColor(iconColor)
+
                 Image(imageName)
                     .resizable()
                     .frame(width: title == "Text Translation" ? 20 : 15, height: title == "Text Translation" ? 14 : 23)
