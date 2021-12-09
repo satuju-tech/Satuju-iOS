@@ -13,14 +13,12 @@ struct MenuListView: View {
     @StateObject var translationViewModel = TranslationViewModel()
     @AppStorage("isAutoPlayOn") var isAutoPlayOn: Bool = false
     @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
-    @AppStorage("isSiriShortcutOn") var isSiriShortcutOn: Bool = false
 
     @State var realm = try! Realm().objects(TranslationHistory.self)
     @State var toggleAutoPlayButton: (() -> Void)
     @State var toggleAutoDetectLanguageButton: (() -> Void)
     @State var toggleSiriShortcutButton: (() -> Void)
     @State var toggleClearHistoryButton: (() -> Void)
-    @State var frameHeight = 170.0
 
     var body: some View {
         List {
@@ -49,7 +47,6 @@ struct MenuListView: View {
             MenuListItem(
                 action: {
                     toggleSiriShortcutButton()
-                    isSiriShortcutOn.toggle()
                 },
                 checkMark: false,
                 buttonText: "Siri Shortcut",

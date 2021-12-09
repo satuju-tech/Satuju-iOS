@@ -59,6 +59,7 @@
 		B7AD00472739370100F15FC0 /* LocationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AD00462739370100F15FC0 /* LocationEnum.swift */; };
 		B7ADFFF1272BB80B00F15FC0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */; };
 		B7ADFFF3272BB9E500F15FC0 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */; };
+		B7D2DE75276095E9008348E1 /* SiriShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2DE74276095E9008348E1 /* SiriShortcutView.swift */; };
 		B7E4321A273A2AB0003FA949 /* ImageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E43219273A2AB0003FA949 /* ImageEnum.swift */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		B7AD00462739370100F15FC0 /* LocationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEnum.swift; sourceTree = "<group>"; };
 		B7ADFFF0272BB80B00F15FC0 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		B7ADFFF2272BB9E500F15FC0 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
+		B7D2DE74276095E9008348E1 /* SiriShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutView.swift; sourceTree = "<group>"; };
 		B7E43219273A2AB0003FA949 /* ImageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +338,7 @@
 		8E4B41352729037D00EDE747 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7D2DE73276095C8008348E1 /* SiriShortcut */,
 				8E437FFA2738F60C00C995FD /* Translation */,
 				B7AD003D2736808700F15FC0 /* LanguageSetting */,
 				A56A66BF27341BB20051A6A9 /* Soundwave */,
@@ -362,7 +365,6 @@
 			children = (
 				8E16CA82272E783100013049 /* APIConstant.swift */,
 				B7AD00332736737500F15FC0 /* View+hasScrollEnabled.swift */,
-				8EAEE8FC273A0A20001B45D6 /* KeyboardViewModifier.swift */,
 				8E4B59CA2754CA7A00CDE07C /* Date+getFormattedDate.swift */,
 				8EAEE8FC273A0A20001B45D6 /* View+keyboardResponsive.swift */,
 			);
@@ -455,6 +457,14 @@
 				B7AD00422736927C00F15FC0 /* LanguageSettingViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B7D2DE73276095C8008348E1 /* SiriShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				B7D2DE74276095E9008348E1 /* SiriShortcutView.swift */,
+			);
+			path = SiriShortcut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -639,6 +649,7 @@
 				A5F26255272BDFEF00A390E6 /* PolygonShapeView.swift in Sources */,
 				8E56B7812731011500848AEA /* TranslationHistoryRepository.swift in Sources */,
 				B7E4321A273A2AB0003FA949 /* ImageEnum.swift in Sources */,
+				B7D2DE75276095E9008348E1 /* SiriShortcutView.swift in Sources */,
 				8E56B77D272FF2CC00848AEA /* TranslationHistory.swift in Sources */,
 				A5A09EC2272FC17B00710550 /* TranslationBubble.swift in Sources */,
 				B7AD0039273675D700F15FC0 /* TextToVoiceService.swift in Sources */,

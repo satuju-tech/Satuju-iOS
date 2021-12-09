@@ -16,6 +16,7 @@ struct TranslationView: View {
     @State private var isLeft: Bool = true
     @State private var transcript = ""
     @State private var isRecording = false
+    @State private var isSiriShortcutOn: Bool = false
 
     private let speechRecognizer = DictationService()
 
@@ -90,7 +91,10 @@ struct TranslationView: View {
                         MenuListView(
                             toggleAutoPlayButton: {isMenuListHidden.toggle()},
                             toggleAutoDetectLanguageButton: {isMenuListHidden.toggle()},
-                            toggleSiriShortcutButton: {isMenuListHidden.toggle()},
+                            toggleSiriShortcutButton: {
+                                isSiriShortcutOn.toggle()
+                                isMenuListHidden.toggle()
+                            },
                             toggleClearHistoryButton: {isMenuListHidden.toggle()}
                         )
                             .opacity(0.95)
@@ -100,6 +104,9 @@ struct TranslationView: View {
                 }
 
             }
+        }
+        .sheet(isPresented: $isSiriShortcutOn) {
+            SiriShortcutView()
         }
         .edgesIgnoringSafeArea(.bottom)
     }
