@@ -50,11 +50,13 @@ class TranslationViewModel: ObservableObject {
                     }
             } else {
                 translationRepository.translate(text: text, source: originLangCode, target: destLangCode) { translatedText in
+
+                    let isLeft = self.leftLangCode == originLangCode
                     self.configureTranslatedText(originText: text,
                                                  translatedText: translatedText,
                                                  originLangCode: originLangCode,
                                                  destLangCode: destLangCode,
-                                                 isLeft: true)
+                                                 isLeft: isLeft)
                 } failCompletion: { error in
                     print(error)
                     self.isTranslating = false
