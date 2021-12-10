@@ -29,7 +29,10 @@ class TranslationViewModel: ObservableObject {
     }
 
     func translate(originLangCode: String, destLangCode: String, isVoice: Bool) {
-        if !originText.isEmpty {
+        let letters = NSCharacterSet.letters
+        let range = originText.rangeOfCharacter(from: letters)
+
+        if range != nil {
             let text = originText
             originText = "Translating..."
             isTranslating = true
