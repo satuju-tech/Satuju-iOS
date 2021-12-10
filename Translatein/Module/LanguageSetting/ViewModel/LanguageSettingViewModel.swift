@@ -8,13 +8,6 @@
 import SwiftUI
 
 final class LanguageSettingViewModel: ObservableObject {
-    @AppStorage("leftLangCode") var leftCountryCode: String = "id"
-    @AppStorage("leftLangName") var leftCountryNameButton: String = "Indonesia"
-    @AppStorage("leftLangImage") var leftCountryImageName: String = "id"
-    @AppStorage("rightLangCode") var rightCountryCode: String = "en"
-    @AppStorage("rightLangName") var rightCountryNameButton: String = "English"
-    @AppStorage("rightLangImage") var rightCountryImageName: String = "en"
-
     @Published var leftColorNameButton = "PurplePrimary"
     @Published var rightColorNameButton = "AquaSecondary"
 

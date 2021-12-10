@@ -87,10 +87,20 @@ struct LanguageListView: View {
                     ForEach(langItem, id: \.language) { item in
                         LanguangeItem(action: {
                             if isOrigin {
+                                if rightLangCode == item.language {
+                                    rightLangCode = leftLangCode
+                                    rightLangName = leftLangName
+                                    rightImageName = leftImageName
+                                }
                                 leftLangCode = item.language
                                 leftLangName = item.name
                                 leftImageName = ImageEnum(rawValue: item.language ?? "")?.getCountryImage() ?? item.language
                             } else {
+                                if leftLangCode == item.language {
+                                    leftLangCode = rightLangCode
+                                    leftLangName = rightLangName
+                                    leftImageName = rightImageName
+                                }
                                 rightLangCode = item.language
                                 rightLangName = item.name
                                 rightImageName = ImageEnum(rawValue: item.language ?? "")?.getCountryImage() ?? item.language
