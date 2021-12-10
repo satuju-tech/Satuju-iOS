@@ -97,7 +97,7 @@ struct DictationService {
         assistant.reset()
     }
 
-    private func canAccess(withHandler handler: @escaping (Bool) -> Void) {
+    func canAccess(withHandler handler: @escaping (Bool) -> Void) {
         SFSpeechRecognizer.requestAuthorization { status in
             if status == .authorized {
                 AVAudioSession.sharedInstance().requestRecordPermission { authorized in
@@ -108,6 +108,7 @@ struct DictationService {
             }
         }
     }
+
     private func relay(_ binding: Binding<String>, message: String) {
         DispatchQueue.main.async {
             binding.wrappedValue = message
