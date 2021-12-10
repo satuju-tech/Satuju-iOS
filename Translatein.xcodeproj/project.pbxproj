@@ -362,7 +362,6 @@
 			children = (
 				8E16CA82272E783100013049 /* APIConstant.swift */,
 				B7AD00332736737500F15FC0 /* View+hasScrollEnabled.swift */,
-				8EAEE8FC273A0A20001B45D6 /* KeyboardViewModifier.swift */,
 				8E4B59CA2754CA7A00CDE07C /* Date+getFormattedDate.swift */,
 				8EAEE8FC273A0A20001B45D6 /* View+keyboardResponsive.swift */,
 			);
@@ -843,7 +842,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.satuju.Translatein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -880,7 +879,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.satuju.Translatein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
