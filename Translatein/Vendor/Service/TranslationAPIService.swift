@@ -11,16 +11,16 @@ import Alamofire
 protocol TranslationAPIServiceProtocol {
 
     func translate(text: String,
-                   lang: String,
+                   source: String,
+                   target: String,
                    successCompletion: @escaping (Translation) -> Void,
                    failCompletion: @escaping (AFError) -> Void)
 
-    func getLanguages(originLang: String,
+    func getLanguages(target: String,
                       successCompletion: @escaping (SupportedLanguages) -> Void,
                       failCompletion: @escaping (AFError) -> Void)
 
-    func detectLanguage(languagePair: String,
-                        text: String,
+    func detectLanguage(text: String,
                         successCompletion: @escaping (DetectedLanguage) -> Void,
                         failCompletion: @escaping (AFError) -> Void)
 
@@ -29,12 +29,13 @@ protocol TranslationAPIServiceProtocol {
 final class TranslationAPIService: TranslationAPIServiceProtocol {
 
     func translate(text: String,
-                   lang: String,
+                   source: String,
+                   target: String,
                    successCompletion: @escaping (Translation) -> Void,
                    failCompletion: @escaping (AFError) -> Void) {
-        AF.request("\(APIConstant.TRANSLATION_BASE_API)/translate?key=\(APIConstant.TRANSLATION_API_KEY)",
+        AF.request("\(APIConstant.TRANSLATION_BASE_API)",
                    method: .post,
-                   parameters: ["text": text, "lang": lang])
+                   parameters: ["q": text, "source": source, "target": target, "key": APIConstant.TRANSLATION_API_KEY])
             .responseDecodable(of: Translation.self) { response in
                 switch response.result {
                 case .success(let data):
@@ -45,10 +46,11 @@ final class TranslationAPIService: TranslationAPIServiceProtocol {
             }
     }
 
-    func getLanguages(originLang: String, successCompletion: @escaping (SupportedLanguages) -> Void, failCompletion: @escaping (AFError) -> Void) {
+    func getLanguages(target: String, successCompletion: @escaping (SupportedLanguages) -> Void, failCompletion: @escaping (AFError) -> Void) {
         AF.request(
-            "\(APIConstant.TRANSLATION_BASE_API)/getLangs?key=\(APIConstant.TRANSLATION_API_KEY)&ui=\(originLang)",
-            method: .post)
+            "\(APIConstant.TRANSLATION_BASE_API)/languages?key=\(APIConstant.TRANSLATION_API_KEY)",
+            method: .get,
+            parameters: ["target": target])
             .responseDecodable(of: SupportedLanguages.self) { response in
                 switch response.result {
                 case .success(let data):
@@ -60,14 +62,13 @@ final class TranslationAPIService: TranslationAPIServiceProtocol {
     }
 
     func detectLanguage(
-        languagePair: String,
         text: String,
         successCompletion: @escaping (DetectedLanguage) -> Void,
         failCompletion: @escaping (AFError) -> Void) {
             AF.request(
                 "\(APIConstant.TRANSLATION_BASE_API)/detect?key=\(APIConstant.TRANSLATION_API_KEY)",
                 method: .post,
-                parameters: ["hint": languagePair, "text": text])
+                parameters: ["q": text])
                 .responseDecodable(of: DetectedLanguage.self) { response in
                     switch response.result {
                     case .success(let data):

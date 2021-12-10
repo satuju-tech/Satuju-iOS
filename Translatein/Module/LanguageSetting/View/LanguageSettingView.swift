@@ -12,6 +12,10 @@ struct LanguageSettingView: View {
     @StateObject private var LanguageSettingVM = LanguageSettingViewModel()
 
     @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
+    @AppStorage("leftLangName") var leftCountryNameButton: String = "Indonesia"
+    @AppStorage("leftLangImage") var leftCountryImageName: String = "id"
+    @AppStorage("rightLangName") var rightCountryNameButton: String = "English"
+    @AppStorage("rightLangImage") var rightCountryImageName: String = "en"
 
     @State var showLanguageListModalView: Bool = false
     @State var isOrigin: Bool = true
@@ -24,8 +28,8 @@ struct LanguageSettingView: View {
                 showLanguageListModalView = true
                 title = "Translate From"
             },
-                               imageName: $LanguageSettingVM.leftCountryImageName,
-                               countryName: $LanguageSettingVM.leftCountryNameButton,
+                               imageName: $leftCountryImageName,
+                               countryName: $leftCountryNameButton,
                                colorName: $LanguageSettingVM.leftColorNameButton)
 
             if !isDetectLanguageOn {
@@ -40,8 +44,8 @@ struct LanguageSettingView: View {
                 showLanguageListModalView = true
                 title = "Translate To"
             },
-                               imageName: $LanguageSettingVM.rightCountryImageName,
-                               countryName: $LanguageSettingVM.rightCountryNameButton,
+                               imageName: $rightCountryImageName,
+                               countryName: $rightCountryNameButton,
                                colorName: $LanguageSettingVM.rightColorNameButton
             )
         }

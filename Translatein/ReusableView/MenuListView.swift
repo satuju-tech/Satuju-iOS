@@ -46,16 +46,16 @@ struct MenuListView: View {
                 textColor: .black
             )
 
-            MenuListItem(
-                action: {
-                    toggleSiriShortcutButton()
-                    isSiriShortcutOn.toggle()
-                },
-                checkMark: isSiriShortcutOn,
-                buttonText: "Siri Shortcut",
-                systemName: "checkmark.circle.fill",
-                textColor: .black
-            )
+//            MenuListItem(
+//                action: {
+//                    toggleSiriShortcutButton()
+//                    isSiriShortcutOn.toggle()
+//                },
+//                checkMark: false,
+//                buttonText: "Siri Shortcut",
+//                systemName: "checkmark.circle.fill",
+//                textColor: .black
+//            )
 
             if !realm.isEmpty {
                 MenuListItem(

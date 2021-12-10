@@ -9,7 +9,7 @@ import Foundation
 
 struct APIConstant {
 
-    static let TRANSLATION_BASE_API = "https://translate.yandex.net/api/v1.5/tr.json"
-    static let TRANSLATION_API_KEY = "trnsl.1.1.20211029T030135Z.371a0e0bf724b062.91facfc6054b6df45308abbe6a78f2ac8151f110"
+    static let TRANSLATION_BASE_API = "https://translation.googleapis.com/language/translate/v2"
+    static let TRANSLATION_API_KEY = "AIzaSyApsfGvw6kdNAGFOUikt-NTSkl0w0hT5Oo"
 
 }

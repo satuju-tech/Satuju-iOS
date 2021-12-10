@@ -10,11 +10,17 @@ import RealmSwift
 
 struct TranslationHistoryView: View {
 
-    @ObservedObject private var translationHistory = TranslationHistoryViewModel(
+    @StateObject private var translationHistory = TranslationHistoryViewModel(
         translationHistoryResults: try! Realm().objects(TranslationHistory.self)
     )
 
-    @Namespace var bottomID
+    @State private var tempDate = Date()
+    @State private var date: [UUID: Date] = [:]
+    @State private var translationHistoryIdx = 0
+
+    @Namespace private var bottomID
+
+    private let dateFormatter: () = DateFormatter().dateFormat = "EEEE, d MMM"
 
     var body: some View {
         if translationHistory.results.isEmpty {
@@ -40,6 +46,16 @@ struct TranslationHistoryView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(translationHistory.results, id: \.id) { item in
+                            if let safeDate = date[item.id] {
+                                HStack {
+                                    Text("\(safeDate.getFormattedDate(format: "EEEE, d MMM"))")
+                                        .font(.custom("NotoSans-Regular", size: 11))
+
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 20)
+                            }
+
                             if item.id == translationHistory.results.last?.id {
                                 TranslationBubble(
                                     isLeft: item.isLeft,
@@ -49,6 +65,9 @@ struct TranslationHistoryView: View {
                                     destinationLangCode: item.destinationLang)
                                     .id(bottomID)
                                     .padding(.bottom, 40)
+                                    .onAppear {
+                                        translationHistoryIdx += 1
+                                    }
                             } else {
                                 TranslationBubble(
                                     isLeft: item.isLeft,
@@ -57,23 +76,26 @@ struct TranslationHistoryView: View {
                                     textTranslationResult: item.destinationText,
                                     destinationLangCode: item.destinationLang)
                                     .padding(.bottom, 20)
+                                    .onAppear {
+                                        translationHistoryIdx += 1
+                                    }
                             }
                         }
                     }
                     .frame(
-                        minWidth: 0,
-                        maxWidth: .infinity,
-                        minHeight: 0,
                         maxHeight: .infinity,
                         alignment: .top
                     )
                 }
                 .onAppear(perform: {
+                    initTempDate()
+
                     withAnimation {
                         proxy.scrollTo(bottomID)
                     }
                 })
                 .onChange(of: translationHistory.results.count) { _ in
+                    updateTempDate(id: translationHistory.results.last?.id ?? UUID(), newDate: translationHistory.results.last?.date ?? Date())
                     withAnimation {
                         proxy.scrollTo(bottomID)
                     }
@@ -81,6 +103,26 @@ struct TranslationHistoryView: View {
             }
         }
     }
+
+    private func initTempDate() {
+        for item in translationHistory.results {
+            if Calendar.current.compare(tempDate,
+                                        to: item.date,
+                                        toGranularity: .hour).rawValue != 0
+                || item == translationHistory.results.first {
+                date[item.id] = item.date
+                tempDate = item.date
+            }
+        }
+    }
+
+    private func updateTempDate(id: UUID, newDate: Date) {
+        if Calendar.current.compare(tempDate, to: newDate, toGranularity: .hour).rawValue != 0 {
+            date[id] = newDate
+            tempDate = newDate
+        }
+    }
+
 }
 
 struct TranslationHistoryView_Previews: PreviewProvider {

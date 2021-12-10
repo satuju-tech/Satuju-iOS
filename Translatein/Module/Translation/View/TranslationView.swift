@@ -11,10 +11,12 @@ struct TranslationView: View {
 
     @StateObject var manager = LocationManagerService()
     @StateObject private var translationViewModel = TranslationViewModel()
+
     @State private var isMenuListHidden: Bool = true
     @State private var isLeft: Bool = true
     @State private var transcript = ""
     @State private var isRecording = false
+
     private let speechRecognizer = DictationService()
 
     var body: some View {
@@ -28,10 +30,11 @@ struct TranslationView: View {
                 TranslationHistoryView()
                     .padding(.top, 21)
 
-                ZStack(alignment: isRecording ? .center : .bottom) {
+                ZStack(alignment: .bottom) {
                     TextFieldTranslationView(
                         text: $translationViewModel.originText,
                         isDisable: $isRecording,
+                        isTranslating: $translationViewModel.isTranslating,
                         onEditingEnded: {
                             translationViewModel.translate(
                                 originLangCode: translationViewModel.leftLangCode,
@@ -40,24 +43,22 @@ struct TranslationView: View {
                         .disabled(!isMenuListHidden)
                         .keyboardResponsive()
 
-                    if isRecording {
-                        SoundWaveView {
-                            stopRecording()
-                        }
-                    } else {
                         HStack {
                             Spacer()
 
                             VoiceButtonGroup(
-                                actionLeftVoiceButton: {
+                                playLeftVoiceButton: {
                                     isLeft = true
                                     listenAndTranslate()
-                                },
-                                actionRightVoiceButton: {
+                                }, stopLeftVoiceButton: {
+                                    stopRecording()
+                                }, playRightVoiceButton: {
                                     isLeft = false
                                     listenAndTranslate()
-                                })
-
+                                }, stopRightVoiceButton: {
+                                    stopRecording()
+                                }
+                            )
                             MenuButtonView(toggleMenuButton: {
                                 isMenuListHidden.toggle()
                             })
@@ -66,7 +67,7 @@ struct TranslationView: View {
                         }
                         .padding(.trailing, 26)
                         .padding(.bottom, 30)
-                    }
+
                 }
             }
 
@@ -108,16 +109,29 @@ struct TranslationView: View {
 extension TranslationView {
 
     func listenAndTranslate() {
-        translationViewModel.originText = "Listening..."
-        if isLeft {
-            speechRecognizer.changeLocale(locale: translationViewModel.leftLangCode)
-        } else {
-            speechRecognizer.changeLocale(locale: translationViewModel.rightLangCode)
+        translationViewModel.originText = "Request permissions..."
+
+        speechRecognizer.canAccess { authorized in
+            guard authorized else {
+                DispatchQueue.main.async {
+                    translationViewModel.originText = "Type or Tap Mic to Translate"
+                }
+                return
+            }
+
+            DispatchQueue.main.async {
+                translationViewModel.originText = "Listening..."
+            }
+
+            if isLeft {
+                speechRecognizer.changeLocale(locale: translationViewModel.leftLangCode)
+            } else {
+                speechRecognizer.changeLocale(locale: translationViewModel.rightLangCode)
+            }
+
+            isRecording = true
+            speechRecognizer.record(to: $transcript)
         }
-
-        isRecording = true
-        speechRecognizer.record(to: $transcript)
-
     }
 
     func stopRecording() {
@@ -134,6 +148,12 @@ extension TranslationView {
                                            destLangCode: translationViewModel.leftLangCode,
                                            isVoice: true)
         }
+
+        transcript = ""
+    }
+
+    private func openSetting(alert: UIAlertAction) {
+
     }
 
 }
