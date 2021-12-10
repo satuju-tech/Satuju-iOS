@@ -109,16 +109,29 @@ struct TranslationView: View {
 extension TranslationView {
 
     func listenAndTranslate() {
-        translationViewModel.originText = "Listening..."
-        if isLeft {
-            speechRecognizer.changeLocale(locale: translationViewModel.leftLangCode)
-        } else {
-            speechRecognizer.changeLocale(locale: translationViewModel.rightLangCode)
+        translationViewModel.originText = "Request permissions..."
+
+        speechRecognizer.canAccess { authorized in
+            guard authorized else {
+                DispatchQueue.main.async {
+                    translationViewModel.originText = "Type or Tap Mic to Translate"
+                }
+                return
+            }
+
+            DispatchQueue.main.async {
+                translationViewModel.originText = "Listening..."
+            }
+
+            if isLeft {
+                speechRecognizer.changeLocale(locale: translationViewModel.leftLangCode)
+            } else {
+                speechRecognizer.changeLocale(locale: translationViewModel.rightLangCode)
+            }
+
+            isRecording = true
+            speechRecognizer.record(to: $transcript)
         }
-
-        isRecording = true
-        speechRecognizer.record(to: $transcript)
-
     }
 
     func stopRecording() {
@@ -137,6 +150,10 @@ extension TranslationView {
         }
 
         transcript = ""
+    }
+
+    private func openSetting(alert: UIAlertAction) {
+
     }
 
 }
