@@ -14,6 +14,8 @@ struct TranslateinApp: App {
     @AppStorage("leftLangCode") var leftCountryCode: String = "id"
     @AppStorage("leftLangName") var leftCountryNameButton: String = "Indonesia"
     @AppStorage("leftLangImage") var leftCountryImageName: String = "id"
+    @AppStorage("isAutoPlayOn") var isAutoPlayOn: Bool = false
+    @AppStorage("isDetectLanguageOn") var isDetectLanguageOn: Bool = false
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
@@ -28,6 +30,9 @@ struct TranslateinApp: App {
             leftCountryCode = locale.languageCode ?? "en"
             leftCountryImageName = ImageEnum(rawValue: leftCountryCode)?.getCountryImage() ?? leftCountryCode
             isFirstLaunch = false
+
+            isAutoPlayOn = true
+            isDetectLanguageOn = true
         }
     }
 
